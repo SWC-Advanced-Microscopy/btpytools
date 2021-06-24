@@ -18,3 +18,34 @@ Running as `sudo` allows the installer to add the most important programs to you
 * `transferToServer`
 * `compressRawData`
 * `summariseAcqs`
+
+In other words, after pip installing you can run `compressRawData` at the command line. 
+
+## Usage instructions
+
+### Compressing the raw data directory
+`cd` to the sample directory at the command line and run `compressRawData`. This requires you to have installed `lbzip2`, which runs parallel bzip. Likely only works on Linux.
+
+```
+$ cd /mnt/data/BakingTrayStacks/CC_125_1__125_2/ 
+$ compressRawData  
+```
+
+### Sending data to a remote server
+The server should be mounted locally to a mount point writable by the user. The tranfer is via `rsync`. The command just ensures no uncompressed raw data or uncropped stacks are copied. It brute-force retries if there is a failure for some reason. 
+
+First `cd` to the directory which **constains your samples**. Not the sample directory. e.g.
+```
+$ cd /mnt/data/BakingTrayStacks
+```
+
+You can now run in either of the following two ways (either one acquisition or multiple acquisitions)
+```
+$ transferToServer RC_RabiesBrains01 /mnt/server/user/data/histology
+$ transferToServer RC_RabiesBrains01 RC_TwoProbeTracks_test RC_MyOldSample /mnt/server/user/data/histology
+```
+
+Do **not** do the following as it will not send compressed raw data should you have any:
+```
+$ transferToServer RC_RabiesBrains01/sample01 RC_RabiesBrains01/sample02 /mnt/server/user/data/histology
+```
