@@ -63,7 +63,7 @@ def has_downsampled_stacks(tPath=''):
     """ Check if current directory (or that defined by tPath) contains a downsampleStacks* directory
         Returns True if present, False if absent
     """
-    tPath = os.path.join(tPath,'./downsampledStacks_*')
+    tPath = os.path.join(tPath,'./downsampled_stacks')
     return file_glob_exist(tPath)
 
 
