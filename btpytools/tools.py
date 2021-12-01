@@ -64,6 +64,12 @@ def has_downsampled_stacks(tPath=''):
         Returns True if present, False if absent
     """
     tPath = os.path.join(tPath,'./downsampled_stacks')
+    if not file_glob_exist(tPath):
+        return False
+    else:
+        tPath = os.path.join(tPath,'*_micron')
+        print(tPath)
+
     return file_glob_exist(tPath)
 
 
