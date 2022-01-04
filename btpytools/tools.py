@@ -13,9 +13,9 @@ _stitchedImageDir = 'stitchedImages_*'
 _downsampledDir = 'downsampled_stacks'
 _downsampledStackSubDir = '*_micron' #Sub-directories in _downsampledDir
 _downsampledStackLogFile = 'ds_*.txt' #Wildcard for downsampled stacks
-"""
-The following are related to BakingTray data directories
-"""
+_uncropped_wildcard = './Uncropped*_DELETE_ME_DELETE_ME'
+_recipe_wildcard = 'recipe*.yml'
+
 
 def has_raw_data(tPath=''):
     """ Check if current directory (or that defined by tPath) contains a rawData directory.
@@ -37,7 +37,7 @@ def has_recipe_file(tPath=''):
     """ Check if current directory (or that defined by tPath) contains a recipe file.
         Returns True if present, False if absent
     """
-    tPath = os.path.join(tPath,'recipe*.yml')
+    tPath = os.path.join(tPath,_recipe_wildcard)
     return file_glob_exist(tPath)
 
 
@@ -83,7 +83,7 @@ def has_uncropped_stitched_images(tPath=''):
     """ Check if current directory (or that defined by tPath) contains a stitched image directory
         Returns True if present, False if absent
     """
-    tPath = os.path.join(tPath,'./Uncropped*_DELETE_ME_DELETE_ME')
+    tPath = os.path.join(tPath,_uncropped_wildcard)
     return file_glob_exist(tPath)
 
 
@@ -187,7 +187,7 @@ def read_downsample_log_file(pathToFile=''):
 
     return out
 
-
+ 
 
 """
 The following are very general purpose and not specific to BakingTray
