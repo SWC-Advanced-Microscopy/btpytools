@@ -20,15 +20,66 @@ to regular gzip.
 
 """
 
+
 import os
 from datetime import datetime
 import time
 from btpytools import tools, recipe
 from glob import glob
+from textwrap import dedent # To remove common leading white space
+import argparse
 
-def main(simulate=False):
 
-    if simulate:
+
+def cli_parser():
+    '''
+    Build and return an argument parser
+    '''
+
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        prog='compressRawData',
+        description=dedent('''\
+                            Compress a raw BrainSaw data directory
+
+                            Usage:
+
+                              cd to sample directory and run this command:
+                              $ cd /mnt/data/somesample
+                              $ compressRawData
+                             '''),
+        epilog=dedent('''\
+                        Notes
+                        If you have signed in via SSH and aren't in a tmux session, the function
+                        asks for confirmation before continuing. If your ssh session breaks off
+                        for some reason, then compression will fail. tmux is therefore recomended
+                        in this situation.
+
+                        Runs much faster with parallel bzip (lbzip2) installed. If this is missing, the
+                        tool reverts to regular gzip.''')
+                        )
+
+
+    parser.add_argument(
+        '-s', 
+        '--simulate', 
+        dest='simulate',
+        required=False,
+        action='store_true',
+        help="If supplied only progress text messages are supplied. No compression run.",
+    )
+
+
+    return  parser
+
+
+
+
+def main():
+    # Main function: runs the compression
+    args = cli_parser().parse_args()
+
+    if args.simulate:
         print('\n\nRUNNING IN SIMULATE MODE\n')
 
 
@@ -105,7 +156,7 @@ def main(simulate=False):
     print("\nRunning compression command: " + compress_cmd + "\n")
     time.sleep(1)
 
-    if not simulate:
+    if not args.simulate:
         # If necessary we copy the meta-data files temporaily out of the uncropped stacks folder
         if copy_files_from_uncropped:
             print('Temporarily moving meta-data from uncropped directory into main directory')

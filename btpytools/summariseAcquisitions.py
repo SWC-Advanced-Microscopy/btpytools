@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-""" Sumarise to screen all acquisitions in the current dirctory
+""" Summarize to screen all acquisitions in the current directory
 
 Usage
 cd to sample directory and run this command:
@@ -9,6 +9,7 @@ $ summariseAcquisitions
 
 This function is automatically added as a console-accessible command during pip install
 """
+
 
 import os
 
