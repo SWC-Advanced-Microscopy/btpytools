@@ -32,8 +32,13 @@ import argparse
 
 
 def cli_parser():
+    '''
+    Build and return an argument parser
+    '''
+
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter,
+        prog='compressRawData',
         description=dedent('''\
                             Compress a raw BrainSaw data directory
 
@@ -43,7 +48,6 @@ def cli_parser():
                               $ cd /mnt/data/somesample
                               $ compressRawData
                              '''),
-        prog='compressRawData',
         epilog=dedent('''\
                         Notes
                         If you have signed in via SSH and aren't in a tmux session, the function

@@ -1,39 +1,18 @@
 #!/usr/bin/env python3
 
-""" Transfer raw data to server
+""" Transfer BrainSaw data to a server mounted on the local machine
 
 This function is a wrapper round rsync and is used for copying BakingTray
-data to a server over a network connection. It corrects trailing slash 
-issues. It doesn't currently support rsync over ssh.
+data to a server over a network connection. 
 
-Inputs arguments
+Input arguments
 - one or more paths to local directories which are to be copied
 - the last path is the destination. 
 
 transferToServer ./localSampleA ./localSampleB /path/to/server
 
-Advanced input arguments
-- You may add a custom rsync switch. By default -av is used. But you may,
-  for example, do a dry run by supplying -avn. This can be supplied either
-  before or after the directory paths (see example below)
+For more see transferToServer -h
 
- Usage examples:
-
- 1. Transfer one sample
- transferToServer ./XY_123 /mnt/datastor/user/path/
-
- 2. Transfer two samples in same directory plus raw data
-    This usage case happens if a sample was split up
- transferToServer ./XY_123_YY_234/sample1 ./XY_123_YY_234/sample2 ./XY_123_YY_234/rawData.tar.bz /mnt/datastor/user/path/
-
- You can also do:
- transferToServer ./XY_123_YY_234/ /mnt/datastor/user/path/
-
- The latter will ask you if you want the data copied in the enclosing directory.
-
- 3. Change rsync flag (advanced usage) using either of the following
- transferToServer -rv ./XY_123 /mnt/datastor/user/path/
- transferToServer ./XY_123 /mnt/datastor/user/path/ -rv
 
 Notes
 If you have signed in via SSH and aren't in a tmux session, the function
@@ -47,27 +26,116 @@ in this situation.
 import os
 import sys
 from btpytools import tools, recipe
+from textwrap import dedent # To remove common leading whitespace
+import argparse
+
+
+def cli_parser():
+    ''' 
+    Build and return an argument parser
+    '''
+
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        prog='transferToServer',
+        description=dedent('''\
+                            Transfer BrainSaw data to a server mounted on the local machine
+
+                            This function is a wrapper round rsync and is used for copying BakingTray
+                            data to a server. It automatically does not copy uncompressed raw data or
+                            the uncropped stacks directory. 
+
+                            Input arguments
+                            - one or more paths to local directories which are to be copied
+                            - the last path is the destination. 
+
+
+                            Usage examples:
+
+                            1. Transfer one sample plus any compressed raw data:
+                               $ transferToServer ./XY_123 /mnt/datastor/user/path/
+
+                            2. Transfer a directory containing two samples (after cropping) plus any compressed raw data.
+                               You will be prompted whether you want the source data to be copied in the enclosing directory.
+                               $ transferToServer ./USER_sampleA_sampleB/ /mnt/datastor/user/path/
+
+                               Note, this is the same as doing:
+                               $ transferToServer ./USER_sampleA_sampleB/sample1 ./USER_sampleA_sampleB/sample2 ./USER_sampleA_sampleB/rawData.tar.bz /mnt/datastor/user/path/
+
+                            3. Simulate the transfer of one sample
+                               $ transferToServer ./XY_123 /mnt/datastor/user/path/ -s
+
+                            4. Run with different rsync flags
+                               $ transferToServer ./XY_123 /mnt/datastor/user/path/ -r rv
+
+                           '''),
+
+        epilog=dedent('''\
+                        Notes
+                        If you have signed in via SSH and aren't in a tmux session, the function
+                        asks for confirmation before continuing. If your ssh session breaks off
+                        for some reason, then compression will fail. tmux is therefore recomended
+                        in this situation.
+                      ''')
+        )
+
+
+    parser.add_argument(
+        dest='paths',
+        type=str,
+        nargs='+',
+        help='One or more local paths followed by destination path'
+        )
+
+
+    parser.add_argument(
+        '-s', 
+        '--simulate', 
+        dest='simulate',
+        required=False,
+        action='store_true',
+        help="If supplied an rsync dry run is conducted and nothing is copied.",
+    )
+
+    parser.add_argument(
+        '-r',
+        '--rsync_flags', 
+        dest='rsync_flags',
+        required=False,
+        default='av',
+        type=str,
+        help='If supplied, this rsync flag is used. Default is "av". Other reasonable options include "rv".',
+    )    
+
+    return parser
 
 
 
 def main():
     # Search for an rsync switch string and replace default value if one is found
-    main_rsync_switch='-av' # default
-    for ii, jj in enumerate(sys.argv):
-        if jj.startswith('-'):
-            main_rsync_switch=jj
-            sys.argv.remove(jj)
+    args = cli_parser().parse_args()
 
-
-    # Need to supply at least what to copy and where to copy it to 
-    if len(sys.argv)<3:
-        print("Supply at least a local path to copy and a destination")
+    if len(args.paths)<2:
+        print("\n\n ERROR: transferToServer requires at least one local path to copy and a destination\n")
+        print(' See "transferToServer -h"\n')
         exit()
 
 
+    main_rsync_switch = args.rsync_flags # This is the flag used by rsync
+    if not main_rsync_switch.startswith('-'):
+        main_rsync_switch = '-%s' % main_rsync_switch
 
-    source  = sys.argv[1:-1]   # One or more files or folders to copy
-    destination = sys.argv[-1] # Where we will copy to
+
+    # Append "n" for dry-run rsync mode if the user asked for this with the -s flag at CLI
+    if args.simulate:
+        main_rsync_switch += 'n'
+
+    print(main_rsync_switch)
+    return
+
+
+    source  = args.paths[1:-1]   # One or more files or folders to copy
+    destination = args.paths[-1] # Where we will copy to
 
 
     # Bail out if any of the supplied paths do not exist
