@@ -130,9 +130,6 @@ def main():
     if args.simulate:
         main_rsync_switch += 'n'
 
-    print(main_rsync_switch)
-    return
-
 
     source  = args.paths[1:-1]   # One or more files or folders to copy
     destination = args.paths[-1] # Where we will copy to
