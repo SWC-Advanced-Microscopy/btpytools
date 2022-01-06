@@ -262,8 +262,7 @@ def main():
     cmd = "rsync %s --progress --exclude rawData --exclude *_DELETE_ME_* %s %s " % (
         main_rsync_switch,
         " ".join(source_dirs),
-        destination_dir,
-    )
+        destination_dir,)
 
     print("Using command %s" % cmd)
     if not tools.query_yes_no(""):
