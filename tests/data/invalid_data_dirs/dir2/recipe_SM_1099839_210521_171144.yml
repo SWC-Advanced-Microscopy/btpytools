@@ -1,0 +1,70 @@
+Acquisition: {acqStartTime: '2021/05/21 17:11:43'}
+sample: {ID: XY_1099839, objectiveName: nikon 16x}
+mosaic:
+  sectionStartNum: 1.0
+  numSections: 208.0
+  cuttingSpeed: 0.4
+  cutSize: 16.0
+  sliceThickness: 0.05
+  numOverlapZPlanes: 0.0
+  numOpticalPlanes: 8.0
+  overlapProportion: 0.1
+  sampleSize: {X: 8.18, Y: 12.79}
+  scanmode: 'tiled: auto-ROI'
+  tilesToRemove: -1.0
+CuttingStartPoint: {X: 33.00001, Y: 0.0}
+FrontLeft: {X: 18.42387, Y: 11.11418}
+StitchingParameters:
+  VoxelSize: {X: 2.23, Y: 2.335}
+  lensDistort: {rows: 0.0, cols: 0.0}
+  affineMat:
+  - [1.0, -0.011, 0.0]
+  - [0.0, 1.0, 0.0]
+  - [0.0, 0.0, 1.0]
+  scannerSettingsIndex: 3.0
+NumTiles: {X: 7.0, Y: 11.0}
+Tile: {nRows: 562.0, nColumns: 562.0}
+TileStepSize: {X: 1.15198, Y: 1.15198}
+VoxelSize: {X: 2.278, Y: 2.278, Z: 6.3}
+ScannerSettings:
+  pixelsPerLine: 562.0
+  linesPerFrame: 562.0
+  micronsBetweenOpticalPlanes: 6.3
+  numOpticalSlices: 8.0
+  zoomFactor: 1.0
+  objectiveResolution: 54.7
+  scannerType: RG
+  pixEqLinCheckBox: true
+  scanAngleShiftFast: 0.0
+  scanAngleShiftSlow: 0.0
+  slowMult: 1.0
+  fastMult: 1.0
+  bidirectionalScan: true
+  pixelBinFactor: 1.0
+  sampleRate: 1.2E8
+  fillFractionSpatial: 0.9000000000000001
+  FOV_alongColsinMicrons: 1279.98
+  FOV_alongRowsinMicrons: 1279.98
+  micronsPerPixel_cols: 2.278
+  micronsPerPixel_rows: 2.278
+  framePeriodInSeconds: 0.036
+  activeChannels: [2.0, 3.0]
+  averageEveryNframes: 1.0
+  beamPower: 30.0
+  powerZAdjust: true
+  beamPowerLengthConstant: 500.0
+  powerZAdjustType:
+  - []
+  scanMode: resonant
+  scannerID: ScanImage via SIBT
+  version: ScanImage(R) Basic 2020.1.4 619cfaf81f on MATLAB 9.7.0.1434023 (R2019b) Update 6
+SYSTEM:
+  ID: brainsaw
+  xySpeed: 35.0
+  cutterSide: 1.0
+  defaultFrontLeft: [12.5, 10.0]
+  homeZjackOnZeroMove: 1.0
+  type: bakingtray
+  version: branch=dev  commit=cb5caae318258027f4a41ee123c60aa66413b07a
+SLICER: {approachSpeed: 25.0, vibrateRate: 9.0, postCutDelay: 6.0, postCutVibrate: 3.0}
+SLACK: {user: '@BrainSaw', hook: 'https://hooks.slack.com/services/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'}
