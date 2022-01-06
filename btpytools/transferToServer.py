@@ -153,14 +153,12 @@ def user_specified_cropped_directories_individually(source_dirs):
     """
 
     # If the list is only one directory long then we are unlikely to have anything
-    # cropped so we can just bail out. 
+    # cropped so we can just bail out.
     if len(source_dirs) == 1:
         return False
 
     # Remove everything from the list that is not a directory
     source_dirs = [x for x in source_dirs if os.path.isdir(x)]
-
-
 
 
 def main():
@@ -186,7 +184,7 @@ def main():
     if args.simulate:
         main_rsync_switch += "n"
 
-    source_dirs = args.paths[1:-1]  # One or more files or folders to copy
+    source_dirs = args.paths[0:-1]  # One or more files or folders to copy
     destination_dir = args.paths[-1]  # Where we will copy to
 
     # Bail out if any of the supplied paths do not exist
@@ -269,7 +267,8 @@ def main():
     cmd = "rsync %s --progress --exclude rawData --exclude *_DELETE_ME_* %s %s " % (
         main_rsync_switch,
         " ".join(source_dirs),
-        destination_dir,)
+        destination_dir,
+    )
 
     print("Using command %s" % cmd)
     if not tools.query_yes_no(""):
