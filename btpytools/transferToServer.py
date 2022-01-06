@@ -26,7 +26,7 @@ in this situation.
 import os
 import sys
 from btpytools import tools, recipe
-from textwrap import dedent  # To remove common leading whitespace
+from textwrap import dedent  # To remove common leading white-space
 import argparse
 
 
@@ -44,7 +44,7 @@ def cli_parser():
 
                             This function is a wrapper round rsync and is used for copying BakingTray
                             data to a server. It automatically does not copy uncompressed raw data or
-                            the uncropped stacks directory. 
+                            the un-cropped stacks directory. 
 
                             Input arguments
                             - one or more paths to local directories which are to be copied
@@ -111,24 +111,49 @@ def cli_parser():
     return parser
 
 
-def check_directories(source, destination):
+def check_directories(source_dirs, destination_dir):
     """
     Returns True if the source and destination directories are all valid. 
     False otherwise. This allows main() to bail out if, for instance, any 
     of the supplied paths do not exist.
     """
     fail = False
-    for tPath in source:
+    for tPath in source_dirs:
         if not os.path.exists(tPath):
             print("%s does not exist" % tPath)
             fail = True
 
     # At least check if the target location is a directory
-    if not os.path.isdir(destination):
-        print("%s is not a valid destination directory" % destination)
+    if not os.path.isdir(destination_dir):
+        print("%s is not a valid destination directory" % destination_dir)
         fail = True
 
     return fail
+
+
+def user_specified_cropped_directories_individually(source_dirs):
+    """
+    Checks whether the user has manually supplied multiple split sample directories
+    from a cropped acquisition. e.g. Say we have a folder called 'acq_123', which 
+    contains cropped samples 'acq_1', 'acq_2', and 'acq_3'. The user could either provide 
+    'acq_123' as the source or they could provide a list of all three directories:
+    'acq_123/acq1', etc. If they have done the latter, this function returns true. 
+
+    Inputs: 
+    source_dirs - a list of source directories
+    
+    Outputs
+    False means the user did not specify cropped directories individually. 
+    True means that at least two directories in the input list are from the same
+    cropped acquisition. 
+
+    Notes:
+    - Function returns true even if some samples nested within the parent directory
+      were not supplied. 
+    """
+
+    if len(source_dirs) == 1:
+        return False
 
 
 def main():
@@ -154,20 +179,20 @@ def main():
     if args.simulate:
         main_rsync_switch += "n"
 
-    source = args.paths[1:-1]  # One or more files or folders to copy
-    destination = args.paths[-1]  # Where we will copy to
+    source_dirs = args.paths[1:-1]  # One or more files or folders to copy
+    destination_dir = args.paths[-1]  # Where we will copy to
 
     # Bail out if any of the supplied paths do not exist
-    if check_directories(source, destination):
+    if check_directories(source_dirs, destination_dir):
         exit()
 
     # Remove trailing slash from data directories that don't contain data sub-directories
-    for ii, tDir in enumerate(source):
+    for ii, tDir in enumerate(source_dirs):
         if tools.is_data_folder(tDir) and not tools.contains_data_folders(tDir):
             # If here, tDIR is a sample folder without sub-folders. If there is a
             # trailing slash then we should delete it. Always.
             if tDir[-1] == os.path.sep:
-                source[ii] = tDir[0:-1]
+                source_dirs[ii] = tDir[0:-1]
 
         elif tools.contains_data_folders(tDir):
             # If here, tDIR contains sub-folders which are sample folders. Thus is likely
@@ -175,7 +200,7 @@ def main():
             # user the option to add it back, copying the *contents* to the destination
             # rather than in the enclosing folder.
             if tDir[-1] == os.path.sep:
-                source[ii] = tDir[0:-1]
+                source_dirs[ii] = tDir[0:-1]
 
             print('\nDirectory "%s" contains multiple samples.' % tDir)
             print(
@@ -184,22 +209,22 @@ def main():
             )
             if not tools.query_yes_no(""):
                 # Add trailing slash, if user does not want to keep enclosing folder.
-                source[ii] = source[ii] + os.path.sep
+                source_dirs[ii] = source_dirs[ii] + os.path.sep
 
     print("")
 
     # Check whether any of the directories we plan to copy already exist at the destination
     safeToCopy = True
-    for ii, tDir in enumerate(source):
+    for ii, tDir in enumerate(source_dirs):
 
         if tDir[-1] != os.path.sep:
             # Look for this directory at the destination
-            destinationPath = os.path.join(destination, tDir)
+            destinationPath = os.path.join(destination_dir, tDir)
             if os.path.exists(destinationPath):
                 safeToCopy = False
                 print(
                     '===>>> WARNING!! "%s" already exists in "%s"!! Proceeding will over-write its contents <===='
-                    % (tDir, destination)
+                    % (tDir, destination_dir)
                 )
         else:
             # Look for the *contents* of this directory at the destination
@@ -207,12 +232,12 @@ def main():
             for jj, subDir in enumerate(dirContents):
                 if subDir == "rawData" or "_DELETE_ME" in subDir:
                     continue
-                destinationPath = os.path.join(destination, subDir)
+                destinationPath = os.path.join(destination_dir, subDir)
                 if os.path.exists(destinationPath):
                     safeToCopy = False
                     print(
                         '===>>> WARNING!! "%s" already exists in "%s"!! Proceeding will over-write its contents <===='
-                        % (subDir, destination)
+                        % (subDir, destination_dir)
                     )
 
     if safeToCopy == False:
@@ -222,22 +247,22 @@ def main():
 
     # Ask for confirmation before starting
     print("\nPerform the following transfer?")
-    for ii, tDir in enumerate(source):
+    for ii, tDir in enumerate(source_dirs):
         if tDir[-1] != os.path.sep:
-            print('Copy directory "%s" to location "%s"' % (tDir, destination))
+            print('Copy directory "%s" to location "%s"' % (tDir, destination_dir))
         else:
             dirContents = os.listdir(tDir)
             for jj, subContents in enumerate(dirContents):
                 if subContents == "rawData" or subContents.endswith("_DELETE_ME"):
                     pass
                 else:
-                    print('Copy "%s" to "%s"' % (subContents, destination))
+                    print('Copy "%s" to "%s"' % (subContents, destination_dir))
 
     # Build the rsync command string
     cmd = "rsync %s --progress --exclude rawData --exclude *_DELETE_ME_* %s %s " % (
         main_rsync_switch,
-        " ".join(source),
-        destination,
+        " ".join(source_dirs),
+        destination_dir,
     )
 
     print("Using command %s" % cmd)
