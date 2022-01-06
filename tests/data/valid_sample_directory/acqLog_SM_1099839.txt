@@ -1,0 +1,1048 @@
+2021/05/21 17:11:42 -- STARTING NEW ACQUISITION
+Writing to volume E: which has 1642/7452 GB free
+Using laser: Spectra Physics,MaiTai,20108/20105/10109,0241-1.00.3 / CD00000011 / 211-00.001.015
+Acquiring with: ScanImage(R) Basic 2020.1.4 222cfag11f on MATLAB 9.7.0 (R2019b) Update 6
+Using BakingTray version cb5caae318258027f4a41ee123c60aa66413b07a from branch dev
+Setting laser watchdog timer to 2400 seconds
+2021/05/21 17:11:43 -- STARTING section number 1 (1 of 208) at z=25.3380 in directory E:\XY_1099839\rawData\XY_1099839-0001
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11914mW,pumpCurrent=98.5,humidity=2.0
+2021/05/21 17:12:18 -- acquired 54 tile positions in 34 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11914mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:13:12 -- FINISHED section number 1, section completed in 1 mins 28 secs
+2021/05/21 17:13:12 -- STARTING section number 2 (2 of 208) at z=25.3880 in directory E:\XY_1099839\rawData\XY_1099839-0002
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11920mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:13:44 -- acquired 54 tile positions in 33 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11911mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:14:38 -- FINISHED section number 2, section completed in 1 mins 26 secs
+2021/05/21 17:14:38 -- STARTING section number 3 (3 of 208) at z=25.4380 in directory E:\XY_1099839\rawData\XY_1099839-0003
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11909mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:15:12 -- acquired 54 tile positions in 34 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11919mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:16:05 -- FINISHED section number 3, section completed in 1 mins 27 secs
+2021/05/21 17:16:05 -- STARTING section number 4 (4 of 208) at z=25.4880 in directory E:\XY_1099839\rawData\XY_1099839-0004
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11924mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:16:38 -- acquired 54 tile positions in 33 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:17:32 -- FINISHED section number 4, section completed in 1 mins 27 secs
+2021/05/21 17:17:32 -- STARTING section number 5 (5 of 208) at z=25.5380 in directory E:\XY_1099839\rawData\XY_1099839-0005
+laser status: wavelength=780nm,outputPower=2963mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:18:07 -- acquired 54 tile positions in 35 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:19:01 -- FINISHED section number 5, section completed in 1 mins 29 secs
+2021/05/21 17:19:01 -- STARTING section number 6 (6 of 208) at z=25.5880 in directory E:\XY_1099839\rawData\XY_1099839-0006
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11897mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:19:43 -- acquired 63 tile positions in 41 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11911mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:20:36 -- FINISHED section number 6, section completed in 1 mins 35 secs
+2021/05/21 17:20:36 -- STARTING section number 7 (7 of 208) at z=25.6380 in directory E:\XY_1099839\rawData\XY_1099839-0007
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11912mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:21:16 -- acquired 63 tile positions in 39 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11909mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:22:09 -- FINISHED section number 7, section completed in 1 mins 33 secs
+2021/05/21 17:22:09 -- STARTING section number 8 (8 of 208) at z=25.6880 in directory E:\XY_1099839\rawData\XY_1099839-0008
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11908mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:22:51 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11908mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:23:44 -- FINISHED section number 8, section completed in 1 mins 35 secs
+2021/05/21 17:23:44 -- STARTING section number 9 (9 of 208) at z=25.7380 in directory E:\XY_1099839\rawData\XY_1099839-0009
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11907mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:24:25 -- acquired 70 tile positions in 41 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11909mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:25:19 -- FINISHED section number 9, section completed in 1 mins 34 secs
+2021/05/21 17:25:19 -- STARTING section number 10 (10 of 208) at z=25.7880 in directory E:\XY_1099839\rawData\XY_1099839-0010
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11908mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:25:52 -- acquired 54 tile positions in 33 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:26:45 -- FINISHED section number 10, section completed in 1 mins 26 secs
+2021/05/21 17:26:45 -- STARTING section number 11 (11 of 208) at z=25.8380 in directory E:\XY_1099839\rawData\XY_1099839-0011
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:27:23 -- acquired 63 tile positions in 38 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:28:16 -- FINISHED section number 11, section completed in 1 mins 31 secs
+2021/05/21 17:28:16 -- STARTING section number 12 (12 of 208) at z=25.8880 in directory E:\XY_1099839\rawData\XY_1099839-0012
+laser status: wavelength=780nm,outputPower=2963mW,pumpPower=11904mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:28:50 -- acquired 54 tile positions in 34 secs
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11911mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:29:44 -- FINISHED section number 12, section completed in 1 mins 27 secs
+2021/05/21 17:29:44 -- STARTING section number 13 (13 of 208) at z=25.9380 in directory E:\XY_1099839\rawData\XY_1099839-0013
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11908mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:30:21 -- acquired 54 tile positions in 37 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11900mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:31:14 -- FINISHED section number 13, section completed in 1 mins 31 secs
+2021/05/21 17:31:14 -- STARTING section number 14 (14 of 208) at z=25.9880 in directory E:\XY_1099839\rawData\XY_1099839-0014
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:31:51 -- acquired 54 tile positions in 36 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:32:44 -- FINISHED section number 14, section completed in 1 mins 30 secs
+2021/05/21 17:32:44 -- STARTING section number 15 (15 of 208) at z=26.0380 in directory E:\XY_1099839\rawData\XY_1099839-0015
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:33:17 -- acquired 48 tile positions in 33 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11899mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:34:10 -- FINISHED section number 15, section completed in 1 mins 26 secs
+2021/05/21 17:34:10 -- STARTING section number 16 (16 of 208) at z=26.0880 in directory E:\XY_1099839\rawData\XY_1099839-0016
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11899mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:34:42 -- acquired 48 tile positions in 32 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11906mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:35:36 -- FINISHED section number 16, section completed in 1 mins 26 secs
+2021/05/21 17:35:36 -- STARTING section number 17 (17 of 208) at z=26.1380 in directory E:\XY_1099839\rawData\XY_1099839-0017
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11904mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:36:08 -- acquired 48 tile positions in 32 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:37:00 -- FINISHED section number 17, section completed in 1 mins 24 secs
+2021/05/21 17:37:00 -- STARTING section number 18 (18 of 208) at z=26.1880 in directory E:\XY_1099839\rawData\XY_1099839-0018
+laser status: wavelength=780nm,outputPower=2957mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:37:31 -- acquired 48 tile positions in 30 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11902mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:38:24 -- FINISHED section number 18, section completed in 1 mins 24 secs
+2021/05/21 17:38:24 -- STARTING section number 19 (19 of 208) at z=26.2380 in directory E:\XY_1099839\rawData\XY_1099839-0019
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:38:54 -- acquired 48 tile positions in 30 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:39:47 -- FINISHED section number 19, section completed in 1 mins 22 secs
+2021/05/21 17:39:47 -- STARTING section number 20 (20 of 208) at z=26.2880 in directory E:\XY_1099839\rawData\XY_1099839-0020
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:40:21 -- acquired 54 tile positions in 34 secs
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:41:15 -- FINISHED section number 20, section completed in 1 mins 28 secs
+2021/05/21 17:41:15 -- STARTING section number 21 (21 of 208) at z=26.3380 in directory E:\XY_1099839\rawData\XY_1099839-0021
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11909mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:41:49 -- acquired 54 tile positions in 34 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11895mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:42:43 -- FINISHED section number 21, section completed in 1 mins 28 secs
+2021/05/21 17:42:43 -- STARTING section number 22 (22 of 208) at z=26.3880 in directory E:\XY_1099839\rawData\XY_1099839-0022
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11897mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:43:22 -- acquired 63 tile positions in 40 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11916mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:44:17 -- FINISHED section number 22, section completed in 1 mins 34 secs
+2021/05/21 17:44:17 -- STARTING section number 23 (23 of 208) at z=26.4380 in directory E:\XY_1099839\rawData\XY_1099839-0023
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11913mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:44:51 -- acquired 54 tile positions in 35 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11905mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:45:45 -- FINISHED section number 23, section completed in 1 mins 28 secs
+2021/05/21 17:45:45 -- STARTING section number 24 (24 of 208) at z=26.4880 in directory E:\XY_1099839\rawData\XY_1099839-0024
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11906mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:46:18 -- acquired 54 tile positions in 33 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11908mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:47:11 -- FINISHED section number 24, section completed in 1 mins 26 secs
+2021/05/21 17:47:11 -- STARTING section number 25 (25 of 208) at z=26.5380 in directory E:\XY_1099839\rawData\XY_1099839-0025
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11912mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:47:44 -- acquired 54 tile positions in 33 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:48:37 -- FINISHED section number 25, section completed in 1 mins 26 secs
+2021/05/21 17:48:37 -- STARTING section number 26 (26 of 208) at z=26.5880 in directory E:\XY_1099839\rawData\XY_1099839-0026
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:49:10 -- acquired 54 tile positions in 33 secs
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11911mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:50:03 -- FINISHED section number 26, section completed in 1 mins 26 secs
+2021/05/21 17:50:03 -- STARTING section number 27 (27 of 208) at z=26.6380 in directory E:\XY_1099839\rawData\XY_1099839-0027
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11912mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:50:36 -- acquired 54 tile positions in 33 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11899mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:51:29 -- FINISHED section number 27, section completed in 1 mins 26 secs
+2021/05/21 17:51:29 -- STARTING section number 28 (28 of 208) at z=26.6880 in directory E:\XY_1099839\rawData\XY_1099839-0028
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:52:07 -- acquired 54 tile positions in 37 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:53:00 -- FINISHED section number 28, section completed in 1 mins 31 secs
+2021/05/21 17:53:00 -- STARTING section number 29 (29 of 208) at z=26.7380 in directory E:\XY_1099839\rawData\XY_1099839-0029
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:53:35 -- acquired 54 tile positions in 35 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11907mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:54:29 -- FINISHED section number 29, section completed in 1 mins 29 secs
+2021/05/21 17:54:29 -- STARTING section number 30 (30 of 208) at z=26.7880 in directory E:\XY_1099839\rawData\XY_1099839-0030
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11911mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:55:07 -- acquired 63 tile positions in 38 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11896mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:56:00 -- FINISHED section number 30, section completed in 1 mins 31 secs
+2021/05/21 17:56:00 -- STARTING section number 31 (31 of 208) at z=26.8380 in directory E:\XY_1099839\rawData\XY_1099839-0031
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11896mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:56:39 -- acquired 63 tile positions in 39 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11910mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:57:32 -- FINISHED section number 31, section completed in 1 mins 32 secs
+2021/05/21 17:57:32 -- STARTING section number 32 (32 of 208) at z=26.8880 in directory E:\XY_1099839\rawData\XY_1099839-0032
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11908mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:58:10 -- acquired 63 tile positions in 38 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11910mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 17:59:04 -- FINISHED section number 32, section completed in 1 mins 31 secs
+2021/05/21 17:59:04 -- STARTING section number 33 (33 of 208) at z=26.9380 in directory E:\XY_1099839\rawData\XY_1099839-0033
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11911mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 17:59:45 -- acquired 70 tile positions in 41 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11910mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:00:38 -- FINISHED section number 33, section completed in 1 mins 35 secs
+2021/05/21 18:00:38 -- STARTING section number 34 (34 of 208) at z=26.9880 in directory E:\XY_1099839\rawData\XY_1099839-0034
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11912mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:01:20 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11901mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:02:13 -- FINISHED section number 34, section completed in 1 mins 35 secs
+2021/05/21 18:02:13 -- STARTING section number 35 (35 of 208) at z=27.0380 in directory E:\XY_1099839\rawData\XY_1099839-0035
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:03:09 -- acquired 70 tile positions in 56 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:04:03 -- FINISHED section number 35, section completed in 1 mins 50 secs
+2021/05/21 18:04:03 -- STARTING section number 36 (36 of 208) at z=27.0880 in directory E:\XY_1099839\rawData\XY_1099839-0036
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11900mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:04:48 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:05:41 -- FINISHED section number 36, section completed in 1 mins 37 secs
+2021/05/21 18:05:41 -- STARTING section number 37 (37 of 208) at z=27.1380 in directory E:\XY_1099839\rawData\XY_1099839-0037
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:06:25 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:07:18 -- FINISHED section number 37, section completed in 1 mins 37 secs
+2021/05/21 18:07:18 -- STARTING section number 38 (38 of 208) at z=27.1880 in directory E:\XY_1099839\rawData\XY_1099839-0038
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:08:02 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11896mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:08:55 -- FINISHED section number 38, section completed in 1 mins 37 secs
+2021/05/21 18:08:55 -- STARTING section number 39 (39 of 208) at z=27.2380 in directory E:\XY_1099839\rawData\XY_1099839-0039
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11894mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:09:36 -- acquired 70 tile positions in 41 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11907mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:10:29 -- FINISHED section number 39, section completed in 1 mins 34 secs
+2021/05/21 18:10:29 -- STARTING section number 40 (40 of 208) at z=27.2880 in directory E:\XY_1099839\rawData\XY_1099839-0040
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11905mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:11:12 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11914mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:12:06 -- FINISHED section number 40, section completed in 1 mins 36 secs
+2021/05/21 18:12:06 -- STARTING section number 41 (41 of 208) at z=27.3380 in directory E:\XY_1099839\rawData\XY_1099839-0041
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:12:52 -- acquired 70 tile positions in 46 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11903mW,pumpCurrent=,humidity=2.0
+2021/05/21 18:13:51 -- FINISHED section number 41, section completed in 1 mins 45 secs
+2021/05/21 18:13:51 -- STARTING section number 42 (42 of 208) at z=27.3880 in directory E:\XY_1099839\rawData\XY_1099839-0042
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11888mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:14:38 -- acquired 70 tile positions in 47 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11896mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:15:32 -- FINISHED section number 42, section completed in 1 mins 41 secs
+2021/05/21 18:15:32 -- STARTING section number 43 (43 of 208) at z=27.4380 in directory E:\XY_1099839\rawData\XY_1099839-0043
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11896mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:16:15 -- acquired 70 tile positions in 43 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11912mW,pumpCurrent=,humidity=2.0
+2021/05/21 18:17:13 -- FINISHED section number 43, section completed in 1 mins 41 secs
+2021/05/21 18:17:13 -- STARTING section number 44 (44 of 208) at z=27.4880 in directory E:\XY_1099839\rawData\XY_1099839-0044
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:17:56 -- acquired 70 tile positions in 43 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:18:50 -- FINISHED section number 44, section completed in 1 mins 37 secs
+2021/05/21 18:18:50 -- STARTING section number 45 (45 of 208) at z=27.5380 in directory E:\XY_1099839\rawData\XY_1099839-0045
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:19:38 -- acquired 70 tile positions in 48 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:20:30 -- FINISHED section number 45, section completed in 1 mins 41 secs
+2021/05/21 18:20:30 -- STARTING section number 46 (46 of 208) at z=27.5880 in directory E:\XY_1099839\rawData\XY_1099839-0046
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:21:16 -- acquired 70 tile positions in 46 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:22:10 -- FINISHED section number 46, section completed in 1 mins 39 secs
+2021/05/21 18:22:10 -- STARTING section number 47 (47 of 208) at z=27.6380 in directory E:\XY_1099839\rawData\XY_1099839-0047
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11899mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:22:56 -- acquired 70 tile positions in 46 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11899mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:23:49 -- FINISHED section number 47, section completed in 1 mins 39 secs
+2021/05/21 18:23:49 -- STARTING section number 48 (48 of 208) at z=27.6880 in directory E:\XY_1099839\rawData\XY_1099839-0048
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:24:34 -- acquired 70 tile positions in 45 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11911mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:25:27 -- FINISHED section number 48, section completed in 1 mins 38 secs
+2021/05/21 18:25:27 -- STARTING section number 49 (49 of 208) at z=27.7380 in directory E:\XY_1099839\rawData\XY_1099839-0049
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:26:09 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:27:02 -- FINISHED section number 49, section completed in 1 mins 35 secs
+2021/05/21 18:27:02 -- STARTING section number 50 (50 of 208) at z=27.7880 in directory E:\XY_1099839\rawData\XY_1099839-0050
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:27:46 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11906mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:28:39 -- FINISHED section number 50, section completed in 1 mins 37 secs
+2021/05/21 18:28:39 -- STARTING section number 51 (51 of 208) at z=27.8380 in directory E:\XY_1099839\rawData\XY_1099839-0051
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11897mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:29:22 -- acquired 70 tile positions in 43 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11910mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:30:15 -- FINISHED section number 51, section completed in 1 mins 36 secs
+2021/05/21 18:30:15 -- STARTING section number 52 (52 of 208) at z=27.8880 in directory E:\XY_1099839\rawData\XY_1099839-0052
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:30:58 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11898mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:31:52 -- FINISHED section number 52, section completed in 1 mins 37 secs
+2021/05/21 18:31:52 -- STARTING section number 53 (53 of 208) at z=27.9380 in directory E:\XY_1099839\rawData\XY_1099839-0053
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11895mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:32:35 -- acquired 70 tile positions in 43 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:33:28 -- FINISHED section number 53, section completed in 1 mins 36 secs
+2021/05/21 18:33:28 -- STARTING section number 54 (54 of 208) at z=27.9880 in directory E:\XY_1099839\rawData\XY_1099839-0054
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:34:10 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:35:03 -- FINISHED section number 54, section completed in 1 mins 35 secs
+2021/05/21 18:35:03 -- STARTING section number 55 (55 of 208) at z=28.0380 in directory E:\XY_1099839\rawData\XY_1099839-0055
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:35:48 -- acquired 70 tile positions in 45 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:36:41 -- FINISHED section number 55, section completed in 1 mins 38 secs
+2021/05/21 18:36:41 -- STARTING section number 56 (56 of 208) at z=28.0880 in directory E:\XY_1099839\rawData\XY_1099839-0056
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:37:25 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:38:20 -- FINISHED section number 56, section completed in 1 mins 38 secs
+2021/05/21 18:38:20 -- STARTING section number 57 (57 of 208) at z=28.1380 in directory E:\XY_1099839\rawData\XY_1099839-0057
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11902mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:39:03 -- acquired 70 tile positions in 43 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11896mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:39:56 -- FINISHED section number 57, section completed in 1 mins 36 secs
+2021/05/21 18:39:56 -- STARTING section number 58 (58 of 208) at z=28.1880 in directory E:\XY_1099839\rawData\XY_1099839-0058
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11890mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:40:40 -- acquired 70 tile positions in 43 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:41:33 -- FINISHED section number 58, section completed in 1 mins 37 secs
+2021/05/21 18:41:33 -- STARTING section number 59 (59 of 208) at z=28.2380 in directory E:\XY_1099839\rawData\XY_1099839-0059
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:42:20 -- acquired 70 tile positions in 47 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:43:13 -- FINISHED section number 59, section completed in 1 mins 40 secs
+2021/05/21 18:43:13 -- STARTING section number 60 (60 of 208) at z=28.2880 in directory E:\XY_1099839\rawData\XY_1099839-0060
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:43:58 -- acquired 70 tile positions in 45 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11909mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:44:52 -- FINISHED section number 60, section completed in 1 mins 39 secs
+2021/05/21 18:44:52 -- STARTING section number 61 (61 of 208) at z=28.3380 in directory E:\XY_1099839\rawData\XY_1099839-0061
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11911mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:45:37 -- acquired 70 tile positions in 45 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:46:31 -- FINISHED section number 61, section completed in 1 mins 39 secs
+2021/05/21 18:46:31 -- STARTING section number 62 (62 of 208) at z=28.3880 in directory E:\XY_1099839\rawData\XY_1099839-0062
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:47:12 -- acquired 70 tile positions in 41 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11893mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:48:05 -- FINISHED section number 62, section completed in 1 mins 34 secs
+2021/05/21 18:48:05 -- STARTING section number 63 (63 of 208) at z=28.4380 in directory E:\XY_1099839\rawData\XY_1099839-0063
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11896mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:48:49 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11912mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:49:43 -- FINISHED section number 63, section completed in 1 mins 38 secs
+2021/05/21 18:49:43 -- STARTING section number 64 (64 of 208) at z=28.4880 in directory E:\XY_1099839\rawData\XY_1099839-0064
+laser status: wavelength=nm,outputPower=2959mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:50:34 -- acquired 70 tile positions in 51 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:51:27 -- FINISHED section number 64, section completed in 1 mins 45 secs
+2021/05/21 18:51:27 -- STARTING section number 65 (65 of 208) at z=28.5380 in directory E:\XY_1099839\rawData\XY_1099839-0065
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11906mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:52:13 -- acquired 70 tile positions in 45 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11910mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:53:07 -- FINISHED section number 65, section completed in 1 mins 40 secs
+2021/05/21 18:53:07 -- STARTING section number 66 (66 of 208) at z=28.5880 in directory E:\XY_1099839\rawData\XY_1099839-0066
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11905mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 18:53:52 -- acquired 70 tile positions in 45 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:54:51 -- FINISHED section number 66, section completed in 1 mins 44 secs
+2021/05/21 18:54:51 -- STARTING section number 67 (67 of 208) at z=28.6380 in directory E:\XY_1099839\rawData\XY_1099839-0067
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:55:33 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11910mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:56:26 -- FINISHED section number 67, section completed in 1 mins 35 secs
+2021/05/21 18:56:26 -- STARTING section number 68 (68 of 208) at z=28.6880 in directory E:\XY_1099839\rawData\XY_1099839-0068
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11908mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:57:07 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:58:00 -- FINISHED section number 68, section completed in 1 mins 35 secs
+2021/05/21 18:58:00 -- STARTING section number 69 (69 of 208) at z=28.7380 in directory E:\XY_1099839\rawData\XY_1099839-0069
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:58:43 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 18:59:35 -- FINISHED section number 69, section completed in 1 mins 35 secs
+2021/05/21 18:59:35 -- STARTING section number 70 (70 of 208) at z=28.7880 in directory E:\XY_1099839\rawData\XY_1099839-0070
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11909mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:00:17 -- acquired 70 tile positions in 41 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:01:10 -- FINISHED section number 70, section completed in 1 mins 35 secs
+2021/05/21 19:01:10 -- STARTING section number 71 (71 of 208) at z=28.8380 in directory E:\XY_1099839\rawData\XY_1099839-0071
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11902mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:01:56 -- acquired 70 tile positions in 45 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11901mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:02:49 -- FINISHED section number 71, section completed in 1 mins 38 secs
+2021/05/21 19:02:49 -- STARTING section number 72 (72 of 208) at z=28.8880 in directory E:\XY_1099839\rawData\XY_1099839-0072
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11902mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:03:33 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11911mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:04:26 -- FINISHED section number 72, section completed in 1 mins 38 secs
+2021/05/21 19:04:26 -- STARTING section number 73 (73 of 208) at z=28.9380 in directory E:\XY_1099839\rawData\XY_1099839-0073
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11912mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:05:11 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11904mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:06:04 -- FINISHED section number 73, section completed in 1 mins 38 secs
+2021/05/21 19:06:04 -- STARTING section number 74 (74 of 208) at z=28.9880 in directory E:\XY_1099839\rawData\XY_1099839-0074
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11906mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:06:46 -- acquired 70 tile positions in 41 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:07:39 -- FINISHED section number 74, section completed in 1 mins 34 secs
+2021/05/21 19:07:39 -- STARTING section number 75 (75 of 208) at z=29.0380 in directory E:\XY_1099839\rawData\XY_1099839-0075
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:08:20 -- acquired 70 tile positions in 41 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11909mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:09:13 -- FINISHED section number 75, section completed in 1 mins 34 secs
+2021/05/21 19:09:13 -- STARTING section number 76 (76 of 208) at z=29.0880 in directory E:\XY_1099839\rawData\XY_1099839-0076
+laser status: wavelength=780nm,outputPower=2957mW,pumpPower=11911mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:09:59 -- acquired 70 tile positions in 45 secs
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:10:52 -- FINISHED section number 76, section completed in 1 mins 38 secs
+2021/05/21 19:10:52 -- STARTING section number 77 (77 of 208) at z=29.1380 in directory E:\XY_1099839\rawData\XY_1099839-0077
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:11:34 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11912mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:12:26 -- FINISHED section number 77, section completed in 1 mins 35 secs
+2021/05/21 19:12:26 -- STARTING section number 78 (78 of 208) at z=29.1880 in directory E:\XY_1099839\rawData\XY_1099839-0078
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11912mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:13:11 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11897mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:14:04 -- FINISHED section number 78, section completed in 1 mins 38 secs
+2021/05/21 19:14:04 -- STARTING section number 79 (79 of 208) at z=29.2380 in directory E:\XY_1099839\rawData\XY_1099839-0079
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11893mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:14:47 -- acquired 70 tile positions in 43 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:15:40 -- FINISHED section number 79, section completed in 1 mins 36 secs
+2021/05/21 19:15:40 -- STARTING section number 80 (80 of 208) at z=29.2880 in directory E:\XY_1099839\rawData\XY_1099839-0080
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:16:22 -- acquired 70 tile positions in 41 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:17:15 -- FINISHED section number 80, section completed in 1 mins 35 secs
+2021/05/21 19:17:15 -- STARTING section number 81 (81 of 208) at z=29.3380 in directory E:\XY_1099839\rawData\XY_1099839-0081
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:18:02 -- acquired 70 tile positions in 47 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:18:55 -- FINISHED section number 81, section completed in 1 mins 40 secs
+2021/05/21 19:18:55 -- STARTING section number 82 (82 of 208) at z=29.3880 in directory E:\XY_1099839\rawData\XY_1099839-0082
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:19:49 -- acquired 70 tile positions in 54 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:20:42 -- FINISHED section number 82, section completed in 1 mins 47 secs
+2021/05/21 19:20:42 -- STARTING section number 83 (83 of 208) at z=29.4380 in directory E:\XY_1099839\rawData\XY_1099839-0083
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:21:26 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11913mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:22:19 -- FINISHED section number 83, section completed in 1 mins 37 secs
+2021/05/21 19:22:19 -- STARTING section number 84 (84 of 208) at z=29.4880 in directory E:\XY_1099839\rawData\XY_1099839-0084
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11921mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:23:04 -- acquired 70 tile positions in 45 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:23:57 -- FINISHED section number 84, section completed in 1 mins 38 secs
+2021/05/21 19:23:57 -- STARTING section number 85 (85 of 208) at z=29.5380 in directory E:\XY_1099839\rawData\XY_1099839-0085
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:24:42 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11910mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:25:35 -- FINISHED section number 85, section completed in 1 mins 38 secs
+2021/05/21 19:25:35 -- STARTING section number 86 (86 of 208) at z=29.5880 in directory E:\XY_1099839\rawData\XY_1099839-0086
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11910mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:26:21 -- acquired 70 tile positions in 46 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11900mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:27:14 -- FINISHED section number 86, section completed in 1 mins 39 secs
+2021/05/21 19:27:14 -- STARTING section number 87 (87 of 208) at z=29.6380 in directory E:\XY_1099839\rawData\XY_1099839-0087
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11898mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:27:58 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11895mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:28:52 -- FINISHED section number 87, section completed in 1 mins 38 secs
+2021/05/21 19:28:52 -- STARTING section number 88 (88 of 208) at z=29.6880 in directory E:\XY_1099839\rawData\XY_1099839-0088
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:29:37 -- acquired 70 tile positions in 45 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:30:31 -- FINISHED section number 88, section completed in 1 mins 39 secs
+2021/05/21 19:30:31 -- STARTING section number 89 (89 of 208) at z=29.7380 in directory E:\XY_1099839\rawData\XY_1099839-0089
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:31:16 -- acquired 70 tile positions in 45 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:32:09 -- FINISHED section number 89, section completed in 1 mins 38 secs
+2021/05/21 19:32:09 -- STARTING section number 90 (90 of 208) at z=29.7880 in directory E:\XY_1099839\rawData\XY_1099839-0090
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11899mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:32:51 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11908mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:33:43 -- FINISHED section number 90, section completed in 1 mins 34 secs
+2021/05/21 19:33:43 -- STARTING section number 91 (91 of 208) at z=29.8380 in directory E:\XY_1099839\rawData\XY_1099839-0091
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11908mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:34:26 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:35:19 -- FINISHED section number 91, section completed in 1 mins 35 secs
+2021/05/21 19:35:19 -- STARTING section number 92 (92 of 208) at z=29.8880 in directory E:\XY_1099839\rawData\XY_1099839-0092
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:36:03 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:36:57 -- FINISHED section number 92, section completed in 1 mins 38 secs
+2021/05/21 19:36:57 -- STARTING section number 93 (93 of 208) at z=29.9380 in directory E:\XY_1099839\rawData\XY_1099839-0093
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:37:43 -- acquired 70 tile positions in 45 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:38:36 -- FINISHED section number 93, section completed in 1 mins 39 secs
+2021/05/21 19:38:36 -- STARTING section number 94 (94 of 208) at z=29.9880 in directory E:\XY_1099839\rawData\XY_1099839-0094
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11910mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:39:23 -- acquired 70 tile positions in 47 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:40:16 -- FINISHED section number 94, section completed in 1 mins 40 secs
+2021/05/21 19:40:16 -- STARTING section number 95 (95 of 208) at z=30.0380 in directory E:\XY_1099839\rawData\XY_1099839-0095
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11898mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:41:03 -- acquired 70 tile positions in 46 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:41:56 -- FINISHED section number 95, section completed in 1 mins 40 secs
+2021/05/21 19:41:56 -- STARTING section number 96 (96 of 208) at z=30.0880 in directory E:\XY_1099839\rawData\XY_1099839-0096
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:42:40 -- acquired 70 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:43:33 -- FINISHED section number 96, section completed in 1 mins 38 secs
+2021/05/21 19:43:33 -- STARTING section number 97 (97 of 208) at z=30.1380 in directory E:\XY_1099839\rawData\XY_1099839-0097
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:44:15 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:45:08 -- FINISHED section number 97, section completed in 1 mins 35 secs
+2021/05/21 19:45:08 -- STARTING section number 98 (98 of 208) at z=30.1880 in directory E:\XY_1099839\rawData\XY_1099839-0098
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:45:50 -- acquired 70 tile positions in 41 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:46:42 -- FINISHED section number 98, section completed in 1 mins 34 secs
+2021/05/21 19:46:42 -- STARTING section number 99 (99 of 208) at z=30.2380 in directory E:\XY_1099839\rawData\XY_1099839-0099
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:47:24 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:48:17 -- FINISHED section number 99, section completed in 1 mins 35 secs
+2021/05/21 19:48:17 -- STARTING section number 100 (100 of 208) at z=30.2880 in directory E:\XY_1099839\rawData\XY_1099839-0100
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11896mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:49:04 -- acquired 70 tile positions in 47 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11901mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:49:57 -- FINISHED section number 100, section completed in 1 mins 40 secs
+2021/05/21 19:49:57 -- STARTING section number 101 (101 of 208) at z=30.3380 in directory E:\XY_1099839\rawData\XY_1099839-0101
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11901mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:50:43 -- acquired 70 tile positions in 46 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:51:37 -- FINISHED section number 101, section completed in 1 mins 40 secs
+2021/05/21 19:51:37 -- STARTING section number 102 (102 of 208) at z=30.3880 in directory E:\XY_1099839\rawData\XY_1099839-0102
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:52:20 -- acquired 70 tile positions in 43 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11894mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:53:13 -- FINISHED section number 102, section completed in 1 mins 37 secs
+2021/05/21 19:53:13 -- STARTING section number 103 (103 of 208) at z=30.4380 in directory E:\XY_1099839\rawData\XY_1099839-0103
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11893mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:53:55 -- acquired 70 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:54:48 -- FINISHED section number 103, section completed in 1 mins 34 secs
+2021/05/21 19:54:48 -- STARTING section number 104 (104 of 208) at z=30.4880 in directory E:\XY_1099839\rawData\XY_1099839-0104
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:55:35 -- acquired 80 tile positions in 47 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:56:28 -- FINISHED section number 104, section completed in 1 mins 40 secs
+2021/05/21 19:56:28 -- STARTING section number 105 (105 of 208) at z=30.5380 in directory E:\XY_1099839\rawData\XY_1099839-0105
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:57:15 -- acquired 80 tile positions in 47 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11901mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:58:08 -- FINISHED section number 105, section completed in 1 mins 40 secs
+2021/05/21 19:58:08 -- STARTING section number 106 (106 of 208) at z=30.5880 in directory E:\XY_1099839\rawData\XY_1099839-0106
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11904mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 19:58:55 -- acquired 80 tile positions in 47 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 19:59:48 -- FINISHED section number 106, section completed in 1 mins 40 secs
+2021/05/21 19:59:48 -- STARTING section number 107 (107 of 208) at z=30.6380 in directory E:\XY_1099839\rawData\XY_1099839-0107
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11893mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:00:38 -- acquired 80 tile positions in 49 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:01:31 -- FINISHED section number 107, section completed in 1 mins 43 secs
+2021/05/21 20:01:31 -- STARTING section number 108 (108 of 208) at z=30.6880 in directory E:\XY_1099839\rawData\XY_1099839-0108
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11898mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:02:23 -- acquired 80 tile positions in 51 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11893mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:03:16 -- FINISHED section number 108, section completed in 1 mins 44 secs
+2021/05/21 20:03:16 -- STARTING section number 109 (109 of 208) at z=30.7380 in directory E:\XY_1099839\rawData\XY_1099839-0109
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11895mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:04:00 -- acquired 72 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11899mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:04:54 -- FINISHED section number 109, section completed in 1 mins 38 secs
+2021/05/21 20:04:54 -- STARTING section number 110 (110 of 208) at z=30.7880 in directory E:\XY_1099839\rawData\XY_1099839-0110
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:05:36 -- acquired 72 tile positions in 43 secs
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11899mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:06:30 -- FINISHED section number 110, section completed in 1 mins 36 secs
+2021/05/21 20:06:30 -- STARTING section number 111 (111 of 208) at z=30.8380 in directory E:\XY_1099839\rawData\XY_1099839-0111
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:07:21 -- acquired 64 tile positions in 51 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:08:15 -- FINISHED section number 111, section completed in 1 mins 45 secs
+2021/05/21 20:08:15 -- STARTING section number 112 (112 of 208) at z=30.8880 in directory E:\XY_1099839\rawData\XY_1099839-0112
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11902mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:08:58 -- acquired 63 tile positions in 43 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:09:52 -- FINISHED section number 112, section completed in 1 mins 37 secs
+2021/05/21 20:09:52 -- STARTING section number 113 (113 of 208) at z=30.9380 in directory E:\XY_1099839\rawData\XY_1099839-0113
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11899mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:10:34 -- acquired 63 tile positions in 41 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11898mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:11:27 -- FINISHED section number 113, section completed in 1 mins 34 secs
+2021/05/21 20:11:27 -- STARTING section number 114 (114 of 208) at z=30.9880 in directory E:\XY_1099839\rawData\XY_1099839-0114
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11898mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:12:05 -- acquired 63 tile positions in 38 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:12:59 -- FINISHED section number 114, section completed in 1 mins 32 secs
+2021/05/21 20:12:59 -- STARTING section number 115 (115 of 208) at z=31.0380 in directory E:\XY_1099839\rawData\XY_1099839-0115
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:13:42 -- acquired 63 tile positions in 43 secs
+laser status: wavelength=nm,outputPower=2961mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:14:42 -- FINISHED section number 115, section completed in 1 mins 43 secs
+2021/05/21 20:14:42 -- STARTING section number 116 (116 of 208) at z=31.0880 in directory E:\XY_1099839\rawData\XY_1099839-0116
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11902mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:15:24 -- acquired 63 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11897mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:16:19 -- FINISHED section number 116, section completed in 1 mins 36 secs
+2021/05/21 20:16:19 -- STARTING section number 117 (117 of 208) at z=31.1380 in directory E:\XY_1099839\rawData\XY_1099839-0117
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:17:01 -- acquired 63 tile positions in 43 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11908mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:17:54 -- FINISHED section number 117, section completed in 1 mins 36 secs
+2021/05/21 20:17:54 -- STARTING section number 118 (118 of 208) at z=31.1880 in directory E:\XY_1099839\rawData\XY_1099839-0118
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11915mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:18:33 -- acquired 63 tile positions in 39 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11897mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:19:27 -- FINISHED section number 118, section completed in 1 mins 32 secs
+2021/05/21 20:19:27 -- STARTING section number 119 (119 of 208) at z=31.2380 in directory E:\XY_1099839\rawData\XY_1099839-0119
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11897mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:20:04 -- acquired 63 tile positions in 38 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11898mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:20:59 -- FINISHED section number 119, section completed in 1 mins 32 secs
+2021/05/21 20:20:59 -- STARTING section number 120 (120 of 208) at z=31.2880 in directory E:\XY_1099839\rawData\XY_1099839-0120
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11899mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:21:41 -- acquired 63 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11909mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:22:34 -- FINISHED section number 120, section completed in 1 mins 36 secs
+2021/05/21 20:22:34 -- STARTING section number 121 (121 of 208) at z=31.3380 in directory E:\XY_1099839\rawData\XY_1099839-0121
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11911mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:23:13 -- acquired 63 tile positions in 38 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11905mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:24:07 -- FINISHED section number 121, section completed in 1 mins 33 secs
+2021/05/21 20:24:07 -- STARTING section number 122 (122 of 208) at z=31.3880 in directory E:\XY_1099839\rawData\XY_1099839-0122
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11899mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:24:51 -- acquired 63 tile positions in 44 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:25:44 -- FINISHED section number 122, section completed in 1 mins 37 secs
+2021/05/21 20:25:44 -- STARTING section number 123 (123 of 208) at z=31.4380 in directory E:\XY_1099839\rawData\XY_1099839-0123
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:26:27 -- acquired 63 tile positions in 43 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11909mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:27:20 -- FINISHED section number 123, section completed in 1 mins 36 secs
+2021/05/21 20:27:20 -- STARTING section number 124 (124 of 208) at z=31.4880 in directory E:\XY_1099839\rawData\XY_1099839-0124
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11911mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:28:00 -- acquired 63 tile positions in 40 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11895mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:28:54 -- FINISHED section number 124, section completed in 1 mins 33 secs
+2021/05/21 20:28:54 -- STARTING section number 125 (125 of 208) at z=31.5380 in directory E:\XY_1099839\rawData\XY_1099839-0125
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11894mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:29:33 -- acquired 63 tile positions in 39 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:30:26 -- FINISHED section number 125, section completed in 1 mins 32 secs
+2021/05/21 20:30:26 -- STARTING section number 126 (126 of 208) at z=31.5880 in directory E:\XY_1099839\rawData\XY_1099839-0126
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:31:04 -- acquired 63 tile positions in 38 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:31:58 -- FINISHED section number 126, section completed in 1 mins 32 secs
+2021/05/21 20:31:58 -- STARTING section number 127 (127 of 208) at z=31.6380 in directory E:\XY_1099839\rawData\XY_1099839-0127
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:32:39 -- acquired 63 tile positions in 40 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11906mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:33:33 -- FINISHED section number 127, section completed in 1 mins 34 secs
+2021/05/21 20:33:33 -- STARTING section number 128 (128 of 208) at z=31.6880 in directory E:\XY_1099839\rawData\XY_1099839-0128
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:34:14 -- acquired 63 tile positions in 42 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:35:07 -- FINISHED section number 128, section completed in 1 mins 34 secs
+2021/05/21 20:35:07 -- STARTING section number 129 (129 of 208) at z=31.7380 in directory E:\XY_1099839\rawData\XY_1099839-0129
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11904mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:35:46 -- acquired 63 tile positions in 38 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:36:39 -- FINISHED section number 129, section completed in 1 mins 32 secs
+2021/05/21 20:36:39 -- STARTING section number 130 (130 of 208) at z=31.7880 in directory E:\XY_1099839\rawData\XY_1099839-0130
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:37:18 -- acquired 63 tile positions in 39 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:38:11 -- FINISHED section number 130, section completed in 1 mins 32 secs
+2021/05/21 20:38:11 -- STARTING section number 131 (131 of 208) at z=31.8380 in directory E:\XY_1099839\rawData\XY_1099839-0131
+laser status: wavelength=780nm,outputPower=2963mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:38:50 -- acquired 63 tile positions in 39 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:39:44 -- FINISHED section number 131, section completed in 1 mins 33 secs
+2021/05/21 20:39:44 -- STARTING section number 132 (132 of 208) at z=31.8880 in directory E:\XY_1099839\rawData\XY_1099839-0132
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:40:26 -- acquired 63 tile positions in 41 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:41:20 -- FINISHED section number 132, section completed in 1 mins 35 secs
+2021/05/21 20:41:20 -- STARTING section number 133 (133 of 208) at z=31.9380 in directory E:\XY_1099839\rawData\XY_1099839-0133
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:42:00 -- acquired 63 tile positions in 41 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:42:54 -- FINISHED section number 133, section completed in 1 mins 34 secs
+2021/05/21 20:42:54 -- STARTING section number 134 (134 of 208) at z=31.9880 in directory E:\XY_1099839\rawData\XY_1099839-0134
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:43:34 -- acquired 63 tile positions in 40 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11905mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:44:28 -- FINISHED section number 134, section completed in 1 mins 34 secs
+2021/05/21 20:44:28 -- STARTING section number 135 (135 of 208) at z=32.0380 in directory E:\XY_1099839\rawData\XY_1099839-0135
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:45:12 -- acquired 63 tile positions in 45 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:46:06 -- FINISHED section number 135, section completed in 1 mins 38 secs
+2021/05/21 20:46:06 -- STARTING section number 136 (136 of 208) at z=32.0880 in directory E:\XY_1099839\rawData\XY_1099839-0136
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:46:46 -- acquired 63 tile positions in 40 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:47:40 -- FINISHED section number 136, section completed in 1 mins 34 secs
+2021/05/21 20:47:40 -- STARTING section number 137 (137 of 208) at z=32.1380 in directory E:\XY_1099839\rawData\XY_1099839-0137
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11908mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:48:14 -- acquired 54 tile positions in 34 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11896mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:49:08 -- FINISHED section number 137, section completed in 1 mins 28 secs
+2021/05/21 20:49:08 -- STARTING section number 138 (138 of 208) at z=32.1880 in directory E:\XY_1099839\rawData\XY_1099839-0138
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:49:42 -- acquired 54 tile positions in 34 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11915mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:50:36 -- FINISHED section number 138, section completed in 1 mins 28 secs
+2021/05/21 20:50:36 -- STARTING section number 139 (139 of 208) at z=32.2380 in directory E:\XY_1099839\rawData\XY_1099839-0139
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:51:13 -- acquired 54 tile positions in 37 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:52:06 -- FINISHED section number 139, section completed in 1 mins 30 secs
+2021/05/21 20:52:06 -- STARTING section number 140 (140 of 208) at z=32.2880 in directory E:\XY_1099839\rawData\XY_1099839-0140
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11899mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:52:40 -- acquired 54 tile positions in 34 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:53:34 -- FINISHED section number 140, section completed in 1 mins 28 secs
+2021/05/21 20:53:34 -- STARTING section number 141 (141 of 208) at z=32.3380 in directory E:\XY_1099839\rawData\XY_1099839-0141
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:54:11 -- acquired 54 tile positions in 37 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:55:04 -- FINISHED section number 141, section completed in 1 mins 30 secs
+2021/05/21 20:55:04 -- STARTING section number 142 (142 of 208) at z=32.3880 in directory E:\XY_1099839\rawData\XY_1099839-0142
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11906mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:55:41 -- acquired 54 tile positions in 37 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:56:35 -- FINISHED section number 142, section completed in 1 mins 30 secs
+2021/05/21 20:56:35 -- STARTING section number 143 (143 of 208) at z=32.4380 in directory E:\XY_1099839\rawData\XY_1099839-0143
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 20:57:07 -- acquired 48 tile positions in 32 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:58:00 -- FINISHED section number 143, section completed in 1 mins 26 secs
+2021/05/21 20:58:00 -- STARTING section number 144 (144 of 208) at z=32.4880 in directory E:\XY_1099839\rawData\XY_1099839-0144
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11904mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:58:32 -- acquired 48 tile positions in 31 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11900mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:59:25 -- FINISHED section number 144, section completed in 1 mins 25 secs
+2021/05/21 20:59:25 -- STARTING section number 145 (145 of 208) at z=32.5380 in directory E:\XY_1099839\rawData\XY_1099839-0145
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11901mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 20:59:59 -- acquired 48 tile positions in 34 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11906mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:00:53 -- FINISHED section number 145, section completed in 1 mins 27 secs
+2021/05/21 21:00:53 -- STARTING section number 146 (146 of 208) at z=32.5880 in directory E:\XY_1099839\rawData\XY_1099839-0146
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:01:23 -- acquired 48 tile positions in 30 secs
+laser status: wavelength=nm,outputPower=2960mW,pumpPower=11898mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:02:22 -- FINISHED section number 146, section completed in 1 mins 30 secs
+2021/05/21 21:02:22 -- STARTING section number 147 (147 of 208) at z=32.6380 in directory E:\XY_1099839\rawData\XY_1099839-0147
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11898mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:02:54 -- acquired 48 tile positions in 32 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11891mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:03:47 -- FINISHED section number 147, section completed in 1 mins 25 secs
+2021/05/21 21:03:47 -- STARTING section number 148 (148 of 208) at z=32.6880 in directory E:\XY_1099839\rawData\XY_1099839-0148
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11890mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:04:21 -- acquired 48 tile positions in 34 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:05:20 -- FINISHED section number 148, section completed in 1 mins 33 secs
+2021/05/21 21:05:20 -- STARTING section number 149 (149 of 208) at z=32.7380 in directory E:\XY_1099839\rawData\XY_1099839-0149
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11898mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:05:51 -- acquired 48 tile positions in 31 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11895mW,pumpCurrent=,humidity=2.0
+2021/05/21 21:06:50 -- FINISHED section number 149, section completed in 1 mins 30 secs
+2021/05/21 21:06:50 -- STARTING section number 150 (150 of 208) at z=32.7880 in directory E:\XY_1099839\rawData\XY_1099839-0150
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11897mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:07:21 -- acquired 48 tile positions in 31 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11911mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:08:15 -- FINISHED section number 150, section completed in 1 mins 25 secs
+2021/05/21 21:08:15 -- STARTING section number 151 (151 of 208) at z=32.8380 in directory E:\XY_1099839\rawData\XY_1099839-0151
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11909mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:08:52 -- acquired 48 tile positions in 37 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:09:45 -- FINISHED section number 151, section completed in 1 mins 30 secs
+2021/05/21 21:09:45 -- STARTING section number 152 (152 of 208) at z=32.8880 in directory E:\XY_1099839\rawData\XY_1099839-0152
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:10:17 -- acquired 48 tile positions in 32 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11904mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:11:10 -- FINISHED section number 152, section completed in 1 mins 26 secs
+2021/05/21 21:11:11 -- STARTING section number 153 (153 of 208) at z=32.9380 in directory E:\XY_1099839\rawData\XY_1099839-0153
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:11:41 -- acquired 48 tile positions in 31 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:12:34 -- FINISHED section number 153, section completed in 1 mins 24 secs
+2021/05/21 21:12:34 -- STARTING section number 154 (154 of 208) at z=32.9880 in directory E:\XY_1099839\rawData\XY_1099839-0154
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:13:05 -- acquired 48 tile positions in 31 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11908mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:13:59 -- FINISHED section number 154, section completed in 1 mins 24 secs
+2021/05/21 21:13:59 -- STARTING section number 155 (155 of 208) at z=33.0380 in directory E:\XY_1099839\rawData\XY_1099839-0155
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:14:29 -- acquired 48 tile positions in 30 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:15:22 -- FINISHED section number 155, section completed in 1 mins 23 secs
+2021/05/21 21:15:22 -- STARTING section number 156 (156 of 208) at z=33.0880 in directory E:\XY_1099839\rawData\XY_1099839-0156
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:15:52 -- acquired 48 tile positions in 31 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:16:46 -- FINISHED section number 156, section completed in 1 mins 24 secs
+2021/05/21 21:16:46 -- STARTING section number 157 (157 of 208) at z=33.1380 in directory E:\XY_1099839\rawData\XY_1099839-0157
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11899mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:17:17 -- acquired 48 tile positions in 31 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:18:10 -- FINISHED section number 157, section completed in 1 mins 24 secs
+2021/05/21 21:18:10 -- STARTING section number 158 (158 of 208) at z=33.1880 in directory E:\XY_1099839\rawData\XY_1099839-0158
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:18:43 -- acquired 48 tile positions in 34 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:19:36 -- FINISHED section number 158, section completed in 1 mins 26 secs
+2021/05/21 21:19:36 -- STARTING section number 159 (159 of 208) at z=33.2380 in directory E:\XY_1099839\rawData\XY_1099839-0159
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:20:11 -- acquired 48 tile positions in 35 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:21:05 -- FINISHED section number 159, section completed in 1 mins 28 secs
+2021/05/21 21:21:05 -- STARTING section number 160 (160 of 208) at z=33.2880 in directory E:\XY_1099839\rawData\XY_1099839-0160
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:21:39 -- acquired 48 tile positions in 34 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:22:33 -- FINISHED section number 160, section completed in 1 mins 28 secs
+2021/05/21 21:22:33 -- STARTING section number 161 (161 of 208) at z=33.3380 in directory E:\XY_1099839\rawData\XY_1099839-0161
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:23:09 -- acquired 48 tile positions in 36 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:24:02 -- FINISHED section number 161, section completed in 1 mins 29 secs
+2021/05/21 21:24:02 -- STARTING section number 162 (162 of 208) at z=33.3880 in directory E:\XY_1099839\rawData\XY_1099839-0162
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11908mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:24:36 -- acquired 48 tile positions in 34 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:25:30 -- FINISHED section number 162, section completed in 1 mins 28 secs
+2021/05/21 21:25:30 -- STARTING section number 163 (163 of 208) at z=33.4380 in directory E:\XY_1099839\rawData\XY_1099839-0163
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:25:59 -- acquired 42 tile positions in 29 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:26:53 -- FINISHED section number 163, section completed in 1 mins 24 secs
+2021/05/21 21:26:53 -- STARTING section number 164 (164 of 208) at z=33.4880 in directory E:\XY_1099839\rawData\XY_1099839-0164
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11898mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:27:24 -- acquired 42 tile positions in 31 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11898mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:28:18 -- FINISHED section number 164, section completed in 1 mins 25 secs
+2021/05/21 21:28:18 -- STARTING section number 165 (165 of 208) at z=33.5380 in directory E:\XY_1099839\rawData\XY_1099839-0165
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11896mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:28:50 -- acquired 42 tile positions in 31 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11909mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:29:43 -- FINISHED section number 165, section completed in 1 mins 25 secs
+2021/05/21 21:29:43 -- STARTING section number 166 (166 of 208) at z=33.5880 in directory E:\XY_1099839\rawData\XY_1099839-0166
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:30:10 -- acquired 35 tile positions in 27 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11897mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:31:03 -- FINISHED section number 166, section completed in 1 mins 20 secs
+2021/05/21 21:31:03 -- STARTING section number 167 (167 of 208) at z=33.6380 in directory E:\XY_1099839\rawData\XY_1099839-0167
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11896mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:31:30 -- acquired 35 tile positions in 27 secs
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:32:24 -- FINISHED section number 167, section completed in 1 mins 20 secs
+2021/05/21 21:32:24 -- STARTING section number 168 (168 of 208) at z=33.6880 in directory E:\XY_1099839\rawData\XY_1099839-0168
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:32:49 -- acquired 35 tile positions in 26 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:33:42 -- FINISHED section number 168, section completed in 1 mins 19 secs
+2021/05/21 21:33:42 -- STARTING section number 169 (169 of 208) at z=33.7380 in directory E:\XY_1099839\rawData\XY_1099839-0169
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11898mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:34:07 -- acquired 35 tile positions in 24 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11906mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:35:00 -- FINISHED section number 169, section completed in 1 mins 18 secs
+2021/05/21 21:35:00 -- STARTING section number 170 (170 of 208) at z=33.7880 in directory E:\XY_1099839\rawData\XY_1099839-0170
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11901mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:35:24 -- acquired 35 tile positions in 24 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:36:18 -- FINISHED section number 170, section completed in 1 mins 18 secs
+2021/05/21 21:36:18 -- STARTING section number 171 (171 of 208) at z=33.8380 in directory E:\XY_1099839\rawData\XY_1099839-0171
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:36:45 -- acquired 35 tile positions in 27 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11904mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:37:39 -- FINISHED section number 171, section completed in 1 mins 20 secs
+2021/05/21 21:37:39 -- STARTING section number 172 (172 of 208) at z=33.8880 in directory E:\XY_1099839\rawData\XY_1099839-0172
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11908mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:38:03 -- acquired 35 tile positions in 24 secs
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:38:57 -- FINISHED section number 172, section completed in 1 mins 18 secs
+2021/05/21 21:38:57 -- STARTING section number 173 (173 of 208) at z=33.9380 in directory E:\XY_1099839\rawData\XY_1099839-0173
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:39:26 -- acquired 35 tile positions in 29 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:40:20 -- FINISHED section number 173, section completed in 1 mins 22 secs
+2021/05/21 21:40:20 -- STARTING section number 174 (174 of 208) at z=33.9880 in directory E:\XY_1099839\rawData\XY_1099839-0174
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:40:43 -- acquired 30 tile positions in 23 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11908mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:41:37 -- FINISHED section number 174, section completed in 1 mins 17 secs
+2021/05/21 21:41:37 -- STARTING section number 175 (175 of 208) at z=34.0380 in directory E:\XY_1099839\rawData\XY_1099839-0175
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11909mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:42:04 -- acquired 35 tile positions in 28 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11898mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:42:57 -- FINISHED section number 175, section completed in 1 mins 20 secs
+2021/05/21 21:42:57 -- STARTING section number 176 (176 of 208) at z=34.0880 in directory E:\XY_1099839\rawData\XY_1099839-0176
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11897mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:43:19 -- acquired 30 tile positions in 22 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11898mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:44:12 -- FINISHED section number 176, section completed in 1 mins 15 secs
+2021/05/21 21:44:12 -- STARTING section number 177 (177 of 208) at z=34.1380 in directory E:\XY_1099839\rawData\XY_1099839-0177
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11898mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:44:34 -- acquired 30 tile positions in 22 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11900mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:45:26 -- FINISHED section number 177, section completed in 1 mins 15 secs
+2021/05/21 21:45:27 -- STARTING section number 178 (178 of 208) at z=34.1880 in directory E:\XY_1099839\rawData\XY_1099839-0178
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11900mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:45:48 -- acquired 30 tile positions in 22 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11896mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:46:41 -- FINISHED section number 178, section completed in 1 mins 15 secs
+2021/05/21 21:46:41 -- STARTING section number 179 (179 of 208) at z=34.2380 in directory E:\XY_1099839\rawData\XY_1099839-0179
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11895mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:47:05 -- acquired 30 tile positions in 24 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:47:59 -- FINISHED section number 179, section completed in 1 mins 17 secs
+2021/05/21 21:47:59 -- STARTING section number 180 (180 of 208) at z=34.2880 in directory E:\XY_1099839\rawData\XY_1099839-0180
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:48:23 -- acquired 30 tile positions in 24 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:49:15 -- FINISHED section number 180, section completed in 1 mins 17 secs
+2021/05/21 21:49:16 -- STARTING section number 181 (181 of 208) at z=34.3380 in directory E:\XY_1099839\rawData\XY_1099839-0181
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:49:37 -- acquired 30 tile positions in 22 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11897mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:50:30 -- FINISHED section number 181, section completed in 1 mins 15 secs
+2021/05/21 21:50:30 -- STARTING section number 182 (182 of 208) at z=34.3880 in directory E:\XY_1099839\rawData\XY_1099839-0182
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11896mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:50:55 -- acquired 30 tile positions in 25 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:51:49 -- FINISHED section number 182, section completed in 1 mins 18 secs
+2021/05/21 21:51:49 -- STARTING section number 183 (183 of 208) at z=34.4380 in directory E:\XY_1099839\rawData\XY_1099839-0183
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:52:14 -- acquired 30 tile positions in 25 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:53:07 -- FINISHED section number 183, section completed in 1 mins 18 secs
+2021/05/21 21:53:07 -- STARTING section number 184 (184 of 208) at z=34.4880 in directory E:\XY_1099839\rawData\XY_1099839-0184
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11907mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:53:26 -- acquired 25 tile positions in 19 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:54:20 -- FINISHED section number 184, section completed in 1 mins 13 secs
+2021/05/21 21:54:20 -- STARTING section number 185 (185 of 208) at z=34.5380 in directory E:\XY_1099839\rawData\XY_1099839-0185
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11908mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:54:42 -- acquired 30 tile positions in 21 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11909mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:55:35 -- FINISHED section number 185, section completed in 1 mins 15 secs
+2021/05/21 21:55:35 -- STARTING section number 186 (186 of 208) at z=34.5880 in directory E:\XY_1099839\rawData\XY_1099839-0186
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:55:55 -- acquired 25 tile positions in 20 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11900mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:56:48 -- FINISHED section number 186, section completed in 1 mins 13 secs
+2021/05/21 21:56:48 -- STARTING section number 187 (187 of 208) at z=34.6380 in directory E:\XY_1099839\rawData\XY_1099839-0187
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11903mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:57:10 -- acquired 25 tile positions in 22 secs
+laser status: wavelength=780nm,outputPower=2962mW,pumpPower=11902mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:58:04 -- FINISHED section number 187, section completed in 1 mins 15 secs
+2021/05/21 21:58:04 -- STARTING section number 188 (188 of 208) at z=34.6880 in directory E:\XY_1099839\rawData\XY_1099839-0188
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11902mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:58:21 -- acquired 20 tile positions in 17 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 21:59:14 -- FINISHED section number 188, section completed in 1 mins 10 secs
+2021/05/21 21:59:14 -- STARTING section number 189 (189 of 208) at z=34.7380 in directory E:\XY_1099839\rawData\XY_1099839-0189
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11904mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 21:59:30 -- acquired 20 tile positions in 16 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11899mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:00:25 -- FINISHED section number 189, section completed in 1 mins 11 secs
+2021/05/21 22:00:25 -- STARTING section number 190 (190 of 208) at z=34.7880 in directory E:\XY_1099839\rawData\XY_1099839-0190
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11897mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:00:44 -- acquired 20 tile positions in 20 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:01:38 -- FINISHED section number 190, section completed in 1 mins 13 secs
+2021/05/21 22:01:38 -- STARTING section number 191 (191 of 208) at z=34.8380 in directory E:\XY_1099839\rawData\XY_1099839-0191
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11904mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:01:59 -- acquired 20 tile positions in 21 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11902mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:02:52 -- FINISHED section number 191, section completed in 1 mins 14 secs
+2021/05/21 22:02:52 -- STARTING section number 192 (192 of 208) at z=34.8880 in directory E:\XY_1099839\rawData\XY_1099839-0192
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11902mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:03:12 -- acquired 20 tile positions in 20 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11909mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:04:06 -- FINISHED section number 192, section completed in 1 mins 14 secs
+2021/05/21 22:04:06 -- STARTING section number 193 (193 of 208) at z=34.9380 in directory E:\XY_1099839\rawData\XY_1099839-0193
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11905mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:04:26 -- acquired 20 tile positions in 20 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11905mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:05:19 -- FINISHED section number 193, section completed in 1 mins 13 secs
+2021/05/21 22:05:19 -- STARTING section number 194 (194 of 208) at z=34.9880 in directory E:\XY_1099839\rawData\XY_1099839-0194
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11903mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:05:36 -- acquired 20 tile positions in 17 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:06:30 -- FINISHED section number 194, section completed in 1 mins 10 secs
+2021/05/21 22:06:30 -- STARTING section number 195 (195 of 208) at z=35.0380 in directory E:\XY_1099839\rawData\XY_1099839-0195
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:06:47 -- acquired 15 tile positions in 17 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11905mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:07:40 -- FINISHED section number 195, section completed in 1 mins 10 secs
+2021/05/21 22:07:40 -- STARTING section number 196 (196 of 208) at z=35.0880 in directory E:\XY_1099839\rawData\XY_1099839-0196
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11904mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:07:57 -- acquired 15 tile positions in 17 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11911mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:08:50 -- FINISHED section number 196, section completed in 1 mins 10 secs
+2021/05/21 22:08:50 -- STARTING section number 197 (197 of 208) at z=35.1380 in directory E:\XY_1099839\rawData\XY_1099839-0197
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11912mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:09:07 -- acquired 20 tile positions in 16 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11909mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:10:00 -- FINISHED section number 197, section completed in 1 mins 10 secs
+2021/05/21 22:10:00 -- STARTING section number 198 (198 of 208) at z=35.1880 in directory E:\XY_1099839\rawData\XY_1099839-0198
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11911mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:10:17 -- acquired 20 tile positions in 17 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:11:11 -- FINISHED section number 198, section completed in 1 mins 11 secs
+2021/05/21 22:11:11 -- STARTING section number 199 (199 of 208) at z=35.2380 in directory E:\XY_1099839\rawData\XY_1099839-0199
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11901mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:11:31 -- acquired 20 tile positions in 20 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11914mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:12:24 -- FINISHED section number 199, section completed in 1 mins 13 secs
+2021/05/21 22:12:24 -- STARTING section number 200 (200 of 208) at z=35.2880 in directory E:\XY_1099839\rawData\XY_1099839-0200
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11916mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:12:41 -- acquired 20 tile positions in 17 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11900mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:13:34 -- FINISHED section number 200, section completed in 1 mins 11 secs
+2021/05/21 22:13:34 -- STARTING section number 201 (201 of 208) at z=35.3380 in directory E:\XY_1099839\rawData\XY_1099839-0201
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11902mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:13:51 -- acquired 20 tile positions in 17 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:14:45 -- FINISHED section number 201, section completed in 1 mins 10 secs
+2021/05/21 22:14:45 -- STARTING section number 202 (202 of 208) at z=35.3880 in directory E:\XY_1099839\rawData\XY_1099839-0202
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11911mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:15:04 -- acquired 20 tile positions in 19 secs
+laser status: wavelength=780nm,outputPower=2960mW,pumpPower=11898mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:15:58 -- FINISHED section number 202, section completed in 1 mins 13 secs
+2021/05/21 22:15:58 -- STARTING section number 203 (203 of 208) at z=35.4380 in directory E:\XY_1099839\rawData\XY_1099839-0203
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11901mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:16:15 -- acquired 20 tile positions in 16 secs
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:17:08 -- FINISHED section number 203, section completed in 1 mins 9 secs
+2021/05/21 22:17:08 -- STARTING section number 204 (204 of 208) at z=35.4880 in directory E:\XY_1099839\rawData\XY_1099839-0204
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11910mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:17:24 -- acquired 20 tile positions in 16 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11908mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:18:18 -- FINISHED section number 204, section completed in 1 mins 10 secs
+2021/05/21 22:18:18 -- STARTING section number 205 (205 of 208) at z=35.5380 in directory E:\XY_1099839\rawData\XY_1099839-0205
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11908mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:18:36 -- acquired 20 tile positions in 18 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11902mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:19:30 -- FINISHED section number 205, section completed in 1 mins 12 secs
+2021/05/21 22:19:30 -- STARTING section number 206 (206 of 208) at z=35.5880 in directory E:\XY_1099839\rawData\XY_1099839-0206
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11898mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:19:49 -- acquired 20 tile positions in 18 secs
+laser status: wavelength=780nm,outputPower=2958mW,pumpPower=11905mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:20:42 -- FINISHED section number 206, section completed in 1 mins 12 secs
+2021/05/21 22:20:42 -- STARTING section number 207 (207 of 208) at z=35.6380 in directory E:\XY_1099839\rawData\XY_1099839-0207
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11909mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:21:03 -- acquired 20 tile positions in 20 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11906mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:21:57 -- FINISHED section number 207, section completed in 1 mins 14 secs
+2021/05/21 22:21:57 -- STARTING section number 208 (208 of 208) at z=35.6880 in directory E:\XY_1099839\rawData\XY_1099839-0208
+laser status: wavelength=780nm,outputPower=2959mW,pumpPower=11907mW,pumpCurrent=98.3,humidity=2.0
+2021/05/21 22:22:18 -- acquired 20 tile positions in 21 secs
+laser status: wavelength=780nm,outputPower=2961mW,pumpPower=11894mW,pumpCurrent=98.2,humidity=2.0
+2021/05/21 22:23:12 -- FINISHED section number 208, section completed in 1 mins 15 secs
+2021/05/21 22:23:12 -- FINISHED AND COMPLETED ACQUISITION
+Attempting to turn off laser

@@ -17,7 +17,7 @@ For more see transferToServer -h
 Notes
 If you have signed in via SSH and aren't in a tmux session, the function
 asks for confirmation before continuing. If your ssh session breaks off
-for some reason, then compression will fail. tmux is therefore recomended
+for some reason, then compression will fail. tmux is therefore recommended
 in this situation.
 
 """
@@ -74,7 +74,7 @@ def cli_parser():
                         Notes
                         If you have signed in via SSH and aren't in a tmux session, the function
                         asks for confirmation before continuing. If your ssh session breaks off
-                        for some reason, then compression will fail. tmux is therefore recomended
+                        for some reason, then compression will fail. tmux is therefore recommended
                         in this situation.
                       ''')
         )
@@ -110,9 +110,34 @@ def cli_parser():
     return parser
 
 
+def check_directories(source,destination):
+    '''
+    Returns True if the source and destination directories are all valid. 
+    False otherwise. This allows main() to bail out if, for instance, any 
+    of the supplied paths do not exist.
+    '''
+    fail=False;
+    for tPath in source:
+        if not os.path.exists(tPath):
+            print("%s does not exist" % tPath)
+            fail=True
+
+
+    # At least check if the target location is a directory
+    if not os.path.isdir(destination):
+        print("%s is not a valid destination directory" % destination)
+        fail=True
+
+    return fail
+
 
 def main():
-    # Search for an rsync switch string and replace default value if one is found
+    '''
+    main()
+    '''
+
+
+    # Process arguments and set up
     args = cli_parser().parse_args()
 
     if len(args.paths)<2:
@@ -136,19 +161,7 @@ def main():
 
 
     # Bail out if any of the supplied paths do not exist
-    fail=False;
-    for tPath in source:
-        if not os.path.exists(tPath):
-            print("%s does not exist" % tPath)
-            fail=True
-
-
-    # At least check if the targtet location is a directory
-    if not os.path.isdir(destination):
-        print("%s is not a valid destination directory" % destination)
-        fail=True
-
-    if fail:
+    if check_directories(source,destination):
         exit()
 
 
@@ -161,13 +174,17 @@ def main():
                 source[ii] = tDir[0:-1]
 
         elif tools.contains_data_folders(tDir):
-            # If here, tDIR contains sub-folders which are sample folders is a sample folder without sub-folders
-            # We again delete the trailing slash but we give the user the option to add it back
+            # If here, tDIR contains sub-folders which are sample folders. Thus is likely
+            # contains cropped data. We again delete the trailing slash but we give the 
+            # user the option to add it back, copying the *contents* to the destination 
+            # rather than in the enclosing folder.
             if tDir[-1] == os.path.sep:
                 source[ii] = tDir[0:-1]
+
             print("\nDirectory \"%s\" contains multiple samples." % tDir)
             print("Do you want to keep samples in their enclosing directory (%s) when on the server?" % tDir)
             if not tools.query_yes_no(''):
+                # Add trailing slash, if user does not want to keep enclosing folder.
                 source[ii] = source[ii] + os.path.sep
 
     print("")
@@ -201,7 +218,6 @@ def main():
 
 
 
-
     #Ask for confirmation before starting
     print("\nPerform the following transfer?")
     for ii,tDir in enumerate(source):
@@ -216,7 +232,7 @@ def main():
                     print("Copy \"%s\" to \"%s\"" % (subContents,destination))
 
 
-
+    # Build the rsync command string
     cmd = ('rsync %s --progress --exclude rawData --exclude *_DELETE_ME_* %s %s ' % 
               (main_rsync_switch, " ".join(source),destination) )
 
