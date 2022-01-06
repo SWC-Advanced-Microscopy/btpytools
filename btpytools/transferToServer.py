@@ -152,8 +152,15 @@ def user_specified_cropped_directories_individually(source_dirs):
       were not supplied. 
     """
 
+    # If the list is only one directory long then we are unlikely to have anything
+    # cropped so we can just bail out. 
     if len(source_dirs) == 1:
         return False
+
+    # Remove everything from the list that is not a directory
+    source_dirs = [x for x in source_dirs if os.path.isdir(x)]
+
+
 
 
 def main():
@@ -262,8 +269,7 @@ def main():
     cmd = "rsync %s --progress --exclude rawData --exclude *_DELETE_ME_* %s %s " % (
         main_rsync_switch,
         " ".join(source_dirs),
-        destination_dir,
-    )
+        destination_dir,)
 
     print("Using command %s" % cmd)
     if not tools.query_yes_no(""):
