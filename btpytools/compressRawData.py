@@ -11,7 +11,7 @@ $ compressRawData
 Notes
 If you have signed in via SSH and aren't in a tmux session, the function
 asks for confirmation before continuing. If your ssh session breaks off
-for some reason, then compression will fail. tmux is therefore recomended
+for some reason, then compression will fail. tmux is therefore recommended
 in this situation.
 
 
@@ -52,7 +52,7 @@ def cli_parser():
                         Notes
                         If you have signed in via SSH and aren't in a tmux session, the function
                         asks for confirmation before continuing. If your ssh session breaks off
-                        for some reason, then compression will fail. tmux is therefore recomended
+                        for some reason, then compression will fail. tmux is therefore recommended
                         in this situation.
 
                         Runs much faster with parallel bzip (lbzip2) installed. If this is missing, the
@@ -114,7 +114,7 @@ def main():
             # use the current working directory and the date to build the sample name
             print('No meta data files. Making up a sample ID from directory name.')
             cwd = os.getcwd()
-            sample_name = cwd.split(cwd[0])[-1]
+            sample_name = cwd.split(os.path.sep)[-1]
 
             now = datetime.now()
             sample_name  = sample_name + now.strftime('_%Y%m%d')
