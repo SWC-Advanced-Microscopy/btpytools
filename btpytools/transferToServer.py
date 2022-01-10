@@ -24,8 +24,7 @@ in this situation.
 
 
 import os
-import sys
-from btpytools import tools, recipe
+from btpytools import tools
 from textwrap import dedent  # To remove common leading white-space
 import argparse
 

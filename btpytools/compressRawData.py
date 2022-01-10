@@ -163,7 +163,7 @@ def main():
     time.sleep(1)
 
     if not args.simulate:
-        # If necessary we copy the meta-data files temporaily out of the uncropped stacks folder
+        # If necessary we copy the meta-data files temporarily out of the uncropped stacks folder
         if copy_files_from_uncropped:
             print(
                 "Temporarily moving meta-data from uncropped directory into main directory"

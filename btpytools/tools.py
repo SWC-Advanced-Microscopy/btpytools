@@ -8,7 +8,7 @@ import re
 from glob import glob
 
 
-## Define variables that will be common across functions
+# Define variables that will be common across functions
 _stitchedImageDir = "stitchedImages_*"
 _downsampledDir = "downsampled_stacks"
 _downsampledStackSubDir = "*_micron"  # Sub-directories in _downsampledDir
@@ -18,56 +18,56 @@ _recipe_wildcard = "recipe*.yml"
 
 
 def has_raw_data(tPath=""):
-    """ Check if current directory (or that defined by tPath) contains a rawData directory.
-        Returns True if present, False if absent
+    """ Check if current directory (or that defined by tPath) contains a
+        rawData directory. Returns True if present, False if absent.
     """
     tPath = os.path.join(tPath, "rawData")
     return os.path.isdir(tPath)
 
 
 def has_compressed_raw_data(tPath=""):
-    """ Check if current directory (or that defined by tPath) has compressed raw data.
-        Returns True if present, False if absent
+    """ Check if current directory (or that defined by tPath) has
+        compressed raw data. Returns True if present, False if absent
     """
     tPath = os.path.join(tPath, "*rawData*.tar.[gb]z")
     return file_glob_exist(tPath)
 
 
 def has_recipe_file(tPath=""):
-    """ Check if current directory (or that defined by tPath) contains a recipe file.
-        Returns True if present, False if absent
+    """ Check if current directory (or that defined by tPath) contains
+        a recipe file. Returns True if present, False if absent.
     """
     tPath = os.path.join(tPath, _recipe_wildcard)
     return file_glob_exist(tPath)
 
 
 def has_scan_settings(tPath=""):
-    """ Check if current directory (or that defined by tPath) contains a scanSettings.mat 
-        file. Returns True if present, False if absent
+    """ Check if current directory (or that defined by tPath) contains
+        a scanSettings.mat file. Returns True if present, False if absent.
     """
     tPath = os.path.join(tPath, "scanSettings.mat")
     return os.path.isfile(tPath)
 
 
 def has_stitched_images_directory(tPath=""):
-    """ Check if current directory (or that defined by tPath) contains a stitched image directory
-        Returns True if present, False if absent
+    """ Check if current directory (or that defined by tPath) contains a
+        stitched image directory Returns True if present, False if absent.
     """
     tPath = os.path.join(tPath, _stitchedImageDir)
     return file_glob_exist(tPath)
 
 
 def has_stitched_stacks(tPath=""):
-    """ Check if current directory (or that defined by tPath) contains stitched tiff stacks
-        Returns True if present, False if absent
+    """ Check if current directory (or that defined by tPath) contains
+        stitched tiff stacks. Returns True if present, False if absent.
     """
     tPath = os.path.join(tPath, "./*_chan_0[1-9].tiff")
     return file_glob_exist(tPath)
 
 
 def has_downsampled_stacks(tPath=""):
-    """ Check if current directory (or that defined by tPath) contains a downsampled_stacks directory
-        Returns True if present, False if absent.
+    """ Check if current directory (or that defined by tPath) contains a
+        downsampled_stacks directory. Returns True if present, False if absent.
     """
     tPath = os.path.join(tPath, _downsampledDir)
     if not file_glob_exist(tPath):
@@ -80,8 +80,8 @@ def has_downsampled_stacks(tPath=""):
 
 
 def has_uncropped_stitched_images(tPath=""):
-    """ Check if current directory (or that defined by tPath) contains a stitched image directory
-        Returns True if present, False if absent
+    """ Check if current directory (or tPath) contains a stitched image
+        directory. Returns True if present, False if absent.
     """
     tPath = os.path.join(tPath, _uncropped_wildcard)
     return file_glob_exist(tPath)
@@ -89,10 +89,11 @@ def has_uncropped_stitched_images(tPath=""):
 
 def is_data_folder(dirToTest):
     """ is directory "dirToTest" a BakingTray data directory?
-        It does this by asking whether the directory satisfies the following criteria:
+       i.e. it satisfies the following criteria:
         - contains a recipe YML
         - contains a scanSettings.mat file
-        - contains one of: stitchedImages directory, stitched stacks, rawData directory, compressed rawData
+        - contains one of: stitchedImages directory, stitched stacks,
+                        rawData directory, compressed rawData
     """
     if (has_recipe_file(dirToTest) and has_scan_settings(dirToTest)) and (
         has_stitched_stacks(dirToTest)
@@ -106,8 +107,8 @@ def is_data_folder(dirToTest):
 
 
 def contains_data_folders(dirToTest):
-    """ returns true if dirToTest contains sub-directories that are 
-        BakingTray data folders
+    """ returns true if dirToTest contains sub-directories that are
+        BakingTray data folders.
     """
     subDirs = next(os.walk(dirToTest))[1]
     if len(subDirs) == 0:
@@ -121,17 +122,22 @@ def contains_data_folders(dirToTest):
 
 
 def available_downsampled_volumes(tPath=""):
-    """ Check if current directory (or that defined by tPath) contains a downsampled_stacks directory
-        and returns a dictionary listing the available downsampled data. If none are present returns false. 
+    """ Check if current directory (or that defined by tPath) contains a
+        downsampled stacks directory and returns a dictionary listing the
+        available downsampled data. If none are present returns false.
 
     """
     if not has_downsampled_stacks(tPath):
         return False
 
-    # This, then, defines the downsampled stack directory and what the downsampled stacks are called
-    # The following line can have two layers of wildcards. e.g. downsampled_stacks/*_micron/ds_*.txt
+    # This defines the downsampled stack directory and what the downsampled
+    # stacks are called. The following line can have two layers of wildcards.
+    # e.g. downsampled_stacks/*_micron/ds_*.txt
     tPath = os.path.join(
-        tPath, _downsampledDir, _downsampledStackSubDir, _downsampledStackLogFile
+        tPath,
+        _downsampledDir,
+        _downsampledStackSubDir,
+        _downsampledStackLogFile
     )
     pathsToDownsampledStacks = glob(tPath)
 
@@ -148,8 +154,8 @@ def available_downsampled_volumes(tPath=""):
 
 def read_downsample_log_file(pathToFile=""):
     """ Parse StitchIt downsampled data file and return as a dictionary
-        pathToFile is the path to a dowsampled log file
-        returns False if no data are found in the defined path or multiple paths were supplied
+        pathToFile is the path to a dowsampled log file returns False if
+        no data are found in the defined path or multiple paths were supplied.
     """
 
     if len(pathToFile) < 1:
@@ -162,7 +168,7 @@ def read_downsample_log_file(pathToFile=""):
     with open(pathToFile) as ff:
         lines = ff.readlines()
 
-    ## Make a dictionary from the file contents
+    # Make a dictionary from the file contents
     out = dict()
 
     # Sample name
