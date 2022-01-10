@@ -3,11 +3,11 @@
 """ Transfer BrainSaw data to a server mounted on the local machine
 
 This function is a wrapper round rsync and is used for copying BakingTray
-data to a server over a network connection. 
+data to a server over a network connection.
 
 Input arguments
 - one or more paths to local directories which are to be copied
-- the last path is the destination. 
+- the last path is the destination.
 
 transferToServer ./localSampleA ./localSampleB /path/to/server
 
@@ -27,10 +27,10 @@ import os
 from btpytools import tools
 from textwrap import dedent  # To remove common leading white-space
 import argparse
-
+import re
 
 def cli_parser():
-    """ 
+    """
     Build and return an argument parser
     """
 
@@ -43,11 +43,11 @@ def cli_parser():
 
                             This function is a wrapper round rsync and is used for copying BakingTray
                             data to a server. It automatically does not copy uncompressed raw data or
-                            the un-cropped stacks directory. 
+                            the un-cropped stacks directory.
 
                             Input arguments
                             - one or more paths to local directories which are to be copied
-                            - the last path is the destination. 
+                            - the last path is the destination.
 
 
                             Usage examples:
@@ -112,8 +112,8 @@ def cli_parser():
 
 def check_directories(source_dirs, destination_dir):
     """
-    Returns True if the source and destination directories are all valid. 
-    False otherwise. This allows main() to bail out if, for instance, any 
+    Returns True if the source and destination directories are all valid.
+    False otherwise. This allows main() to bail out if, for instance, any
     of the supplied paths do not exist.
     """
     fail = False
@@ -133,31 +133,102 @@ def check_directories(source_dirs, destination_dir):
 def user_specified_cropped_directories_individually(source_dirs):
     """
     Checks whether the user has manually supplied multiple split sample directories
-    from a cropped acquisition. e.g. Say we have a folder called 'acq_123', which 
-    contains cropped samples 'acq_1', 'acq_2', and 'acq_3'. The user could either provide 
+    from a cropped acquisition. e.g. Say we have a folder called 'acq_123', which
+    contains cropped samples 'acq_1', 'acq_2', and 'acq_3'. The user could either provide
     'acq_123' as the source or they could provide a list of all three directories:
-    'acq_123/acq1', etc. If they have done the latter, this function returns true. 
+    'acq_123/acq1', etc. If they have done the latter, this function returns True.
 
-    Inputs: 
-    source_dirs - a list of source directories
-    
+    This function is used in conjunction with others to determine whether there is a
+    chance that the user is accidentally failing to back up compressed raw data.
+
+    Inputs:
+    source_dirs - a list of source directories. If just one entry it can be a string.
+
     Outputs
-    False means the user did not specify cropped directories individually. 
+    False means the user did not specify cropped directories individually.
     True means that at least two directories in the input list are from the same
-    cropped acquisition. 
+    cropped acquisition.
 
     Notes:
     - Function returns true even if some samples nested within the parent directory
-      were not supplied. 
+      were not supplied.
     """
 
-    # If the list is only one directory long then we are unlikely to have anything
+    # If the list is only one directory long (or is a string) then we are unlikely to have anything
     # cropped so we can just bail out.
-    if len(source_dirs) == 1:
+    if isinstance(source_dirs,str) or isinstance(source_dirs,list) and len(source_dirs) == 1:
         return False
+
+    # TODO -- the above is only true if the directory it sits in is not a cropped data directory
+    # It is possible user specified just one directory from a cropped acquisition.
 
     # Remove everything from the list that is not a directory
     source_dirs = [x for x in source_dirs if os.path.isdir(x)]
+
+    # First we handle the potential scenario where the user's current folder is a
+    # data acquisition directory.
+    cwd_is_data_dir = tools.is_data_folder(os.getcwd())
+
+    if cwd_is_data_dir:
+        # If the current directory is a BakingTray data folder and there are multiple source
+        # directories then the user has, indeed, specified directories individually.
+        return True
+
+    else:
+        #Generate a new version of source_dirs with the last element of each path removed
+        trimmed_list = [os.path.dirname(x) for x in source_dirs]
+
+        # Since the current directory is not a sample directory, list entries that are empty
+        # are in the current directory and therefore are either single samples or acquisitions
+        # with multiple samples. We therefore can remove these.
+        trimmed_list = [x for x in trimmed_list if len(x)>0]
+
+        # If the list is now empty, then it contains no individually specified directories
+        # from within a cropped acquisition. This is because a list like this will all end
+        # up being empty after the above: ['./sample_01', 'sample_02']
+        if len(trimmed_list)==0:
+            return False
+
+        # If the list contains two or more non-unique paths, then original source list contained
+        # individually specified directories from within a cropped acquisition.
+        if len(set(trimmed_list)) != len(trimmed_list):
+            # There are duplicates so user must have asked for this
+            return True
+
+
+        # At this point we know that source_dirs was a directory list that probably something of
+        # this sort: './acq_xy/sample1' , './acq_ab/sample1'. This is an unusual scenario and,
+        # like in the if statement above, means the user is specifying directories from a cropped
+        # acquisition individually. We therefore return True.
+        return True
+
+
+def dir_list_contains_compressed_archive(source_dirs):
+    """
+    Does the directory list in source_dirs contain at least one compressed raw data archive?
+    The lack of a compressed archive in this list does not meant the compressed raw data are
+    not going to be sent. It just reflects whether or not the user has explicitly asked to send the data.
+
+    This function is used in conjunction with others to determine whether there is a
+    chance that the user is accidentally failing to back up compressed raw data.
+
+    Inputs:
+    source_dirs - a list of source directories
+
+    Outputs
+    True means the directory list in source_dirs contains a raw data archive. False otherwise.
+    """
+
+    compressed_archives = [
+        x
+        for x in source_dirs
+        if isinstance(re.match(r".*rawData.*\.tar\.[bg]z", x), re.Match)
+    ]
+
+    if len(compressed_archives) > 0:
+        return True
+    else:
+        return False
 
 
 def main():
