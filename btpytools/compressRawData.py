@@ -14,6 +14,9 @@ asks for confirmation before continuing. If your ssh session breaks off
 for some reason, then compression will fail. tmux is therefore recommended
 in this situation.
 
+The compression does not run if there is insufficient disk space. It does not run if
+free_disk_space_GB < (uncompressed raw_data_size_GB * 0.7) + 500
+
 
 Runs much faster with parallel bzip (lbzip2) installed. If this is missing, the tool reverts
 to regular gzip.
@@ -22,12 +25,12 @@ to regular gzip.
 
 
 import os
-from datetime import datetime
+import argparse
 import time
+from datetime import datetime
 from btpytools import tools, recipe
 from glob import glob
 from textwrap import dedent  # To remove common leading white space
-import argparse
 
 
 def cli_parser():
@@ -83,6 +86,33 @@ def main():
 
     if tools.has_raw_data() == False:
         print("No rawData folder found in", os.getcwd())
+        exit()
+
+    # Is there sufficient disk space to run the compression?
+    free_GB = tools.get_free_disk_space_in_GB()
+    raw_data_GB = tools.get_dir_size_in_GB(tools.RAW_DATA_DIR)
+    free_size_buffer = (
+        500
+    )  # There should be at least this many GB free after compression
+
+    # If there is less space available than the size of the raw data we quit
+    if free_GB < (raw_data_GB * 0.7):
+        print(
+            "Compression adds about %d GB but there is only %d free. Free space and try again."
+            % (int(raw_data_GB), int(free_GB))
+        )
+        exit()
+
+    # If there is less space available than the size of the raw data plus the buffer we also quit
+    # but display a slightly different message.
+    if free_GB < (raw_data_GB * 0.7) + free_size_buffer:
+        print(
+            "Compression adds about %d GB and there is only %d free."
+            % (int(raw_data_GB), int(free_GB))
+        )
+        print(
+            "For safety compression will not proceed. Please free space and try again."
+        )
         exit()
 
     # The sample ID is used to name the raw data directory. We get this information from
@@ -163,7 +193,7 @@ def main():
     time.sleep(1)
 
     if not args.simulate:
-        # If necessary we copy the meta-data files temporaily out of the uncropped stacks folder
+        # If necessary we copy the meta-data files temporarily out of the uncropped stacks folder
         if copy_files_from_uncropped:
             print(
                 "Temporarily moving meta-data from uncropped directory into main directory"

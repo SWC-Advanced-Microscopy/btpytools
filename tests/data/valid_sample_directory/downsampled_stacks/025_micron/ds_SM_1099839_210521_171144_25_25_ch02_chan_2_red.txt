@@ -1,0 +1,12 @@
+Downsampling SM_1099839
+Acquired on: 2021/05/21 17:11:43
+Downsampled: 08-Jun-2021 17:29:28
+downsample file name: downsampled_stacks/025_micron/ds_SM_1099839_210521_171144_25_25_ch02_chan_2_red.tif
+
+---log---
+Begining to downsample:
+x/y: 10.953
+z: 3.968
+Loading and down-sampling x/y by 10.953
+Rescaling in z by 3.9683
+Done
