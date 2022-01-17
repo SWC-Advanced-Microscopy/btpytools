@@ -1,4 +1,4 @@
-# Quick hack to run common tasks 
+# Quick shell script to run common tasks
 
 pytest-3 tests/tests/basic.py
 python3 -m black ./

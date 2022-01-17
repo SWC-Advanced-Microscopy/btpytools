@@ -24,7 +24,9 @@ In other words, after pip installing you can run `compressRawData` at the comman
 ## Usage instructions
 
 ### Compressing the raw data directory
-`cd` to the sample directory at the command line and run `compressRawData`. This requires you to have installed `lbzip2`, which runs parallel bzip. Likely only works on Linux.
+`cd` to the sample directory at the command line and run `compressRawData`. This works much faster
+if you to have installed `lbzip2`, which runs parallel bzip. Likely only works on Linux. The
+command also confirms there is enough disk space available to complete successfully.
 
 ```
 $ cd /mnt/data/BakingTrayStacks/CC_125_1__125_2/ 
@@ -34,7 +36,7 @@ $ compressRawData
 ### Sending data to a remote server
 The server should be mounted locally to a mount point writable by the user. The tranfer is via `rsync`. The command just ensures no uncompressed raw data or uncropped stacks are copied. It brute-force retries if there is a failure for some reason. 
 
-First `cd` to the directory which **constains your samples**. Not the sample directory. e.g.
+First `cd` to the directory which **contains your samples**. Not the sample directory. e.g.
 ```
 $ cd /mnt/data/BakingTrayStacks
 ```

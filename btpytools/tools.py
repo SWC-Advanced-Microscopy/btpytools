@@ -6,10 +6,12 @@ import sys
 import os
 import re
 from glob import glob
-
+from pathlib import Path
+import shutil
 
 # Define variables that will be common across functions
 STITCHED_IMAGE_DIR = "stitchedImages_*"
+RAW_DATA_DIR = "rawData"
 DOWNSAMPLED_DIR = "downsampled_stacks"
 DOWNSAMPLED_STACK_SUB_DIR = "*_micron"  # Sub-directories in DOWNSAMPLED_DIR
 DOWNSAMPLED_STACK_LOG_FILE = "ds_*.txt"  # Wildcard for downsampled stacks
@@ -21,7 +23,7 @@ def has_raw_data(t_path=""):
     """ Check if current directory (or that defined by t_path) contains a
         rawData directory. Returns True if present, False if absent.
     """
-    t_path = os.path.join(t_path, "rawData")
+    t_path = os.path.join(t_path, RAW_DATA_DIR)
     return os.path.isdir(t_path)
 
 
@@ -75,14 +77,16 @@ def has_downsampled_stacks(t_path="", verbose=False):
 
     if not file_glob_exist(t_path):
         if verbose:
-            print('Can not find path %s' % t_path)
+            print("Can not find path %s" % t_path)
 
         return False
 
     # Does the downsampled stack directory contain downsampled stack directories?
     if not file_glob_exist(os.path.join(t_path, DOWNSAMPLED_STACK_SUB_DIR)):
         if verbose:
-            print('Downsampled stack directory does not contain downsampled stack sub-dirs')
+            print(
+                "Downsampled stack directory does not contain downsampled stack sub-dirs"
+            )
         return False
 
     return file_glob_exist(t_path)
@@ -106,10 +110,10 @@ def is_data_folder(dirToTest):
     """
     if (has_recipe_file(dirToTest) and has_scan_settings(dirToTest)) and (
         has_stitched_stacks(dirToTest)
-            or has_stitched_images_directory(dirToTest)
-            or has_raw_data(dirToTest)
-            or has_compressed_raw_data(dirToTest)
-        ):
+        or has_stitched_images_directory(dirToTest)
+        or has_raw_data(dirToTest)
+        or has_compressed_raw_data(dirToTest)
+    ):
         return True
     else:
         return False
@@ -142,15 +146,12 @@ def available_downsampled_volumes(in_path="", verbose=False):
     # stacks are called. The following line can have two layers of wildcards.
     # e.g. downsampled_stacks/*_micron/ds_*.txt
     in_path = os.path.join(
-        in_path,
-        DOWNSAMPLED_DIR,
-        DOWNSAMPLED_STACK_SUB_DIR,
-        DOWNSAMPLED_STACK_LOG_FILE
+        in_path, DOWNSAMPLED_DIR, DOWNSAMPLED_STACK_SUB_DIR, DOWNSAMPLED_STACK_LOG_FILE
     )
     paths_to_downsampled_stacks = glob(in_path)
 
     if len(paths_to_downsampled_stacks) < 1:
-        if verbose('No downsampled stacks found'):
+        if verbose("No downsampled stacks found"):
             return False
 
     out = []
@@ -286,3 +287,27 @@ def get_line_with_substr(allLines, subStr):
         return tLine[0].rstrip()
     else:
         return tLine
+
+
+def get_dir_size_in_GB(t_path):
+    """
+    Return the size of directory t_path in GB.
+    Return False if directory dow not exist
+    """
+
+    if not file_glob_exist(t_path):
+        return False
+
+    t_path = Path(t_path)
+    size_in_bytes = sum(f.stat().st_size for f in t_path.glob("**/*") if f.is_file())
+    return size_in_bytes / 1024 ** 3
+
+
+def get_free_disk_space_in_GB(t_path="."):
+    """
+    Return free disk space in GB. Uses volume associated with current path if no
+    path is provided.
+    """
+
+    out = shutil.disk_usage(t_path)
+    return out.free / 1024 ** 3

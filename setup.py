@@ -26,7 +26,7 @@ setup(
     python_requires=">=3.6",
     url="https://github.com/SainsburyWellcomeCentre/btpytools",
     project_urls={
-        "Source Code": "https://github.com/SainsburyWellcomeCentre/btpytools",
+        "Source Code": "https://github.com/SainsburyWellcomeCentre/btpytools"
     },
     author="Rob Campbell",
     author_email="rob.campbell@ucl.ac.uk",
