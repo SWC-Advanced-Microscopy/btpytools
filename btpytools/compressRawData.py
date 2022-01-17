@@ -89,6 +89,7 @@ def main():
         exit()
 
     # Is there sufficient disk space to run the compression?
+    print("Calculating disk size... Please wait.")
     free_GB = tools.get_free_disk_space_in_GB()
     raw_data_GB = tools.get_dir_size_in_GB(tools.RAW_DATA_DIR)
     free_size_buffer = (
@@ -114,6 +115,11 @@ def main():
             "For safety compression will not proceed. Please free space and try again."
         )
         exit()
+
+    print(
+        "OK to proceed: %d GB will be free after compression."
+        % int(free_GB - raw_data_GB)
+    )
 
     # The sample ID is used to name the raw data directory. We get this information from
     # the recipe file. We look for this in the current directory and, failing that, in the
