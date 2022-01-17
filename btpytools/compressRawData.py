@@ -91,10 +91,10 @@ def main():
     # Is there sufficient disk space to run the compression?
     print("Calculating disk size... Please wait.")
     free_GB = tools.get_free_disk_space_in_GB()
-    raw_data_GB = tools.get_dir_size_in_GB(tools.RAW_DATA_DIR)
-    free_size_buffer = (
-        500
-    )  # There should be at least this many GB free after compression
+    raw_data_GB = tools.get_dir_size_in_GB(tools.RAW_DATA_DIR, fast_raw_data=True)
+
+    # There should be at least this many GB free after compression
+    free_size_buffer = 500
 
     # If there is less space available than the size of the raw data we quit
     if free_GB < (raw_data_GB * 0.7):

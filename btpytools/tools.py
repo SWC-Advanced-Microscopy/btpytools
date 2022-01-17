@@ -289,17 +289,30 @@ def get_line_with_substr(allLines, subStr):
         return tLine
 
 
-def get_dir_size_in_GB(t_path):
+def get_dir_size_in_GB(t_path, fast_raw_data=False):
     """
     Return the size of directory t_path in GB.
     Return False if directory dow not exist
+
+    If fast_raw_data is true, we assume this is a raw data
+    directory and measure the size of every 10th sub-dir then
+    multiply by 10 to estimate the full size.
     """
 
     if not file_glob_exist(t_path):
         return False
 
-    t_path = Path(t_path)
-    size_in_bytes = sum(f.stat().st_size for f in t_path.glob("**/*") if f.is_file())
+    if fast_raw_data:
+        t_path = Path(t_path).glob("*-*1/*")
+    else:
+        t_path = Path(t_path).glob("**/*")
+
+    size_in_bytes = sum(f.stat().st_size for f in t_path if f.is_file())
+
+    if fast_raw_data:
+        size_in_bytes = size_in_bytes * 10  # Because we measured every 10th directory
+        size_in_bytes = size_in_bytes * 1.03  # Because we skipped some directories
+
     return size_in_bytes / 1024 ** 3
 
 
