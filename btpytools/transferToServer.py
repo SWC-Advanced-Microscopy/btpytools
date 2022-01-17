@@ -29,6 +29,7 @@ from textwrap import dedent  # To remove common leading white-space
 import argparse
 import re
 
+
 def cli_parser():
     """
     Build and return an argument parser
@@ -156,7 +157,11 @@ def user_specified_cropped_directories_individually(source_dirs):
 
     # If the list is only one directory long (or is a string) then we are unlikely to have anything
     # cropped so we can just bail out.
-    if isinstance(source_dirs,str) or isinstance(source_dirs,list) and len(source_dirs) == 1:
+    if (
+        isinstance(source_dirs, str)
+        or isinstance(source_dirs, list)
+        and len(source_dirs) == 1
+    ):
         return False
 
     # TODO -- the above is only true if the directory it sits in is not a cropped data directory
@@ -175,18 +180,18 @@ def user_specified_cropped_directories_individually(source_dirs):
         return True
 
     else:
-        #Generate a new version of source_dirs with the last element of each path removed
+        # Generate a new version of source_dirs with the last element of each path removed
         trimmed_list = [os.path.dirname(x) for x in source_dirs]
 
         # Since the current directory is not a sample directory, list entries that are empty
         # are in the current directory and therefore are either single samples or acquisitions
         # with multiple samples. We therefore can remove these.
-        trimmed_list = [x for x in trimmed_list if len(x)>0]
+        trimmed_list = [x for x in trimmed_list if len(x) > 0]
 
         # If the list is now empty, then it contains no individually specified directories
         # from within a cropped acquisition. This is because a list like this will all end
         # up being empty after the above: ['./sample_01', 'sample_02']
-        if len(trimmed_list)==0:
+        if len(trimmed_list) == 0:
             return False
 
         # If the list contains two or more non-unique paths, then original source list contained
@@ -194,7 +199,6 @@ def user_specified_cropped_directories_individually(source_dirs):
         if len(set(trimmed_list)) != len(trimmed_list):
             # There are duplicates so user must have asked for this
             return True
-
 
         # At this point we know that source_dirs was a directory list that probably something of
         # this sort: './acq_xy/sample1' , './acq_ab/sample1'. This is an unusual scenario and,

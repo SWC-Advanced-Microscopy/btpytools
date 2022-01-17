@@ -86,6 +86,7 @@ class TestTools(unittest.TestCase):
         out = tools.available_downsampled_volumes(VALID_SAMPLE_DIR, verbose=True)
         self.assertTrue(len(out) == 4)
 
+
 class TestTransferToServer(unittest.TestCase):
     """
     Run tests associated with btpytools.transferToServer.
@@ -96,18 +97,21 @@ class TestTransferToServer(unittest.TestCase):
         """
         Confirm if that that two data directories exist
         """
-        out = tts.check_directories(
-            join(DATA_DIR, "dir_a"), join(DATA_DIR, "dir_b")
-        )
+        out = tts.check_directories(join(DATA_DIR, "dir_a"), join(DATA_DIR, "dir_b"))
         self.assertTrue(out)
 
     def test_dir_list_contains_compressed_archive(self):
         """
         Confirm that the list of paths contains at least one compressed archive
         """
-        a_1 = ['dir1/dir2/stuff_rawData.tar.bz', 'dir_a', 'dir_b']
-        a_2 = ['dir1/dir2/stuff_rawData.tar.gz', 'dir_a', 'dir_b']
-        a_3 = ['dir1/dir2/stuff_rawData.tar.gz', 'dir_a', 'dir_b', 'dir1/dir2/stuff_rawData.tar.bz']
+        a_1 = ["dir1/dir2/stuff_rawData.tar.bz", "dir_a", "dir_b"]
+        a_2 = ["dir1/dir2/stuff_rawData.tar.gz", "dir_a", "dir_b"]
+        a_3 = [
+            "dir1/dir2/stuff_rawData.tar.gz",
+            "dir_a",
+            "dir_b",
+            "dir1/dir2/stuff_rawData.tar.bz",
+        ]
         self.assertTrue(tts.dir_list_contains_compressed_archive(a_1))
         self.assertTrue(tts.dir_list_contains_compressed_archive(a_2))
         self.assertTrue(tts.dir_list_contains_compressed_archive(a_3))
@@ -116,29 +120,33 @@ class TestTransferToServer(unittest.TestCase):
         """
         Confirm that the list of paths contains no compressed archives
         """
-        b_1 = ['dir1/dir2', 'dir_a', 'dir_b']
-        b_2 = ['dir1/dir2/stuff_rawData.tar', 'dir_a', 'dir_b']
-        b_3 = ['dir1/dir2/stuff_rawData', 'dir_a', 'dir_b', 'dir1/dir2/rawData']
+        b_1 = ["dir1/dir2", "dir_a", "dir_b"]
+        b_2 = ["dir1/dir2/stuff_rawData.tar", "dir_a", "dir_b"]
+        b_3 = ["dir1/dir2/stuff_rawData", "dir_a", "dir_b", "dir1/dir2/rawData"]
         self.assertFalse(tts.dir_list_contains_compressed_archive(b_1))
         self.assertFalse(tts.dir_list_contains_compressed_archive(b_2))
         self.assertFalse(tts.dir_list_contains_compressed_archive(b_3))
 
     def test_user_specified_individual_dirs(self):
-        '''
+        """
         User specifies two cropped samples within a single acquisition
-        '''
-        t_dirs = [join(CROPPED_ACQ_DIR, 'dir1'), join(CROPPED_ACQ_DIR, 'dir1')]
+        """
+        t_dirs = [join(CROPPED_ACQ_DIR, "dir1"), join(CROPPED_ACQ_DIR, "dir1")]
         self.assertTrue(tts.user_specified_cropped_directories_individually(t_dirs))
 
     def test_user_specifies_one_valid_directory(self):
-        '''
+        """
         Should return False because this is not a cropped sample
-        '''
-        self.assertFalse(tts.user_specified_cropped_directories_individually(VALID_SAMPLE_DIR))
+        """
+        self.assertFalse(
+            tts.user_specified_cropped_directories_individually(VALID_SAMPLE_DIR)
+        )
 
     def test_user_specifies_one_directory_from_a_cropped_acq(self):
-        '''
+        """
         Should return True because this is a cropped sample
-        '''
-        out = tts.user_specified_cropped_directories_individually(join(CROPPED_ACQ_DIR, 'dir1'))
+        """
+        out = tts.user_specified_cropped_directories_individually(
+            join(CROPPED_ACQ_DIR, "dir1")
+        )
         self.assertTrue(out)
