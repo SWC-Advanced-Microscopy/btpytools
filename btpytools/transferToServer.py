@@ -158,9 +158,9 @@ def user_specified_cropped_directories_individually(source_dirs):
     # If the list is only one directory long (or is a string) then we are unlikely to have anything
     # cropped so we can just bail out.
     if (
-        isinstance(source_dirs, str)
-        or isinstance(source_dirs, list)
-        and len(source_dirs) == 1
+      isinstance(source_dirs, str)
+      or isinstance(source_dirs, list)
+      and len(source_dirs) == 1
     ):
         return False
 
