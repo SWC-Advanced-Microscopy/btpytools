@@ -117,8 +117,8 @@ def main():
         exit()
 
     print(
-        "OK to proceed: %d GB will be free after compression."
-        % int(free_GB - raw_data_GB)
+        "OK! Compressed archive will be about %d GB and so %d GB will be free after compression."
+        % (int(raw_data_GB * 0.7), int(free_GB - raw_data_GB))
     )
 
     # The sample ID is used to name the raw data directory. We get this information from
