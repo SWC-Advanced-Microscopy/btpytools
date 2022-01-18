@@ -60,8 +60,8 @@ def cli_parser():
                         for some reason, then compression will fail. tmux is therefore recommended
                         in this situation.
 
-                        Runs much faster with parallel bzip (lbzip2) installed. If this is missing, the
-                        tool reverts to regular gzip."""
+                        Runs much faster with parallel bzip (lbzip2) installed. If this is missing,
+                        the tool reverts to regular gzip."""
         ),
     )
 
@@ -78,18 +78,21 @@ def cli_parser():
 
 
 def main():
-    # Main function: runs the compression
+    """
+    Main function: runs the compression
+    """
+
     args = cli_parser().parse_args()
 
     if args.simulate:
         print("\n\nRUNNING IN SIMULATE MODE\n")
 
-    if tools.has_raw_data() == False:
+    if not tools.has_raw_data():
         print("No rawData folder found in", os.getcwd())
         exit()
 
     # Is there sufficient disk space to run the compression?
-    print("Calculating disk size... Please wait.")
+    print("Calculating raw data size... Please wait.")
     free_GB = tools.get_free_disk_space_in_GB()
     raw_data_GB = tools.get_dir_size_in_GB(tools.RAW_DATA_DIR, fast_raw_data=True)
 

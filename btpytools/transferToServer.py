@@ -24,10 +24,10 @@ in this situation.
 
 
 import os
-from btpytools import tools
-from textwrap import dedent  # To remove common leading white-space
 import argparse
 import re
+from btpytools import tools
+from textwrap import dedent  # To remove common leading white-space
 
 
 def cli_parser():
@@ -179,42 +179,41 @@ def user_specified_cropped_directories_individually(source_dirs):
         # directories then the user has, indeed, specified directories individually.
         return True
 
-    else:
-        # Generate a new version of source_dirs with the last element of each path removed
-        trimmed_list = [os.path.dirname(x) for x in source_dirs]
+    # Generate a new version of source_dirs with the last element of each path removed
+    trimmed_list = [os.path.dirname(x) for x in source_dirs]
 
-        # Since the current directory is not a sample directory, list entries that are empty
-        # are in the current directory and therefore are either single samples or acquisitions
-        # with multiple samples. We therefore can remove these.
-        trimmed_list = [x for x in trimmed_list if len(x) > 0]
+    # Since the current directory is not a sample directory, list entries that are empty
+    # are in the current directory and therefore are either single samples or acquisitions
+    # with multiple samples. We therefore can remove these.
+    trimmed_list = [x for x in trimmed_list if len(x) > 0]
 
-        # If the list is now empty, then it contains no individually specified directories
-        # from within a cropped acquisition. This is because a list like this will all end
-        # up being empty after the above: ['./sample_01', 'sample_02']
-        if len(trimmed_list) == 0:
-            return False
+    # If the list is now empty, then it contains no individually specified directories
+    # from within a cropped acquisition. This is because a list like this will all end
+    # up being empty after the above: ['./sample_01', 'sample_02']
+    if len(trimmed_list) == 0:
+        return False
 
-        # If the list contains two or more non-unique paths, then original source list contained
-        # individually specified directories from within a cropped acquisition.
-        if len(set(trimmed_list)) != len(trimmed_list):
-            # There are duplicates so user must have asked for this
-            return True
-
-        # At this point we know that source_dirs was a directory list that probably something of
-        # this sort: './acq_xy/sample1' , './acq_ab/sample1'. This is an unusual scenario and,
-        # like in the if statement above, means the user is specifying directories from a cropped
-        # acquisition individually. We therefore return True.
+    # If the list contains two or more non-unique paths, then original source list contained
+    # individually specified directories from within a cropped acquisition.
+    if len(set(trimmed_list)) != len(trimmed_list):
+        # There are duplicates so user must have asked for this
         return True
+
+    # At this point we know that source_dirs was a directory list that probably something of
+    # this sort: './acq_xy/sample1' , './acq_ab/sample1'. This is an unusual scenario and,
+    # like in the if statement above, means the user is specifying directories from a cropped
+    # acquisition individually. We therefore return True.
+    return True
 
 
 def dir_list_contains_compressed_archive(source_dirs):
     """
-    Does the directory list in source_dirs contain at least one compressed raw data archive?
-    The lack of a compressed archive in this list does not meant the compressed raw data are
-    not going to be sent. It just reflects whether or not the user has explicitly asked to send the data.
+    Does the directory list in source_dirs contain at least one compressed raw data archive? The
+    lack of a compressed archive in this list does not meant the compressed raw data are not going
+    to be sent. It just reflects whether or not the user has explicitly asked to send the data.
 
-    This function is used in conjunction with others to determine whether there is a
-    chance that the user is accidentally failing to back up compressed raw data.
+    This function is used in conjunction with others to determine whether there is a chance that
+    the user is accidentally failing to back up compressed raw data.
 
     Inputs:
     source_dirs - a list of source directories
@@ -266,25 +265,25 @@ def main():
         exit()
 
     # Remove trailing slash from data directories that don't contain data sub-directories
-    for ii, tDir in enumerate(source_dirs):
-        if tools.is_data_folder(tDir) and not tools.contains_data_folders(tDir):
+    for ii, t_dir in enumerate(source_dirs):
+        if tools.is_data_folder(t_dir) and not tools.contains_data_folders(t_dir):
             # If here, tDIR is a sample folder without sub-folders. If there is a
             # trailing slash then we should delete it. Always.
-            if tDir[-1] == os.path.sep:
-                source_dirs[ii] = tDir[0:-1]
+            if t_dir[-1] == os.path.sep:
+                source_dirs[ii] = t_dir[0:-1]
 
-        elif tools.contains_data_folders(tDir):
+        elif tools.contains_data_folders(t_dir):
             # If here, tDIR contains sub-folders which are sample folders. Thus is likely
             # contains cropped data. We again delete the trailing slash but we give the
             # user the option to add it back, copying the *contents* to the destination
             # rather than in the enclosing folder.
-            if tDir[-1] == os.path.sep:
-                source_dirs[ii] = tDir[0:-1]
+            if t_dir[-1] == os.path.sep:
+                source_dirs[ii] = t_dir[0:-1]
 
-            print('\nDirectory "%s" contains multiple samples.' % tDir)
+            print('\nDirectory "%s" contains multiple samples.' % t_dir)
             print(
                 "Do you want to keep samples in their enclosing directory (%s) when on the server?"
-                % tDir
+                % t_dir
             )
             if not tools.query_yes_no(""):
                 # Add trailing slash, if user does not want to keep enclosing folder.
@@ -293,45 +292,45 @@ def main():
     print("")
 
     # Check whether any of the directories we plan to copy already exist at the destination
-    safeToCopy = True
-    for ii, tDir in enumerate(source_dirs):
+    safe_to_copy = True
+    for ii, t_dir in enumerate(source_dirs):
 
-        if tDir[-1] != os.path.sep:
+        if t_dir[-1] != os.path.sep:
             # Look for this directory at the destination
-            destinationPath = os.path.join(destination_dir, tDir)
-            if os.path.exists(destinationPath):
-                safeToCopy = False
+            destination_path = os.path.join(destination_dir, t_dir)
+            if os.path.exists(destination_path):
+                safe_to_copy = False
                 print(
                     '===>>> WARNING!! "%s" already exists in "%s"!! Proceeding will over-write its contents <===='
-                    % (tDir, destination_dir)
+                    % (t_dir, destination_dir)
                 )
         else:
             # Look for the *contents* of this directory at the destination
-            dirContents = os.listdir(tDir)
-            for jj, subDir in enumerate(dirContents):
+            dir_contents = os.listdir(t_dir)
+            for jj, subDir in enumerate(dir_contents):
                 if subDir == "rawData" or "_DELETE_ME" in subDir:
                     continue
-                destinationPath = os.path.join(destination_dir, subDir)
-                if os.path.exists(destinationPath):
-                    safeToCopy = False
+                destination_path = os.path.join(destination_dir, subDir)
+                if os.path.exists(destination_path):
+                    safe_to_copy = False
                     print(
                         '===>>> WARNING!! "%s" already exists in "%s"!! Proceeding will over-write its contents <===='
                         % (subDir, destination_dir)
                     )
 
-    if safeToCopy == False:
+    if safe_to_copy == False:
         print("\n IS IT OK TO PROCEED DESPITE THE ABOVE WARNINGS?")
         if not tools.query_yes_no(""):
             exit()
 
     # Ask for confirmation before starting
     print("\nPerform the following transfer?")
-    for ii, tDir in enumerate(source_dirs):
-        if tDir[-1] != os.path.sep:
-            print('Copy directory "%s" to location "%s"' % (tDir, destination_dir))
+    for ii, t_dir in enumerate(source_dirs):
+        if t_dir[-1] != os.path.sep:
+            print('Copy directory "%s" to location "%s"' % (t_dir, destination_dir))
         else:
-            dirContents = os.listdir(tDir)
-            for jj, subContents in enumerate(dirContents):
+            dir_contents = os.listdir(t_dir)
+            for jj, subContents in enumerate(dir_contents):
                 if subContents == "rawData" or subContents.endswith("_DELETE_ME"):
                     pass
                 else:
