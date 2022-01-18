@@ -136,7 +136,7 @@ def main():
         sample_name = recipe.sample_id()
     elif tools.has_uncropped_stitched_images():
         # Can we get sample ID from a recipe file in the uncropped stacks directory?
-        uncropped_dir = glob(tools._uncropped_wildcard)[0]
+        uncropped_dir = glob(tools.UNCROPPED_WILDCARD)[0]
         if tools.has_recipe_file(uncropped_dir):
             # We get the sample ID from the uncropped data directory, so we also want to later
             # copy other settings files temporarily into the current directory so they
