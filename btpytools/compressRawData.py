@@ -27,11 +27,11 @@ to regular gzip.
 import os
 import argparse
 import time
+import sys
 from datetime import datetime
-from btpytools import tools, recipe
 from glob import glob
 from textwrap import dedent  # To remove common leading white space
-
+from btpytools import tools, recipe
 
 def cli_parser():
     """
@@ -89,7 +89,7 @@ def main():
 
     if not tools.has_raw_data():
         print("No rawData folder found in", os.getcwd())
-        exit()
+        sys.exit()
 
     # Is there sufficient disk space to run the compression?
     print("Calculating raw data size... Please wait.")
@@ -105,7 +105,7 @@ def main():
             "Compression adds about %d GB but there is only %d free. Free space and try again."
             % (int(raw_data_GB), int(free_GB))
         )
-        exit()
+        sys.exit()
 
     # If there is less space available than the size of the raw data plus the buffer we also quit
     # but display a slightly different message.
@@ -117,7 +117,7 @@ def main():
         print(
             "For safety compression will not proceed. Please free space and try again."
         )
-        exit()
+        sys.exit()
 
     print(
         "OK! Compressed archive will be about %d GB and so %d GB will be free after compression."
@@ -168,7 +168,7 @@ def main():
             "no",
         ):
             print("Not proceeding with compression.\n")
-            exit()
+            sys.exit()
 
     # We will also copy metadata
     meta_data_file_names = (

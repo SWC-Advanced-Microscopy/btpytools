@@ -26,9 +26,9 @@ in this situation.
 import os
 import argparse
 import re
-from btpytools import tools
+import sys
 from textwrap import dedent  # To remove common leading white-space
-
+from btpytools import tools
 
 def cli_parser():
     """
@@ -247,7 +247,7 @@ def main():
             "\n\n ERROR: transferToServer requires at least one local path to copy and a destination\n"
         )
         print(' See "transferToServer -h"\n')
-        exit()
+        sys.exit()
 
     main_rsync_switch = args.rsync_flags  # This is the flag used by rsync
     if not main_rsync_switch.startswith("-"):
@@ -262,7 +262,7 @@ def main():
 
     # Bail out if any of the supplied paths do not exist
     if check_directories(source_dirs, destination_dir):
-        exit()
+        sys.exit()
 
     # Remove trailing slash from data directories that don't contain data sub-directories
     for ii, t_dir in enumerate(source_dirs):
@@ -318,10 +318,10 @@ def main():
                         % (subDir, destination_dir)
                     )
 
-    if safe_to_copy == False:
+    if not safe_to_copy:
         print("\n IS IT OK TO PROCEED DESPITE THE ABOVE WARNINGS?")
         if not tools.query_yes_no(""):
-            exit()
+            sys.exit()
 
     # Ask for confirmation before starting
     print("\nPerform the following transfer?")
@@ -345,7 +345,7 @@ def main():
 
     print("Using command %s" % cmd)
     if not tools.query_yes_no(""):
-        exit()
+        sys.exit()
 
     # Start the transfer
     os.system(cmd)
