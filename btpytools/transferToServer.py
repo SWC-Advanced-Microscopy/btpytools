@@ -155,17 +155,22 @@ def user_specified_cropped_directories_individually(source_dirs):
       were not supplied.
     """
 
-    # If the list is only one directory long (or is a string) then we are unlikely to have anything
-    # cropped so we can just bail out.
+    # If the list is only one directory long (or is a string) then we still need to check if it
+    # is a cropped directory before deciding for sure wether to return True or False.
     if (
-        isinstance(source_dirs, str)
-        or isinstance(source_dirs, list)
-        and len(source_dirs) == 1
-    ):
-        return False
+            isinstance(source_dirs, str)
+            or isinstance(source_dirs, list)
+            and len(source_dirs) == 1
+        ):
+        if tools.has_compressed_raw_data(os.path.split(source_dirs)[0]):
+            # Parent directory contains a compressed archive. This makes it
+            # likely this was a cropped directory and that the user could
+            # potentially be failing to include the archive in the list of
+            # to transfer (although we will check this elsewhere)
+            return True
+        else:
+            return False
 
-    # TODO -- the above is only true if the directory it sits in is not a cropped data directory
-    # It is possible user specified just one directory from a cropped acquisition.
 
     # Remove everything from the list that is not a directory
     source_dirs = [x for x in source_dirs if os.path.isdir(x)]
