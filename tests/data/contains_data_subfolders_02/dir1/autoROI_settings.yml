@@ -1,0 +1,10 @@
+main: {borderPixSize: 4.0, medFiltRawImage: 5.0, doTiledMerge: true, tiledMergeThresh: 1.05,
+  defaultThreshSD: 7.0, reCalcThreshSD_threshold: 10.0, rescaleTo: 50.0}
+mainBin: {removeNoise: true, medFiltBW: 5.0, primaryShape: disk, primaryFiltSize: 50.0,
+  expansionShape: square, doExpansion: true, expansionSize: 600.0}
+mainGetBB: {minSizeInSqMicrons: 15000.0}
+clipper: {doExtension: true, edgeThreshMicrons: 350.0, growROIbyMicrons: 450.0}
+mergeO: {mergeThresh: 1.3}
+stackStr: {rollingThreshold: true, nImages: 5.0}
+autoThresh: {skipMergeNROIThresh: 10.0, doBinaryExpansion: false, minThreshold: 2.0,
+  maxThreshold: 12.0, allowMaxExtensionIfFewThreshLeft: true, decreaseThresholdBy: 0.9}

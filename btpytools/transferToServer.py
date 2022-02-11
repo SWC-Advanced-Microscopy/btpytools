@@ -30,6 +30,7 @@ import sys
 from textwrap import dedent  # To remove common leading white-space
 from btpytools import tools
 
+
 def cli_parser():
     """
     Build and return an argument parser
@@ -131,9 +132,9 @@ def check_directories(source_dirs, destination_dir):
     return fail
 
 
-def user_specified_cropped_directories_individually(source_dirs):
+def user_specified_cropped_directories_individually(source_dirs, verbose=False):
     """
-    Checks whether the user has manually supplied multiple split sample directories
+    Checks whether the user has manually supplied any multiple split sample directories
     from a cropped acquisition. e.g. Say we have a folder called 'acq_123', which
     contains cropped samples 'acq_1', 'acq_2', and 'acq_3'. The user could either provide
     'acq_123' as the source or they could provide a list of all three directories:
@@ -158,30 +159,37 @@ def user_specified_cropped_directories_individually(source_dirs):
     # If the list is only one directory long (or is a string) then we still need to check if it
     # is a cropped directory before deciding for sure wether to return True or False.
     if (
-            isinstance(source_dirs, str)
-            or isinstance(source_dirs, list)
-            and len(source_dirs) == 1
-        ):
+        isinstance(source_dirs, str)
+        or isinstance(source_dirs, list)
+        and len(source_dirs) == 1
+    ):
         if tools.has_compressed_raw_data(os.path.split(source_dirs)[0]):
             # Parent directory contains a compressed archive. This makes it
             # likely this was a cropped directory and that the user could
             # potentially be failing to include the archive in the list of
-            # to transfer (although we will check this elsewhere)
+            # to transfer (although we will check this elsewhere). If there is no
+            # compressed archive this will return False, which is OK.
             return True
         else:
             return False
 
-
     # Remove everything from the list that is not a directory
     source_dirs = [x for x in source_dirs if os.path.isdir(x)]
 
-    # First we handle the potential scenario where the user's current folder is a
-    # data acquisition directory.
-    cwd_is_data_dir = tools.is_data_folder(os.getcwd())
+    # Remove any directories that are definitely single samples or uncropped acquisitions
+    source_dirs = remove_single_samples_from_list(source_dirs)
+    if len(source_dirs) == 0:
+        # If list is empty we have no individually specified directories
+        return False
 
-    if cwd_is_data_dir:
+    # Now we handle the potential scenario where the user's current folder is a
+    # data acquisition directory.
+    if tools.is_data_folder(os.getcwd()):
         # If the current directory is a BakingTray data folder and there are multiple source
-        # directories then the user has, indeed, specified directories individually.
+        # directories (if here theen there are) then the user has, indeed, specified directories
+        # individually.
+        if verbose:
+            print("Individually specified because current dir is a data dir")
         return True
 
     # Generate a new version of source_dirs with the last element of each path removed
@@ -202,6 +210,8 @@ def user_specified_cropped_directories_individually(source_dirs):
     # individually specified directories from within a cropped acquisition.
     if len(set(trimmed_list)) != len(trimmed_list):
         # There are duplicates so user must have asked for this
+        if verbose:
+            print("Duplicates found: must be individually specified")
         return True
 
     # At this point we know that source_dirs was a directory list that probably something of
@@ -237,6 +247,80 @@ def dir_list_contains_compressed_archive(source_dirs):
         return True
     else:
         return False
+
+
+def issue_warning_if_compressed_data_will_not_be_sent(source_dirs, verbose=False):
+    """
+    If the user is running transferToServer in a way that would cause raw data not be transfered,
+    we return True. If the source directory list appears safe we return False.
+    """
+
+    if not user_specified_cropped_directories_individually(source_dirs):
+        # Then we are definitely fine and we can return false
+        if verbose:
+            print("Directories not specified individually")
+
+        return False
+
+    # If we are here, there are indivually specified directories
+    if verbose:
+        print("Individually specified directories found")
+
+    # If the user specified the directories individually we are still "safe" so long as either
+    # a) They included the compressed archive in the transfer list (source_dirs).
+    # b) There is no compressed archive (meaning the user does not want to back up raw data)
+    if dir_list_contains_compressed_archive(source_dirs):
+        if verbose:
+            print("List contains a compressed archive")
+        return False
+
+    # Go through each directory in the list. If it is The following
+    dir_to_test = os.path.split(source_dirs[0])[0]
+    if not tools.has_compressed_raw_data(dir_to_test):
+        if verbose:
+            print("No raw data archive found in directory %s" % dir_to_test)
+        return False
+
+    # If we are here, there could be compressed raw data that are not being sent
+    return True
+
+
+def remove_single_samples_from_list(source_dirs, verbose=False):
+    """
+    Remove from list source_list all folders that are definitely not an individually specified
+    directory. Return this list.
+    """
+
+    if not isinstance(source_dirs, list):
+        return
+
+    # Remove everything from the list that is not a directory
+    source_dirs = [x for x in source_dirs if os.path.isdir(x)]
+
+    if verbose:
+        print("\nInitial dir list:\n")
+        print(source_dirs)
+
+    # If it has a raw data archive or does not have a cropped directory with the raw data
+    # then it is likely a non separately specified directory. So we can remove it from the list.
+    # keep removing. If list empty user had none specified indiviudally.
+    for t_dir in source_dirs:
+        if (
+            tools.has_compressed_raw_data(t_dir)
+            or tools.has_raw_data(t_dir)
+            or tools.has_uncropped_stitched_images(t_dir)
+        ):
+            if verbose:
+                print("Removed %s" % t_dir)
+            source_dirs = [x for x in source_dirs if x != t_dir]  # remove t_dir
+
+        if verbose:
+            print("Tested %s. length=%s" % (t_dir, len(source_dirs)))
+
+    if len(source_dirs) == 0:
+        return list()
+
+    return source_dirs
 
 
 def main():
@@ -312,15 +396,15 @@ def main():
         else:
             # Look for the *contents* of this directory at the destination
             dir_contents = os.listdir(t_dir)
-            for jj, subDir in enumerate(dir_contents):
-                if subDir == "rawData" or "_DELETE_ME" in subDir:
+            for jj, sub_dir in enumerate(dir_contents):
+                if sub_dir == "rawData" or "_DELETE_ME" in sub_dir:
                     continue
-                destination_path = os.path.join(destination_dir, subDir)
+                destination_path = os.path.join(destination_dir, sub_dir)
                 if os.path.exists(destination_path):
                     safe_to_copy = False
                     print(
                         '===>>> WARNING!! "%s" already exists in "%s"!! Proceeding will over-write its contents <===='
-                        % (subDir, destination_dir)
+                        % (sub_dir, destination_dir)
                     )
 
     if not safe_to_copy:
@@ -335,11 +419,11 @@ def main():
             print('Copy directory "%s" to location "%s"' % (t_dir, destination_dir))
         else:
             dir_contents = os.listdir(t_dir)
-            for jj, subContents in enumerate(dir_contents):
-                if subContents == "rawData" or subContents.endswith("_DELETE_ME"):
+            for jj, sub_contents in enumerate(dir_contents):
+                if sub_contents == "rawData" or sub_contents.endswith("_DELETE_ME"):
                     pass
                 else:
-                    print('Copy "%s" to "%s"' % (subContents, destination_dir))
+                    print('Copy "%s" to "%s"' % (sub_contents, destination_dir))
 
     # Build the rsync command string
     cmd = "rsync %s --progress --exclude rawData --exclude *_DELETE_ME_* %s %s " % (

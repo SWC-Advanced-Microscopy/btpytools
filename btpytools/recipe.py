@@ -35,28 +35,28 @@ def read_recipe(dirToSearch=""):
 def sample_id(dirToSearch=""):
     """return sample ID as a string
     """
-    thisRecipe = read_recipe(dirToSearch)
-    if thisRecipe == False:
+    this_recipe = read_recipe(dirToSearch)
+    if not this_recipe:
         return False
     else:
-        return thisRecipe["sample"]["ID"]
+        return this_recipe["sample"]["ID"]
 
 
 def microscope(dirToSearch=""):
     """return microscope name as a string
     """
-    thisRecipe = read_recipe(dirToSearch)
-    if thisRecipe == False:
+    this_recipe = read_recipe(dirToSearch)
+    if not this_recipe:
         return False
     else:
-        return thisRecipe["SYSTEM"]["ID"]
+        return this_recipe["SYSTEM"]["ID"]
 
 
 def acq_start_time(dirToSearch=""):
     """return acquisition start time as a string
     """
-    thisRecipe = read_recipe(dirToSearch)
-    if thisRecipe == False:
+    this_recipe = read_recipe(dirToSearch)
+    if not this_recipe:
         return False
     else:
-        return thisRecipe["Acquisition"]["acqStartTime"]
+        return this_recipe["Acquisition"]["acqStartTime"]
