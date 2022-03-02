@@ -10,9 +10,9 @@ from btpytools import tools
 
 
 def read_recipe(dirToSearch=""):
-    """ Read recipe file from current directory or a defined directory.
-        If multiple files present, reads the last one
-        Return False if no recipe present
+    """Read recipe file from current directory or a defined directory.
+    If multiple files present, reads the last one
+    Return False if no recipe present
     """
     if len(dirToSearch) == 0:
         dirToSearch = os.getcwd()
@@ -33,8 +33,7 @@ def read_recipe(dirToSearch=""):
 
 
 def sample_id(dirToSearch=""):
-    """return sample ID as a string
-    """
+    """return sample ID as a string"""
     this_recipe = read_recipe(dirToSearch)
     if not this_recipe:
         return False
@@ -43,8 +42,7 @@ def sample_id(dirToSearch=""):
 
 
 def microscope(dirToSearch=""):
-    """return microscope name as a string
-    """
+    """return microscope name as a string"""
     this_recipe = read_recipe(dirToSearch)
     if not this_recipe:
         return False
@@ -53,8 +51,7 @@ def microscope(dirToSearch=""):
 
 
 def acq_start_time(dirToSearch=""):
-    """return acquisition start time as a string
-    """
+    """return acquisition start time as a string"""
     this_recipe = read_recipe(dirToSearch)
     if not this_recipe:
         return False

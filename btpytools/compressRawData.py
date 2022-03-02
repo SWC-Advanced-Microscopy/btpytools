@@ -132,9 +132,7 @@ def main():
     # If there is no recipe file in the current directory, look for one in the cropped data dir.
     # if also that is missing, we use as the
 
-    copy_files_from_uncropped = (
-        False
-    )  # Do we need to temporarily copy settings files out of the uncropped data dir?
+    copy_files_from_uncropped = False  # Do we need to temporarily copy settings files out of the uncropped data dir?
 
     if tools.has_recipe_file():
         sample_name = recipe.sample_id()
@@ -172,9 +170,7 @@ def main():
             sys.exit()
 
     # We will also copy metadata
-    meta_data_file_names = (
-        "scanSettings.mat *.yml *.txt *.ini"
-    )  # wildcards for files other than raw data that we will compress
+    meta_data_file_names = "scanSettings.mat *.yml *.txt *.ini"  # wildcards for files other than raw data that we will compress
 
     # Check whether we have lbzip2 and use it if so
     out = os.system("lbzip2 -h > /dev/null")
