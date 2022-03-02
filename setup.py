@@ -15,7 +15,7 @@ with open(os.path.join(THIS_DIRECTORY, "README.md"), encoding="utf-8") as f:
 # Blank setup.py which pip seems to need in order to be happy with setup.cfg
 setup(
     name="btpytools",
-    version="0.1.21",
+    version="0.1.23",
     packages=find_packages(),
     description="Helper functions for BakingTray and StitchIt",
     license_files="LICENSE",
@@ -46,6 +46,7 @@ setup(
             "summariseAcqs=btpytools.summariseAcquisitions:main",
             "compressRawData=btpytools.compressRawData:main",
             "transferToServer=btpytools.transferToServer:main",
+            "brainregbt=btpytools.brainreg_bt:main",
         ]
     },
 )

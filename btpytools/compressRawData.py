@@ -27,10 +27,11 @@ to regular gzip.
 import os
 import argparse
 import time
+import sys
 from datetime import datetime
-from btpytools import tools, recipe
 from glob import glob
 from textwrap import dedent  # To remove common leading white space
+from btpytools import tools, recipe
 
 
 def cli_parser():
@@ -60,8 +61,8 @@ def cli_parser():
                         for some reason, then compression will fail. tmux is therefore recommended
                         in this situation.
 
-                        Runs much faster with parallel bzip (lbzip2) installed. If this is missing, the
-                        tool reverts to regular gzip."""
+                        Runs much faster with parallel bzip (lbzip2) installed. If this is missing,
+                        the tool reverts to regular gzip."""
         ),
     )
 
@@ -78,18 +79,21 @@ def cli_parser():
 
 
 def main():
-    # Main function: runs the compression
+    """
+    Main function: runs the compression
+    """
+
     args = cli_parser().parse_args()
 
     if args.simulate:
         print("\n\nRUNNING IN SIMULATE MODE\n")
 
-    if tools.has_raw_data() == False:
+    if not tools.has_raw_data():
         print("No rawData folder found in", os.getcwd())
-        exit()
+        sys.exit()
 
     # Is there sufficient disk space to run the compression?
-    print("Calculating disk size... Please wait.")
+    print("Calculating raw data size... Please wait.")
     free_GB = tools.get_free_disk_space_in_GB()
     raw_data_GB = tools.get_dir_size_in_GB(tools.RAW_DATA_DIR, fast_raw_data=True)
 
@@ -102,7 +106,7 @@ def main():
             "Compression adds about %d GB but there is only %d free. Free space and try again."
             % (int(raw_data_GB), int(free_GB))
         )
-        exit()
+        sys.exit()
 
     # If there is less space available than the size of the raw data plus the buffer we also quit
     # but display a slightly different message.
@@ -114,11 +118,11 @@ def main():
         print(
             "For safety compression will not proceed. Please free space and try again."
         )
-        exit()
+        sys.exit()
 
     print(
-        "OK to proceed: %d GB will be free after compression."
-        % int(free_GB - raw_data_GB)
+        "OK! Compressed archive will be about %d GB and so %d GB will be free after compression."
+        % (int(raw_data_GB * 0.7), int(free_GB - raw_data_GB))
     )
 
     # The sample ID is used to name the raw data directory. We get this information from
@@ -128,15 +132,13 @@ def main():
     # If there is no recipe file in the current directory, look for one in the cropped data dir.
     # if also that is missing, we use as the
 
-    copy_files_from_uncropped = (
-        False
-    )  # Do we need to temporarily copy settings files out of the uncropped data dir?
+    copy_files_from_uncropped = False  # Do we need to temporarily copy settings files out of the uncropped data dir?
 
     if tools.has_recipe_file():
         sample_name = recipe.sample_id()
     elif tools.has_uncropped_stitched_images():
         # Can we get sample ID from a recipe file in the uncropped stacks directory?
-        uncropped_dir = glob(tools._uncropped_wildcard)[0]
+        uncropped_dir = glob(tools.UNCROPPED_WILDCARD)[0]
         if tools.has_recipe_file(uncropped_dir):
             # We get the sample ID from the uncropped data directory, so we also want to later
             # copy other settings files temporarily into the current directory so they
@@ -165,12 +167,10 @@ def main():
             "no",
         ):
             print("Not proceeding with compression.\n")
-            exit()
+            sys.exit()
 
     # We will also copy metadata
-    meta_data_file_names = (
-        "scanSettings.mat *.yml *.txt *.ini"
-    )  # wildcards for files other than raw data that we will compress
+    meta_data_file_names = "scanSettings.mat *.yml *.txt *.ini"  # wildcards for files other than raw data that we will compress
 
     # Check whether we have lbzip2 and use it if so
     out = os.system("lbzip2 -h > /dev/null")
