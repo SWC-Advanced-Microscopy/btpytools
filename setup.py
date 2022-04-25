@@ -15,13 +15,13 @@ with open(os.path.join(THIS_DIRECTORY, "README.md"), encoding="utf-8") as f:
 # Blank setup.py which pip seems to need in order to be happy with setup.cfg
 setup(
     name="btpytools",
-    version="0.1.23",
+    version="0.1.24",
     packages=find_packages(),
     description="Helper functions for BakingTray and StitchIt",
     license_files="LICENSE",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
-    install_requires=["pyyaml"],
+    install_requires=["pyyaml","brainreg"],
     extras_require={"dev": ["black", "pytest"]},
     python_requires=">=3.6",
     url="https://github.com/SainsburyWellcomeCentre/btpytools",
