@@ -173,6 +173,7 @@ def read_downsample_log_file(pathToFile=""):
     no data are found in the defined path or multiple paths were supplied.
     """
 
+    print("READING FILE %s" % pathToFile)
     if len(pathToFile) < 1:
         return False
     elif isinstance(pathToFile, list) and len(pathToFile) == 1:
@@ -206,12 +207,16 @@ def read_downsample_log_file(pathToFile=""):
     out["voxelsize"] = int(s.group(1))
 
     # Get the channel index from the file name
-    s = re.search(r".*_ch(\d+)_chan_\d_", pathToFile)
+    s = re.search(r".*_ch(0\d+)", pathToFile)
     out["channelindex"] = int(s.group(1))
+
 
     # Get the channel friendly name from the file name
     s = re.search(r".*_ch\d+_chan_\d_(.*)\.t", pathToFile)
-    out["channelname"] = s.group(1)
+    if s is not None:
+        out["channelname"] = s.group(1)
+    else:
+        out["channelname"] = str(out["channelindex"])
 
     return out
 
@@ -474,6 +479,9 @@ def make_reg_dir(simulate=False):
 
     return full_path_to_make
 
+
+def make_log_dir():
+    print('hello')
 
 def increment_char(t_char, increment_by=1):
     """

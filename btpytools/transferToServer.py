@@ -27,6 +27,7 @@ import os
 import argparse
 import re
 import sys
+import subprocess
 from textwrap import dedent  # To remove common leading white-space
 from btpytools import tools
 
@@ -436,8 +437,31 @@ def main():
     if not tools.query_yes_no(""):
         sys.exit()
 
-    # Start the transfer
+
+    # Start the transfer and return standard output to the CLI
     os.system(cmd)
+
+    # There are rare cases where the transfer of individual files failed and they became corrupt.
+    # Here we see empty files in the destination, whereas in the source they are OK. Re-running the
+    # transfer will fix these instances. So we do that here.
+    print('\nLooking for corrupted files in destination...\n')
+    max_retries = 10
+    pass_number = 1
+    while True:
+        out = subprocess.check_output(cmd, shell=True)
+
+        #If the second line is empty then everything has been transfered OK
+        if len(out.decode().split("\n")[1]) == 0:
+            print('Good! There are no corrupt empty files on the server.')
+            break
+        else:
+            print('Corrected corrupt files at destination. Checking again...\n')
+
+        pass_number += 1
+        if pass_number > max_retries:
+            print('After %d attempts there still seem to be corrupt files on the server!' %
+                  max_retries)
+            break
 
 
 if __name__ == "__main__":

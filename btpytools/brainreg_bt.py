@@ -67,7 +67,7 @@ def main():
         % (chosen_ds["samplename"], vox_size, args.bt_channel)
     )
 
-    input("Press return to start\n")
+    input("\n\n --> OK! Press return to start <-- \n")
 
     # Make the directory/set the directory
     reg_dir = tools.make_reg_dir()

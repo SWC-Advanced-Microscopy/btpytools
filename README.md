@@ -8,18 +8,17 @@ The `recipe.py` and `tools.py` modules support these and are aimed at developers
 
 ## Install instructions
 ```
-$ sudo pip install btpytools
+$ pip install btpytools
 
 ```
 
-Running as `sudo` allows the installer to add the most important programs to your path, allowing them to be run at the system command line:
+You will then be able to run the following commands at the system command prompt:
 
 
 * `transferToServer`
 * `compressRawData`
 * `summariseAcqs`
 
-In other words, after pip installing you can run `compressRawData` at the command line. 
 
 ## Usage instructions
 
