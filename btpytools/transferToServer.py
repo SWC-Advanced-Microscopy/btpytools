@@ -447,15 +447,23 @@ def main():
     print('\nLooking for corrupted files in destination...\n')
     max_retries = 10
     pass_number = 1
+
+    # Alter the rsync command to add more information
+    cmd = cmd.replace('rsync -', 'rsync -i')
+
     while True:
         out = subprocess.check_output(cmd, shell=True)
 
-        #If the second line is empty then everything has been transfered OK
-        if len(out.decode().split("\n")[1]) == 0:
+        # Convert to a string
+        out = out.decode()
+
+        #If there are no ">" with -i then nothing was sent
+        num_transfered_files = out.count('>')
+        if len(num_transfered_files) == 0:
             print('Good! There are no corrupt empty files on the server.')
             break
         else:
-            print('Corrected corrupt files at destination. Checking again...\n')
+            print('Corrected %d corrupt files at destination. Checking again...\n' % num_transfered_files)
 
         pass_number += 1
         if pass_number > max_retries:
