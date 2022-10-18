@@ -459,7 +459,7 @@ def main():
 
         #If there are no ">" with -i then nothing was sent
         num_transfered_files = out.count('>')
-        if len(num_transfered_files) == 0:
+        if num_transfered_files == 0:
             print('Good! There are no corrupt empty files on the server.')
             break
         else:
