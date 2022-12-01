@@ -1,2 +1,3 @@
-__version__ = "0.1.28"
 __author__ = "Rob Campbell"
+__name__="btpytools"
+__package__=__name__
