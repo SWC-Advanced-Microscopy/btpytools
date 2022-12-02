@@ -151,7 +151,10 @@ def available_downsampled_volumes(in_path="", verbose=False):
     # stacks are called. The following line can have two layers of wildcards.
     # e.g. downsampled_stacks/*_micron/ds_*.txt
     in_path = os.path.join(
-        in_path, DOWNSAMPLED_DIR, DOWNSAMPLED_STACK_SUB_DIR, DOWNSAMPLED_STACK_LOG_FILE
+        in_path,
+        DOWNSAMPLED_DIR,
+        DOWNSAMPLED_STACK_SUB_DIR,
+        DOWNSAMPLED_STACK_LOG_FILE,
     )
     paths_to_downsampled_stacks = glob(in_path)
 
@@ -210,7 +213,6 @@ def read_downsample_log_file(pathToFile=""):
     s = re.search(r".*_ch(0\d+)", pathToFile)
     out["channelindex"] = int(s.group(1))
 
-
     # Get the channel friendly name from the file name
     s = re.search(r".*_ch\d+_chan_\d_(.*)\.t", pathToFile)
     if s is not None:
@@ -261,7 +263,9 @@ def query_yes_no(question, default="yes"):
         elif choice in valid:
             return valid[choice]
         else:
-            sys.stdout.write("Please respond with 'yes' or 'no' " "(or 'y' or 'n').\n")
+            sys.stdout.write(
+                "Please respond with 'yes' or 'no' " "(or 'y' or 'n').\n"
+            )
 
 
 def in_tmux_session():
@@ -318,7 +322,9 @@ def get_dir_size_in_GB(t_path, fast_raw_data=False):
     size_in_bytes = sum(f.stat().st_size for f in t_path if f.is_file())
 
     if fast_raw_data:
-        size_in_bytes = size_in_bytes * 10  # Because we measured every 10th directory
+        size_in_bytes = (
+            size_in_bytes * 10
+        )  # Because we measured every 10th directory
         size_in_bytes = size_in_bytes * 1.03  # Because we skipped some directories
 
     return size_in_bytes / 1024**3
@@ -481,7 +487,8 @@ def make_reg_dir(simulate=False):
 
 
 def make_log_dir():
-    print('hello')
+    print("hello")
+
 
 def increment_char(t_char, increment_by=1):
     """

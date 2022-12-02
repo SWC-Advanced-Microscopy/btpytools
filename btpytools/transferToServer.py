@@ -42,45 +42,46 @@ def cli_parser():
         prog="transferToServer",
         description=dedent(
             """\
-                            Transfer BrainSaw data to a server mounted on the local machine
+        Transfer BrainSaw data to a server mounted on the local machine
 
-                            This function is a wrapper round rsync and is used for copying BakingTray
-                            data to a server. It automatically does not copy uncompressed raw data or
-                            the un-cropped stacks directory.
+        This function is a wrapper round rsync and is used for copying BakingTray
+        data to a server. It automatically does not copy uncompressed raw data or
+        the un-cropped stacks directory.
 
-                            Input arguments
-                            - one or more paths to local directories which are to be copied
-                            - the last path is the destination.
+        Input arguments
+        - one or more paths to local directories which are to be copied
+        - the last path is the destination.
 
 
-                            Usage examples:
+        Usage examples:
 
-                            1. Transfer one sample plus any compressed raw data:
-                               $ transferToServer ./XY_123 /mnt/datastor/user/path/
+        1. Transfer one sample plus any compressed raw data:
+           $ transferToServer ./XY_123 /mnt/datastor/
 
-                            2. Transfer a directory containing two samples (after cropping) plus any compressed raw data.
-                               You will be prompted whether you want the source data to be copied in the enclosing directory.
-                               $ transferToServer ./USER_sampleA_sampleB/ /mnt/datastor/user/path/
+        2. Transfer a directory containing two samples (after cropping) plus any
+           compressed raw data. You will be prompted whether you want the source data
+           to be copied in the enclosing directory.
+           $ transferToServer ./dataA_B/ /mnt/server/
 
-                               Note, this is the same as doing:
-                               $ transferToServer ./USER_sampleA_sampleB/sample1 ./USER_sampleA_sampleB/sample2 ./USER_sampleA_sampleB/rawData.tar.bz /mnt/datastor/user/path/
+           Note, this is the same as doing:
+           $ transferToServer ./dataA_B/sampA ./dataA_B/sampB ./dataA_B/rawData.tar.bz /mnt/server/
 
-                            3. Simulate the transfer of one sample
-                               $ transferToServer ./XY_123 /mnt/datastor/user/path/ -s
+        3. Simulate the transfer of one sample
+           $ transferToServer ./XY_123 /mnt/datastor/ -s
 
-                            4. Run with different rsync flags
-                               $ transferToServer ./XY_123 /mnt/datastor/user/path/ -r rv
+        4. Run with different rsync flags
+           $ transferToServer ./XY_123 /mnt/datastor/ -r rv
 
-                           """
+        """
         ),
         epilog=dedent(
             """\
-                        Notes
-                        If you have signed in via SSH and aren't in a tmux session, the function
-                        asks for confirmation before continuing. If your ssh session breaks off
-                        for some reason, then compression will fail. tmux is therefore recommended
-                        in this situation.
-                      """
+                Notes
+                If you have signed in via SSH and aren't in a tmux session, the function
+                asks for confirmation before continuing. If your ssh session breaks off
+                for some reason, then compression will fail. tmux is therefore recommended
+                in this situation.
+            """
         ),
     )
 
@@ -107,7 +108,10 @@ def cli_parser():
         required=False,
         default="av",
         type=str,
-        help='If supplied, this rsync flag is used. Default is "av". Other reasonable options include "rv".',
+        help=(
+            "If supplied, this rsync flag is used. "
+            'Default is "av". Other reasonable options include "rv".'
+        ),
     )
 
     return parser
@@ -334,7 +338,8 @@ def main():
 
     if len(args.paths) < 2:
         print(
-            "\n\n ERROR: transferToServer requires at least one local path to copy and a destination\n"
+            "\n\n ERROR: "
+            "transferToServer requires at least one local path to copy and a destination\n"
         )
         print(' See "transferToServer -h"\n')
         sys.exit()
@@ -391,7 +396,8 @@ def main():
             if os.path.exists(destination_path):
                 safe_to_copy = False
                 print(
-                    '===>>> WARNING!! "%s" already exists in "%s"!! Proceeding will over-write its contents <===='
+                    '===>>> WARNING!! "%s" already exists in "%s"!! '
+                    "Proceeding will over-write its contents <===="
                     % (t_dir, destination_dir)
                 )
         else:
@@ -404,7 +410,8 @@ def main():
                 if os.path.exists(destination_path):
                     safe_to_copy = False
                     print(
-                        '===>>> WARNING!! "%s" already exists in "%s"!! Proceeding will over-write its contents <===='
+                        '===>>> WARNING!! "%s" already exists in "%s"!! '
+                        "Proceeding will over-write its contents <===="
                         % (sub_dir, destination_dir)
                     )
 
@@ -437,19 +444,18 @@ def main():
     if not tools.query_yes_no(""):
         sys.exit()
 
-
     # Start the transfer and return standard output to the CLI
     os.system(cmd)
 
     # There are rare cases where the transfer of individual files failed and they became corrupt.
     # Here we see empty files in the destination, whereas in the source they are OK. Re-running the
     # transfer will fix these instances. So we do that here.
-    print('\nLooking for corrupted files in destination...\n')
+    print("\nLooking for corrupted files in destination...\n")
     max_retries = 10
     pass_number = 1
 
     # Alter the rsync command to add more information
-    cmd = cmd.replace('rsync -', 'rsync -i')
+    cmd = cmd.replace("rsync -", "rsync -i")
 
     while True:
         out = subprocess.check_output(cmd, shell=True)
@@ -457,18 +463,23 @@ def main():
         # Convert to a string
         out = out.decode()
 
-        #If there are no ">" with -i then nothing was sent
-        num_transfered_files = out.count('>')
+        # If there are no ">" with -i then nothing was sent
+        num_transfered_files = out.count(">")
         if num_transfered_files == 0:
-            print('Good! There are no corrupt empty files on the server.')
+            print("Good! There are no corrupt empty files on the server.")
             break
         else:
-            print('Corrected %d corrupt files at destination. Checking again...\n' % num_transfered_files)
+            print(
+                "Corrected %d corrupt files at destination. Checking again...\n"
+                % num_transfered_files
+            )
 
         pass_number += 1
         if pass_number > max_retries:
-            print('After %d attempts there still seem to be corrupt files on the server!' %
-                  max_retries)
+            print(
+                "After %d attempts there still seem to be corrupt files on the server!"
+                % max_retries
+            )
             break
 
 

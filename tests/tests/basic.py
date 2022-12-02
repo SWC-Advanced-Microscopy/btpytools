@@ -199,7 +199,9 @@ class TestTransferToServer(unittest.TestCase):
         self.assertFalse(tts.issue_warning_if_compressed_data_will_not_be_sent(t_1))
 
         # Should pass because specified dirs are in a directory with no compressed data
-        crop_no_comp_dat = join(DATA_DIR, "contains_data_subfolders_no_compress_data")
+        crop_no_comp_dat = join(
+            DATA_DIR, "contains_data_subfolders_no_compress_data"
+        )
         t_2 = [join(crop_no_comp_dat, "dir1"), join(crop_no_comp_dat, "dir2")]
         self.assertFalse(tts.issue_warning_if_compressed_data_will_not_be_sent(t_2))
 

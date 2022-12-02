@@ -16,7 +16,8 @@ classifiers=[
     "Intended Audience :: Science/Research"
     ]
 dependencies = [
-    "pyyaml"
+    "pyyaml",
+     "types-PyYAML"
     ]
 
 
@@ -39,6 +40,8 @@ build-backend = "setuptools.build_meta"
 # the software but not tools that are needed to run it. 
 [project.optional-dependencies]
 dev = [
+    "ipython",
+    "mypy",
     "pytest",
     "setuptools_scm",
     "black",
@@ -68,6 +71,11 @@ exclude = '''
   )/
 )
 '''
+
+[tool.mypy]
+#Crude way of not getting errors due to brainreg not being imported. Nothing else works
+#exclude="btpytools/brainreg_bt"
+ignore_missing_imports = true
 
 
 
