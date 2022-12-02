@@ -74,7 +74,6 @@ exclude = '''
 
 [tool.mypy]
 #Crude way of not getting errors due to brainreg not being imported. Nothing else works
-#exclude="btpytools/brainreg_bt"
 ignore_missing_imports = true
 
 
