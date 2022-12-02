@@ -1,6 +1,11 @@
 # StitchIt Python Tools
 
-The directory contains Python code for managing BakingTray serial-section 2p data.
+[![PyPI](https://img.shields.io/pypi/v/btpytools.svg?color=green)](https://pypi.org/project/btpytools)
+[![Python Version](https://img.shields.io/pypi/pyversions/btpytools.svg?color=green)](https://python.org)
+[![License GNU GPL v3.0](https://img.shields.io/pypi/l/btpytools.svg?color=green)](https://github.com/SainsburyWellcomeCentre/btpytools/raw/main/LICENSE)
+
+
+This package contains Python code for managing BakingTray serial-section 2p data.
 The main functions of interest are `compressRawData.py` and `transferToServer.py`, which are aimed at end users of the microscope. 
 The `recipe.py` and `tools.py` modules support these and are aimed at developers. 
 

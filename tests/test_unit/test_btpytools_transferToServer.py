@@ -142,7 +142,7 @@ class TestTransferToServer(unittest.TestCase, btpytools_test):
 
     def test_compressed_data_warning_with_normal_call_structure(self):
         """
-        Test whether a normal call structure (e.g. a cropped roor dir) will trigger no error
+        Test whether a normal call structure (e.g. a cropped root dir) will trigger no error
         """
 
         self.assertFalse(
@@ -165,18 +165,23 @@ class TestTransferToServer(unittest.TestCase, btpytools_test):
         The user might mix and match individually specified directories with "normal" directories.
         Check these cases: when in doubt we just want to flag it.
         """
+
+        # f_1 is two individually specified directories aand then after a valid sample dir
         f_1 = [
             join(self.CROPPED_ACQ_DIR1, "dir1"),
             join(self.CROPPED_ACQ_DIR1, "dir2"),
             self.VALID_SAMPLE_DIR1,
         ]
 
+        # f_2 is a valid sample dir and *then* two individually specified directories
         f_2 = [
             self.VALID_SAMPLE_DIR1,
             join(self.CROPPED_ACQ_DIR1, "dir1"),
             join(self.CROPPED_ACQ_DIR1, "dir2"),
         ]
-        self.assertTrue(tts.issue_warning_if_compressed_data_will_not_be_sent(f_1))
+        self.assertTrue(
+            tts.issue_warning_if_compressed_data_will_not_be_sent(f_1, verbose=False)
+        )
         self.assertTrue(
             tts.issue_warning_if_compressed_data_will_not_be_sent(f_2, verbose=True)
         )
