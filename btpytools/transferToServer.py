@@ -267,6 +267,7 @@ def dir_list_contains_compressed_archive(source_dirs, dir_root=""):
     if len(dir_root) > 0:
         r_ex = re.compile(dir_root)
         source_dirs = list(filter(r_ex.match, source_dirs))
+        print(source_dirs)
 
     compressed_archives = [
         x
@@ -495,7 +496,8 @@ def main():
         destination_dir,
     )
 
-    print("Using command %s" % cmd)
+    print("")
+
     if not tools.query_yes_no(""):
         sys.exit()
 
