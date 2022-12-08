@@ -265,7 +265,7 @@ def dir_list_contains_compressed_archive(source_dirs, dir_root=""):
 
     # Filter list if needed. This will remove everything that does not match dir_root
     if len(dir_root) > 0:
-        r_ex = re.compile(dir_root + ".*")
+        r_ex = re.compile(dir_root)
         source_dirs = list(filter(r_ex.match, source_dirs))
 
     compressed_archives = [
