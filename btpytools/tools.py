@@ -146,6 +146,7 @@ def contains_data_folders(dirToTest, verbose=False):
 
         if verbose:
             print('Testing if "%s" is a data folder: ' % path_to_test, end="")
+
         if is_data_folder(path_to_test):
             if verbose:
                 print("YES")
@@ -153,8 +154,13 @@ def contains_data_folders(dirToTest, verbose=False):
 
         else:
             if verbose:
-                print("NO\nDirectory contents are:")
-                os.listdir(path_to_test)
+                print("NO")
+                dir_contents = os.listdir(path_to_test)
+                if len(dir_contents) == 0:
+                    print("Directory is empty")
+                else:
+                    print("Directory contents:")
+                    print(dir_contents)
 
     # If we're here then there are no data-containing subdirs
     return False
