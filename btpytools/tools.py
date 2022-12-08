@@ -142,7 +142,7 @@ def contains_data_folders(dirToTest, verbose=False):
             return False
 
         if verbose:
-            print('Testing if "%s" is a data folder: ', end="")
+            print('Testing if "%s" is a data folder: ' % path_to_test, end="")
         if is_data_folder(path_to_test):
             if verbose:
                 print("YES")
