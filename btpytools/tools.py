@@ -176,7 +176,6 @@ def read_downsample_log_file(pathToFile=""):
     no data are found in the defined path or multiple paths were supplied.
     """
 
-    print("READING FILE %s" % pathToFile)
     if len(pathToFile) < 1:
         return False
     elif isinstance(pathToFile, list) and len(pathToFile) == 1:
