@@ -201,6 +201,11 @@ def choose_vox_size(default, args):
             "(Enter a number and press return)\n"
         )
         n = 1
+
+        # Find the index the corresponds to the default voxel size. If this is missing,
+        # we choose the first found voxel size as the default
+        default_index = 0
+
         for t_vox in unique_voxel_sizes:
             msg += "%d. %d micron\n" % (n, t_vox)
             if default == t_vox:
