@@ -124,6 +124,7 @@ def is_data_folder(dirToTest=""):
         or has_compressed_raw_data(dirToTest)
     ):
         return True
+
     else:
         return False
 
@@ -133,8 +134,10 @@ def contains_data_folders(dirToTest, verbose=False):
     BakingTray data folders.
     """
     subDirs = next(os.walk(dirToTest))[1]
+
     if len(subDirs) == 0:
         return False
+
     for tDir in subDirs:
         path_to_test = os.path.join(dirToTest, tDir)
         if not os.path.exists(path_to_test):
@@ -147,9 +150,11 @@ def contains_data_folders(dirToTest, verbose=False):
             if verbose:
                 print("YES")
             return True
+
         else:
             if verbose:
-                print("NO")
+                print("NO\nDirectory contents are:")
+                os.listdir(path_to_test)
 
     # If we're here then there are no data-containing subdirs
     return False
