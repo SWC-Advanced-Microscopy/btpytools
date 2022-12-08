@@ -19,9 +19,10 @@ class TestTools(unittest.TestCase, btpytools_test):
 
     def test_valid_directory_is_valid(self):
         """
-        Confirm that folder defined by VALID_SAMPLE_DIR1 is indeed valid
+        Confirm that folder defined by VALID_SAMPLE_DIR1 is indeed a valid data folder
         """
         self.assertTrue(tools.is_data_folder(self.VALID_SAMPLE_DIR1))
+        self.assertTrue(tools.is_data_folder(join(self.CROPPED_ACQ_DIR1, "dir2")))
 
     def test_has_raw_data(self):
         """
