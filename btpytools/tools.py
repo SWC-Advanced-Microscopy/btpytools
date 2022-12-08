@@ -249,7 +249,7 @@ def read_downsample_log_file(pathToFile=""):
     out["acqdate"] = s.group(1)
 
     # Get the voxel size from the directory name
-    s = re.search(r".*" + os.sep + r"(\d+)_micron" + os.sep, pathToFile)
+    s = re.search(r".*(\d+)_micron", pathToFile)
     out["voxelsize"] = int(s.group(1))
 
     # Get the channel index from the file name
