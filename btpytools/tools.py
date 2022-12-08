@@ -113,6 +113,10 @@ def is_data_folder(dirToTest=""):
      - contains one of: stitchedImages directory, stitched stacks,
                      rawData directory, compressed rawData
     """
+    if not os.path.exists(dirToTest):
+        print("Directory %s does not exist!" % dirToTest)
+        return False
+
     if (has_recipe_file(dirToTest) and has_scan_settings(dirToTest)) and (
         has_stitched_stacks(dirToTest)
         or has_stitched_images_directory(dirToTest)
@@ -124,7 +128,7 @@ def is_data_folder(dirToTest=""):
         return False
 
 
-def contains_data_folders(dirToTest):
+def contains_data_folders(dirToTest, verbose=False):
     """returns true if dirToTest contains sub-directories that are
     BakingTray data folders.
     """
@@ -132,8 +136,20 @@ def contains_data_folders(dirToTest):
     if len(subDirs) == 0:
         return False
     for tDir in subDirs:
-        if is_data_folder(os.path.join(dirToTest, tDir)):
+        path_to_test = os.path.join(dirToTest, tDir)
+        if not os.path.exists(path_to_test):
+            print("Directory %s does not exist!" % path_to_test)
+            return False
+
+        if verbose:
+            print('Testing if "%s" is a data folder: ', end="")
+        if is_data_folder(path_to_test):
+            if verbose:
+                print("YES")
             return True
+        else:
+            if verbose:
+                print("NO")
 
     # If we're here then there are no data-containing subdirs
     return False

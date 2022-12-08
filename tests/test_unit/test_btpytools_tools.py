@@ -78,7 +78,9 @@ class TestTools(unittest.TestCase, btpytools_test):
         """
         Confirm that folder contains sub-folders that are data folders
         """
-        self.assertTrue(tools.contains_data_folders(self.CROPPED_ACQ_DIR1))
+        self.assertTrue(
+            tools.contains_data_folders(self.CROPPED_ACQ_DIR1, verbose=True)
+        )
 
     def test_contains_two_downsampled_dirs(self):
         """
