@@ -25,7 +25,7 @@ REG_DIR_REGEX = r"reg_\d{2}__\d{4}_\d{2}_\d{2}_\w"
 
 
 def has_raw_data(t_path=""):
-    """Check if current directory (or that defined by t_path) contains a
+    """Check if current directory (or that defined by t_path contains a
     rawData directory. Returns True if present, False if absent.
     """
     t_path = os.path.join(t_path, RAW_DATA_DIR)
@@ -33,7 +33,7 @@ def has_raw_data(t_path=""):
 
 
 def has_compressed_raw_data(t_path=""):
-    """Check if current directory (or that defined by t_path) has
+    """Check if current directory (or that defined by t_path has
     compressed raw data. Returns True if present, False if absent
     """
     t_path = os.path.join(t_path, "*rawData*.tar.[gb]z")
@@ -41,7 +41,7 @@ def has_compressed_raw_data(t_path=""):
 
 
 def has_recipe_file(t_path=""):
-    """Check if current directory (or that defined by t_path) contains
+    """Check if current directory (or that defined by t_path contains
     a recipe file. Returns True if present, False if absent.
     """
     t_path = os.path.join(t_path, RECIPE_WILDCARD)
@@ -49,7 +49,7 @@ def has_recipe_file(t_path=""):
 
 
 def has_scan_settings(t_path=""):
-    """Check if current directory (or that defined by t_path) contains
+    """Check if current directory (or that defined by t_path contains
     a scanSettings.mat file. Returns True if present, False if absent.
     """
     t_path = os.path.join(t_path, "scanSettings.mat")
@@ -57,7 +57,7 @@ def has_scan_settings(t_path=""):
 
 
 def has_stitched_images_directory(t_path=""):
-    """Check if current directory (or that defined by t_path) contains a
+    """Check if current directory (or that defined by t_path contains a
     stitched image directory Returns True if present, False if absent.
     """
     t_path = os.path.join(t_path, STITCHED_IMAGE_DIR)
@@ -65,7 +65,7 @@ def has_stitched_images_directory(t_path=""):
 
 
 def has_stitched_stacks(t_path=""):
-    """Check if current directory (or that defined by t_path) contains
+    """Check if current directory (or that defined by t_path contains
     stitched tiff stacks. Returns True if present, False if absent.
     """
     t_path = os.path.join(t_path, "./*_chan_0[1-9].tiff")
@@ -73,7 +73,7 @@ def has_stitched_stacks(t_path=""):
 
 
 def has_downsampled_stacks(t_path="", verbose=False):
-    """Check if current directory (or that defined by t_path) contains a
+    """Check if current directory (or that defined by t_path contains a
     downsampled_stacks directory. Returns True if present, False if absent.
     """
 
@@ -105,7 +105,7 @@ def has_uncropped_stitched_images(t_path=""):
     return file_glob_exist(t_path)
 
 
-def is_data_folder(dirToTest=""):
+def is_data_folder(dirToTest="", verbose=False):
     """is directory "dirToTest" a BakingTray data directory?
     i.e. it satisfies the following criteria:
      - contains a recipe YML
@@ -117,6 +117,11 @@ def is_data_folder(dirToTest=""):
         print("Directory %s does not exist!" % dirToTest)
         return False
 
+    if verbose:
+        print('Testing if directory "%s" is a valid sample directory.' % dirToTest)
+        print("Directory contents:")
+        print(os.listdir(dirToTest))
+
     if (has_recipe_file(dirToTest) and has_scan_settings(dirToTest)) and (
         has_stitched_stacks(dirToTest)
         or has_stitched_images_directory(dirToTest)
@@ -126,6 +131,18 @@ def is_data_folder(dirToTest=""):
         return True
 
     else:
+        if verbose:
+            print("Test directory is not a data folder:")
+            print("Has recipe: %s" % has_recipe_file(dirToTest))
+            print("Has scan settings: %s" % has_scan_settings(dirToTest))
+            print("Has stitched stacks: %s" % has_stitched_stacks(dirToTest))
+            print(
+                "Has stitched images directory: %s"
+                % has_stitched_images_directory(dirToTest)
+            )
+            print("Has raw data: %s" % has_raw_data(dirToTest))
+            print("Has compressed raw data: %s" % has_compressed_raw_data(dirToTest))
+
         return False
 
 
@@ -167,7 +184,7 @@ def contains_data_folders(dirToTest, verbose=False):
 
 
 def available_downsampled_volumes(in_path="", verbose=False):
-    """Check if current directory (or that defined by t_path) contains a ownsampled stacks
+    """Check if current directory (or that defined by t_path contains a ownsampled stacks
     directory and returns a list of dictionaries listing the available downsampled data.
     If none are present returns False.
     """
