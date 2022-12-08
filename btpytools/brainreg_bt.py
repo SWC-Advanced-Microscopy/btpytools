@@ -74,6 +74,7 @@ def main():
     # Run the registration using brainreg
     args, additional_images_downsample = cli.prep_registration(args)
 
+    # This is the registration function from brainreg
     register(
         atlas_name,
         args.orientation,
@@ -81,6 +82,7 @@ def main():
         args.brainreg_directory,
         args.voxel_sizes,
         arg_groups["NiftyReg registration backend options"],
+        arg_groups["Pre-processing options"],
         sort_input_file=args.sort_input_file,
         n_free_cpus=args.n_free_cpus,
         additional_images_downsample=additional_images_downsample,
