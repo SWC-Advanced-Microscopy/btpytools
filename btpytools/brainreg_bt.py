@@ -14,10 +14,8 @@ $ brainreg_bt
 This function is automatically added as a console-accessible command during pip install
 """
 
-import os
 import argparse
-import re
-from btpytools import tools, recipe
+from btpytools import tools
 from brainreg.paths import Paths
 from brainreg.main import main as register
 from brainreg import cli
@@ -198,7 +196,10 @@ def choose_vox_size(default, args):
     msg = ""
     if run_cli_ui:
 
-        msg = "Select downsampled stack voxel size for registration.\n(Enter a number and press return)\n"
+        msg = (
+            "Select downsampled stack voxel size for registration.\n"
+            "(Enter a number and press return)\n"
+        )
         n = 1
         for t_vox in unique_voxel_sizes:
             msg += "%d. %d micron\n" % (n, t_vox)

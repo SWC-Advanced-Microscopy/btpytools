@@ -132,7 +132,8 @@ def main():
     # If there is no recipe file in the current directory, look for one in the cropped data dir.
     # if also that is missing, we use as the
 
-    copy_files_from_uncropped = False  # Do we need to temporarily copy settings files out of the uncropped data dir?
+    # Do we need to temporarily copy settings files out of the uncropped data dir?
+    copy_files_from_uncropped = False
 
     if tools.has_recipe_file():
         sample_name = recipe.sample_id()
@@ -169,8 +170,9 @@ def main():
             print("Not proceeding with compression.\n")
             sys.exit()
 
-    # We will also copy metadata
-    meta_data_file_names = "scanSettings.mat *.yml *.txt *.ini"  # wildcards for files other than raw data that we will compress
+    # We will also copy metadata: the following are # wildcards for files other than raw data that
+    # we will compress
+    meta_data_file_names = "scanSettings.mat *.yml *.txt *.ini"
 
     # Check whether we have lbzip2 and use it if so
     out = os.system("lbzip2 -h > /dev/null")
@@ -184,7 +186,10 @@ def main():
         tar_switches = "-zcvf"
         compressed_rawdata_name = sample_name + "_rawData.tar.gz"
         print(
-            "\n\n** WARNING -- parallel compression tool lbzip2 not found. Using much slower single-threaded gzip.\n\n"
+            [
+                "\n\n** WARNING -- parallel compression tool lbzip2 not found. "
+                "Using much slower single-threaded gzip.\n\n"
+            ]
         )
         time.sleep(3)
 
@@ -210,8 +215,8 @@ def main():
         # Run the compression command
         os.system(compress_cmd)
 
-        # If needed, remove the files that we added. The following is slightly dangerous, but if normal
-        # usage there should be no problem with the wild card delete.
+        # If needed, remove the files that we added. The following is slightly dangerous, but if
+        # normal usage there should be no problem with the wild card delete.
 
         if copy_files_from_uncropped:
             print("\nTidying up temporarily copied files")

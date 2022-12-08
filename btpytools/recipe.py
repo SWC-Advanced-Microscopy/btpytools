@@ -17,7 +17,7 @@ def read_recipe(dirToSearch=""):
     if len(dirToSearch) == 0:
         dirToSearch = os.getcwd()
 
-    if tools.has_recipe_file(dirToSearch) == False:
+    if tools.has_recipe_file(dirToSearch) is False:
         print("No recipe file found in", dirToSearch)
         return 0
 

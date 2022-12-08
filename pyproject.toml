@@ -1,0 +1,88 @@
+[project]
+name = "btpytools"
+authors = [{name="Rob Campbell"}]
+description="Helper functions for BakingTray and StitchIt"
+readme="README.md"
+requires-python = ">=3.6.0"
+dynamic = ["version"]
+license = {text = "GPL-3.0-or-later"} # Can also provide a link with file =  (the standard licences have abbreviations)
+keywords = ["anatomy","image analysis","data handling"]
+classifiers=[
+    "Natural Language :: English", 
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "License :: Free for non-commercial use",
+    "Programming Language :: Python",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research"
+    ]
+dependencies = [
+    "pyyaml",
+     "types-PyYAML",
+     "termcolor"
+    ]
+
+
+[project.urls]
+repository = "https://github.com/SainsburyWellcomeCentre/btpytools"
+
+[build-system]
+requires = [
+    "setuptools>=45",
+    "wheel",
+    "setuptools_scm[toml]>=6.2",
+]
+
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+
+
+# github actions will look in these. these are the tools that we need to work with
+# the software but not tools that are needed to run it. 
+[project.optional-dependencies]
+dev = [
+    "ipython",
+    "mypy",
+    "pytest",
+    "setuptools_scm",
+    "black",
+    "flake8",
+    "pre-commit"
+]
+register = [
+    "brainreg"
+    ]
+
+
+
+[tool.black]
+target-version = ['py36','py37','py38', 'py39', 'py310']
+skip-string-normalization = false
+line-length = 85
+exclude = '''
+(
+  /(
+      \.eggs
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | _build
+    | build
+    | dist
+  )/
+)
+'''
+
+[tool.mypy]
+#Crude way of not getting errors due to brainreg not being imported. Nothing else works
+ignore_missing_imports = true
+
+
+
+# Finally we define the "entry points" or "console scripts"
+[project.scripts]
+summariseAcqs="btpytools.summariseAcquisitions:main"
+compressRawData="btpytools.compressRawData:main"
+transferToServer="btpytools.transferToServer:main"
+brainregbt="btpytools.brainreg_bt:main"
+add_nums = "pythonator_123.amazing_function:main"
