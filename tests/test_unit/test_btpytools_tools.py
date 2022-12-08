@@ -22,9 +22,7 @@ class TestTools(unittest.TestCase, btpytools_test):
         Confirm that folder defined by VALID_SAMPLE_DIR1 is indeed a valid data folder
         """
         self.assertTrue(tools.is_data_folder(self.VALID_SAMPLE_DIR1))
-        self.assertTrue(
-            tools.is_data_folder(join(self.CROPPED_ACQ_DIR1, "dir2"), verbose=True)
-        )
+        self.assertTrue(tools.is_data_folder(join(self.CROPPED_ACQ_DIR1, "dir2")))
 
     def test_has_raw_data(self):
         """
@@ -81,9 +79,7 @@ class TestTools(unittest.TestCase, btpytools_test):
         """
         Confirm that folder contains sub-folders that are data folders
         """
-        self.assertTrue(
-            tools.contains_data_folders(self.CROPPED_ACQ_DIR1, verbose=True)
-        )
+        self.assertTrue(tools.contains_data_folders(self.CROPPED_ACQ_DIR1))
 
     def test_contains_two_downsampled_dirs(self):
         """
