@@ -164,11 +164,10 @@ def user_specified_cropped_directories_individually(source_dirs, verbose=False):
 
     # If the list is only one directory long (or is a string) then we still need to check if it
     # is a cropped directory before deciding for sure wether to return True or False.
-    if (
-        isinstance(source_dirs, str)
-        or isinstance(source_dirs, list)
-        and len(source_dirs) == 1
-    ):
+    if isinstance(source_dirs, list) and len(source_dirs) == 1:
+        source_dirs = source_dirs[0]
+
+    if isinstance(source_dirs, str):
         if tools.has_compressed_raw_data(os.path.split(source_dirs)[0]):
             # Parent directory contains a compressed archive. This makes it
             # likely this was a cropped directory and that the user could
@@ -485,6 +484,19 @@ def main():
     if not safe_to_copy:
         print("\n IS IT OK TO PROCEED DESPITE THE ABOVE WARNINGS?")
         if not tools.query_yes_no(""):
+            sys.exit()
+
+    # Check whether the user is maybe failing to copy raw data
+
+    if issue_warning_if_compressed_data_will_not_be_sent(source_dirs):
+        print(
+            "\nYou have specified directories individually and have omitted to "
+            "ask for existing compressed raw data to be sent!"
+        )
+        print("Please see the readme at: https://pypi.org/project/btpytools/")
+        if not tools.query_yes_no(
+            "Are you sure you want to continue?", default="no"
+        ):
             sys.exit()
 
     # Ask for confirmation before starting
