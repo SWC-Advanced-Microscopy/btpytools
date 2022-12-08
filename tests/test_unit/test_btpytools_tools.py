@@ -90,3 +90,16 @@ class TestTools(unittest.TestCase, btpytools_test):
             self.VALID_SAMPLE_DIR1, verbose=True
         )
         self.assertTrue(len(out) == 4)
+
+    def test_downsample_dir_read_voxel_size(self):
+        """
+        Tests whether we can correctly read the unique voxel size from all downsampled stacks
+        in a folder.
+        """
+        ds_stacks = tools.available_downsampled_volumes(self.VALID_SAMPLE_DIR1)
+        extracted_unique_voxel_size = list(set([x["voxelsize"] for x in ds_stacks]))
+        extracted_unique_voxel_size.sort()
+
+        expected_voxel_sizes = [25, 50]
+
+        self.assertTrue(extracted_unique_voxel_size == expected_voxel_sizes)

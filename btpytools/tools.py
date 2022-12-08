@@ -113,6 +113,10 @@ def is_data_folder(dirToTest="", verbose=False):
      - contains one of: stitchedImages directory, stitched stacks,
                      rawData directory, compressed rawData
     """
+
+    if len(dirToTest) == 0:
+        dirToTest = os.getcwd()
+
     if not os.path.exists(dirToTest):
         print("Directory %s does not exist!" % dirToTest)
         return False
@@ -249,7 +253,7 @@ def read_downsample_log_file(pathToFile=""):
     out["acqdate"] = s.group(1)
 
     # Get the voxel size from the directory name
-    s = re.search(r".*(\d+)_micron", pathToFile)
+    s = re.search(r".*(\d{3})_micron", pathToFile)
     out["voxelsize"] = int(s.group(1))
 
     # Get the channel index from the file name
