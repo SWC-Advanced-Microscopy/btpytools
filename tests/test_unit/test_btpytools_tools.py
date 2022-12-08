@@ -83,8 +83,8 @@ class TestTools(unittest.TestCase, btpytools_test):
 
     def test_contains_two_downsampled_dirs(self):
         """
-        Confirm that the downsampled stacks directory in the valid sample has two downsampled
-        stacks
+        Confirm that the downsampled stacks directory in the valid sample has four downsampled
+        stacks: two channels by two resolutions
         """
         out = tools.available_downsampled_volumes(
             self.VALID_SAMPLE_DIR1, verbose=True
