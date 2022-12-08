@@ -6,7 +6,7 @@ or simply run pytest to run all tests
 
 
 import unittest
-from os.path import join
+from os.path import join, split
 from btpytools import transferToServer as tts
 from btpytools_test import btpytools_test
 
@@ -38,9 +38,19 @@ class TestTransferToServer(unittest.TestCase, btpytools_test):
             "dir_b",
             "dir1/dir2/stuff_rawData.tar.bz",
         ]
+        a_4 = [
+            "tests/data/contains_data_subfolders_01/dir1",
+            "tests/data/contains_data_subfolders_01/dir1",
+            "tests/data/contains_data_subfolders_01/compressed_rawData.tar.bz",
+        ]
+
         self.assertTrue(tts.dir_list_contains_compressed_archive(a_1))
         self.assertTrue(tts.dir_list_contains_compressed_archive(a_2))
         self.assertTrue(tts.dir_list_contains_compressed_archive(a_3))
+        self.assertTrue(tts.dir_list_contains_compressed_archive(a_4))
+        self.assertTrue(
+            tts.dir_list_contains_compressed_archive(a_4, split(a_4[0])[0])
+        )
 
     def test_dir_list_not_contains_compressed_archive(self):
         """
@@ -49,9 +59,12 @@ class TestTransferToServer(unittest.TestCase, btpytools_test):
         b_1 = ["dir1/dir2", "dir_a", "dir_b"]
         b_2 = ["dir1/dir2/stuff_rawData.tar", "dir_a", "dir_b"]
         b_3 = ["dir1/dir2/stuff_rawData", "dir_a", "dir_b", "dir1/dir2/rawData"]
+        # b_4 has a compressed archive but it is in a different path so we want to return false
+        b_4 = ["./s_dir/sample1", "./s_dir/sample2", "OTHER_DIR/rawData.tar.bz"]
         self.assertFalse(tts.dir_list_contains_compressed_archive(b_1))
         self.assertFalse(tts.dir_list_contains_compressed_archive(b_2))
         self.assertFalse(tts.dir_list_contains_compressed_archive(b_3))
+        self.assertFalse(tts.dir_list_contains_compressed_archive(b_4, "./s_dir"))
 
     def test_user_specified_two_individual_dirs(self):
         """
@@ -131,7 +144,9 @@ class TestTransferToServer(unittest.TestCase, btpytools_test):
             join(self.CROPPED_ACQ_DIR1, "compressed_rawData.tar.bz"),
         ]
 
-        self.assertFalse(tts.issue_warning_if_compressed_data_will_not_be_sent(t_1))
+        self.assertFalse(
+            tts.issue_warning_if_compressed_data_will_not_be_sent(t_1, verbose=True)
+        )
 
         # Should pass because specified dirs are in a directory with no compressed data
         crop_no_comp_dat = join(

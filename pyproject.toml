@@ -17,7 +17,8 @@ classifiers=[
     ]
 dependencies = [
     "pyyaml",
-     "types-PyYAML"
+     "types-PyYAML",
+     "termcolor"
     ]
 
 
@@ -55,7 +56,7 @@ register = [
 
 
 [tool.black]
-target-version = ['py36','py37','py38', 'py39', 'py310', 'py311']
+target-version = ['py36','py37','py38', 'py39', 'py310']
 skip-string-normalization = false
 line-length = 85
 exclude = '''

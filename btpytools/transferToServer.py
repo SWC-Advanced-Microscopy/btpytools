@@ -30,6 +30,7 @@ import sys
 import subprocess
 from textwrap import dedent  # To remove common leading white-space
 from btpytools import tools
+from termcolor import colored
 
 
 def cli_parser():
@@ -226,21 +227,46 @@ def user_specified_cropped_directories_individually(source_dirs, verbose=False):
     return True
 
 
-def dir_list_contains_compressed_archive(source_dirs):
+def dir_list_contains_compressed_archive(source_dirs, dir_root=""):
     """
     Does the directory list in source_dirs contain at least one compressed raw data archive? The
-    lack of a compressed archive in this list does not meant the compressed raw data are not going
+    lack of a compressed archive in this list does not mean the compressed raw data are not going
     to be sent. It just reflects whether or not the user has explicitly asked to send the data.
 
     This function is used in conjunction with others to determine whether there is a chance that
     the user is accidentally failing to back up compressed raw data.
 
+    Function looks for a tar.bz or tar.gz archive
+
     Inputs:
     source_dirs - a list of source directories
+    dir_root -  Optional. Empty by default. If present, dir_root restricts the search to only dirs
+                that match. See below for examples.
 
     Outputs
     True means the directory list in source_dirs contains a raw data archive. False otherwise.
+
+    Examples
+    source_dirs = ['./sample_dir/sample1', './sample_dir/sample2']
+    dir_list_contains_compressed_archive(source_dirs)  # Returns False
+
+
+    source_dirs = ['./sample_dir/sample1', './sample_dir/sample2', 'sample_dir/rawData.tar.bz']
+    dir_list_contains_compressed_archive(source_dirs)  # Returns True
+
+
+    source_dirs = ['./sample_dir/sample1', './sample_dir/sample2', 'OTHER_DIR/rawData.tar.bz']
+    dir_list_contains_compressed_archive(source_dirs)  # Returns True
+
+
+    source_dirs = ['./sample_dir/sample1', './sample_dir/sample2', 'OTHER_DIR/rawData.tar.bz']
+    dir_list_contains_compressed_archive(source_dirs, './sample_dir'')  # Returns False
     """
+
+    # Filter list if needed. This will remove everything that does not match dir_root
+    if len(dir_root) > 0:
+        r_ex = re.compile(dir_root + ".*")
+        source_dirs = list(filter(r_ex.match, source_dirs))
 
     compressed_archives = [
         x
@@ -265,29 +291,58 @@ def issue_warning_if_compressed_data_will_not_be_sent(source_dirs, verbose=False
         if verbose:
             print("Directories not specified individually")
 
-        return False
+        return False  # False, nothing is wrong
 
-    # If we are here, there are indivually specified directories
+    # If we are here, there are individually specified directories
     if verbose:
         print("Individually specified directories found")
 
     # If the user specified the directories individually we are still "safe" so long as either
     # a) They included the compressed archive in the transfer list (source_dirs).
-    # b) There is no compressed archive (meaning the user does not want to back up raw data)
-    if dir_list_contains_compressed_archive(source_dirs):
-        if verbose:
-            print("List contains a compressed archive")
-        return False
+    # b) There is no compressed archive (so the user probably does not want to back up raw data)
+    # Go through each directory in the list and confirm the above
 
-    # Go through each directory in the list. If it is The following
-    dir_to_test = os.path.split(source_dirs[0])[0]
-    if not tools.has_compressed_raw_data(dir_to_test):
-        if verbose:
-            print("No raw data archive found in directory %s" % dir_to_test)
-        return False
+    return_state = (
+        False  # False, nothing is wrong (unless the loop below modifies this)
+    )
+    for t_dir in source_dirs:
+        if not os.path.isdir(t_dir):
+            # Skip if this is not a directory (e.g. it's a raw data archive)
+            if verbose:
+                print("%s is not a directory: skipping it" % t_dir)
+            continue
 
-    # If we are here, there could be compressed raw data that are not being sent
-    return True
+        print(t_dir, end="")
+
+        parent_dir = os.path.split(t_dir)[0]  # convenience
+
+        if tools.has_compressed_raw_data(t_dir):
+            # If true the directory itself contains compressed data.
+            print(colored(" has compressed raw data", "green"))
+        elif dir_list_contains_compressed_archive(source_dirs, parent_dir):
+            # If true, the directory is a split sample and the user has also specified that
+            # they want the raw data to be sent.
+            print(
+                colored(
+                    " is a split sample and compressed raw data are being sent",
+                    "green",
+                )
+            )
+        elif not dir_list_contains_compressed_archive(
+            source_dirs, parent_dir
+        ) and tools.has_compressed_raw_data(parent_dir):
+            # This sample contains no raw data directory within it, the user did not specify
+            # raw data but there *is* raw data in its parent directory. This means the user
+            # intended to send the data but is not doing so.
+            print(
+                colored(
+                    " is a split sample with raw data that are not being sent!",
+                    "red",
+                )
+            )
+            return_state = True  # We have a problem
+
+    return return_state
 
 
 def remove_single_samples_from_list(source_dirs, verbose=False):
@@ -297,7 +352,7 @@ def remove_single_samples_from_list(source_dirs, verbose=False):
     """
 
     if not isinstance(source_dirs, list):
-        return
+        return False
 
     # Remove everything from the list that is not a directory
     source_dirs = [x for x in source_dirs if os.path.isdir(x)]
@@ -360,12 +415,12 @@ def main():
         sys.exit()
 
     # Remove trailing slash from data directories that don't contain data sub-directories
-    for ii, t_dir in enumerate(source_dirs):
+    for _ii, t_dir in enumerate(source_dirs):
         if tools.is_data_folder(t_dir) and not tools.contains_data_folders(t_dir):
             # If here, tDIR is a sample folder without sub-folders. If there is a
             # trailing slash then we should delete it. Always.
             if t_dir[-1] == os.path.sep:
-                source_dirs[ii] = t_dir[0:-1]
+                source_dirs[_ii] = t_dir[0:-1]
 
         elif tools.contains_data_folders(t_dir):
             # If here, tDIR contains sub-folders which are sample folders. Thus is likely
@@ -373,7 +428,7 @@ def main():
             # user the option to add it back, copying the *contents* to the destination
             # rather than in the enclosing folder.
             if t_dir[-1] == os.path.sep:
-                source_dirs[ii] = t_dir[0:-1]
+                source_dirs[_ii] = t_dir[0:-1]
 
             print('\nDirectory "%s" contains multiple samples.' % t_dir)
             print(
@@ -382,13 +437,13 @@ def main():
             )
             if not tools.query_yes_no(""):
                 # Add trailing slash, if user does not want to keep enclosing folder.
-                source_dirs[ii] = source_dirs[ii] + os.path.sep
+                source_dirs[_ii] = source_dirs[_ii] + os.path.sep
 
     print("")
 
     # Check whether any of the directories we plan to copy already exist at the destination
     safe_to_copy = True
-    for ii, t_dir in enumerate(source_dirs):
+    for _ii, t_dir in enumerate(source_dirs):
 
         if t_dir[-1] != os.path.sep:
             # Look for this directory at the destination
@@ -403,7 +458,7 @@ def main():
         else:
             # Look for the *contents* of this directory at the destination
             dir_contents = os.listdir(t_dir)
-            for jj, sub_dir in enumerate(dir_contents):
+            for _jj, sub_dir in enumerate(dir_contents):
                 if sub_dir == "rawData" or "_DELETE_ME" in sub_dir:
                     continue
                 destination_path = os.path.join(destination_dir, sub_dir)
@@ -422,12 +477,12 @@ def main():
 
     # Ask for confirmation before starting
     print("\nPerform the following transfer?")
-    for ii, t_dir in enumerate(source_dirs):
+    for _ii, t_dir in enumerate(source_dirs):
         if t_dir[-1] != os.path.sep:
             print('Copy directory "%s" to location "%s"' % (t_dir, destination_dir))
         else:
             dir_contents = os.listdir(t_dir)
-            for jj, sub_contents in enumerate(dir_contents):
+            for _jj, sub_contents in enumerate(dir_contents):
                 if sub_contents == "rawData" or sub_contents.endswith("_DELETE_ME"):
                     pass
                 else:
