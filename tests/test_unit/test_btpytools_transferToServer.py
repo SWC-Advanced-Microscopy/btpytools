@@ -30,18 +30,23 @@ class TestTransferToServer(unittest.TestCase, btpytools_test):
         """
         Confirm that the list of paths contains at least one compressed archive
         """
-        a_1 = ["dir1/dir2/stuff_rawData.tar.bz", "dir_a", "dir_b"]
-        a_2 = ["dir1/dir2/stuff_rawData.tar.gz", "dir_a", "dir_b"]
+        a_1 = [join("dir1", "dir2", "stuff_rawData.tar.bz"), "dir_a", "dir_b"]
+        a_2 = [join("dir1", "dir2", "stuff_rawData.tar.gz"), "dir_a", "dir_b"]
         a_3 = [
-            "dir1/dir2/stuff_rawData.tar.gz",
+            join("dir1", "dir2", "stuff_rawData.tar.gz"),
             "dir_a",
             "dir_b",
-            "dir1/dir2/stuff_rawData.tar.bz",
+            join("dir1", "dir2", "stuff_rawData.tar.bz"),
         ]
         a_4 = [
-            "tests/data/contains_data_subfolders_01/dir1",
-            "tests/data/contains_data_subfolders_01/dir1",
-            "tests/data/contains_data_subfolders_01/compressed_rawData.tar.bz",
+            join("tests", "data", "contains_data_subfolders_01", "dir1"),
+            join("tests", "data", "contains_data_subfolders_01", "dir1"),
+            join(
+                "tests",
+                "data",
+                "contains_data_subfolders_01",
+                "compressed_rawData.tar.bz",
+            ),
         ]
 
         self.assertTrue(tts.dir_list_contains_compressed_archive(a_1))
@@ -56,15 +61,24 @@ class TestTransferToServer(unittest.TestCase, btpytools_test):
         """
         Confirm that the list of paths contains no compressed archives
         """
-        b_1 = ["dir1/dir2", "dir_a", "dir_b"]
-        b_2 = ["dir1/dir2/stuff_rawData.tar", "dir_a", "dir_b"]
-        b_3 = ["dir1/dir2/stuff_rawData", "dir_a", "dir_b", "dir1/dir2/rawData"]
+        b_1 = [join("dir1", "dir2"), "dir_a", "dir_b"]
+        b_2 = [join("dir1", "dir2", "stuff_rawData.tar"), "dir_a", "dir_b"]
+        b_3 = [
+            join("dir1", "dir2", "stuff_rawData"),
+            "dir_a",
+            "dir_b",
+            join("dir1", "dir2", "rawData"),
+        ]
         # b_4 has a compressed archive but it is in a different path so we want to return false
-        b_4 = ["./s_dir/sample1", "./s_dir/sample2", "OTHER_DIR/rawData.tar.bz"]
+        b_4 = [
+            join("s_dir", "sample1"),
+            join("s_dir", "sample2"),
+            join("OTHER_DIR", "rawData.tar.bz"),
+        ]
         self.assertFalse(tts.dir_list_contains_compressed_archive(b_1))
         self.assertFalse(tts.dir_list_contains_compressed_archive(b_2))
         self.assertFalse(tts.dir_list_contains_compressed_archive(b_3))
-        self.assertFalse(tts.dir_list_contains_compressed_archive(b_4, "./s_dir"))
+        self.assertFalse(tts.dir_list_contains_compressed_archive(b_4, "s_dir"))
 
     def test_user_specified_two_individual_dirs(self):
         """
