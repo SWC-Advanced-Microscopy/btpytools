@@ -158,9 +158,7 @@ class TestTransferToServer(unittest.TestCase, btpytools_test):
             join(self.CROPPED_ACQ_DIR1, "compressed_rawData.tar.bz"),
         ]
 
-        self.assertFalse(
-            tts.issue_warning_if_compressed_data_will_not_be_sent(t_1, verbose=True)
-        )
+        self.assertFalse(tts.issue_warning_if_compressed_data_will_not_be_sent(t_1))
 
         # Should pass because specified dirs are in a directory with no compressed data
         crop_no_comp_dat = join(
@@ -208,9 +206,5 @@ class TestTransferToServer(unittest.TestCase, btpytools_test):
             join(self.CROPPED_ACQ_DIR1, "dir1"),
             join(self.CROPPED_ACQ_DIR1, "dir2"),
         ]
-        self.assertTrue(
-            tts.issue_warning_if_compressed_data_will_not_be_sent(f_1, verbose=False)
-        )
-        self.assertTrue(
-            tts.issue_warning_if_compressed_data_will_not_be_sent(f_2, verbose=True)
-        )
+        self.assertTrue(tts.issue_warning_if_compressed_data_will_not_be_sent(f_1))
+        self.assertTrue(tts.issue_warning_if_compressed_data_will_not_be_sent(f_2))

@@ -227,7 +227,7 @@ def user_specified_cropped_directories_individually(source_dirs, verbose=False):
     return True
 
 
-def dir_list_contains_compressed_archive(source_dirs, dir_root=""):
+def dir_list_contains_compressed_archive(source_dirs, dir_root="", verbose=False):
     """
     Does the directory list in source_dirs contain at least one compressed raw data archive? The
     lack of a compressed archive in this list does not mean the compressed raw data are not going
@@ -264,10 +264,21 @@ def dir_list_contains_compressed_archive(source_dirs, dir_root=""):
     """
 
     # Filter list if needed. This will remove everything that does not match dir_root
-    if len(dir_root) > 0:
-        r_ex = re.compile(dir_root)
-        source_dirs = list(filter(r_ex.match, source_dirs))
+    if len(source_dirs) == 0:
+        return False
+
+    if verbose:
+        print("Searching list for compressed data archive:")
         print(source_dirs)
+
+    if len(dir_root) > 0:
+        source_dirs = [i for i in source_dirs if i.startswith(dir_root)]
+
+    if len(source_dirs) == 0:
+        print(
+            "dir_list_contains_compressed_archive -- Source directories have all been removed. Odd"
+        )
+        return False
 
     compressed_archives = [
         x
