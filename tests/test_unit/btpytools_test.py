@@ -11,3 +11,4 @@ class btpytools_test:
     VALID_SAMPLE_DIR2 = join(DATA_DIR, "valid_sample_directory_02")
     CROPPED_ACQ_DIR1 = join(DATA_DIR, "contains_data_subfolders_01")
     CROPPED_ACQ_DIR2 = join(DATA_DIR, "contains_data_subfolders_02")
+    CURRENTLY_CROPPING = join(DATA_DIR, "cropping_taking_place")

@@ -1,2 +1,4 @@
 *.pyc
-
+btpytools.egg-info/
+build/
+dist/

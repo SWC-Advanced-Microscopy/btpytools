@@ -36,6 +36,13 @@ class TestTools(unittest.TestCase, btpytools_test):
         """
         self.assertTrue(tools.has_compressed_raw_data(self.VALID_SAMPLE_DIR1))
 
+    def test_is_cropping(self):
+        """
+        Confirm that can read back that cropping is currently happening
+        """
+        self.assertTrue(tools.is_currently_cropping(self.CURRENTLY_CROPPING))
+        self.assertFalse(tools.is_currently_cropping(self.VALID_SAMPLE_DIR1))
+
     def test_has_recipe_file(self):
         """
         Confirm that VALID_SAMPLE_DIR1 contains a recipe file

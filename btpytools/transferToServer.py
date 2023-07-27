@@ -425,8 +425,15 @@ def main():
     if check_directories(source_dirs, destination_dir):
         sys.exit()
 
+    # Bail out if we find any folders at all that have not finished cropping
+    for t_dir in source_dirs:
+        if tools.is_currently_cropping(t_dir):
+            print("Directory '%s' is currently being cropped. QUITTING." % t_dir)
+            sys.exit()
+
     # Remove trailing slash from data directories that don't contain data sub-directories
     for _ii, t_dir in enumerate(source_dirs):
+
         if tools.is_data_folder(t_dir) and not tools.contains_data_folders(t_dir):
             # If here, tDIR is a sample folder without sub-folders. If there is a
             # trailing slash then we should delete it. Always.

@@ -17,6 +17,7 @@ DOWNSAMPLED_DIR = "downsampled_stacks"
 DOWNSAMPLED_STACK_SUB_DIR = "*_micron"  # Sub-directories in DOWNSAMPLED_DIR
 DOWNSAMPLED_STACK_LOG_FILE = "ds_*.txt"  # Wildcard for downsampled stacks
 UNCROPPED_WILDCARD = "./Uncropped*_DELETE_ME_DELETE_ME"
+CROPPED_TEMP_DIR_WILDCARD = "CROP_stitchedImages_*"
 RECIPE_WILDCARD = "recipe*.yml"
 
 # Related to registration directories.
@@ -102,6 +103,15 @@ def has_uncropped_stitched_images(t_path=""):
     directory. Returns True if present, False if absent.
     """
     t_path = os.path.join(t_path, UNCROPPED_WILDCARD)
+    return file_glob_exist(t_path)
+
+
+def is_currently_cropping(t_path=""):
+    """Check if cropping is currently happening by looking for the temp dir
+    that the stitchit.sampleSplitter created.
+    Returns True if cropping right now, False otherwise.
+    """
+    t_path = os.path.join(t_path, CROPPED_TEMP_DIR_WILDCARD)
     return file_glob_exist(t_path)
 
 
