@@ -109,7 +109,6 @@ Running `brainregbt -D` will run the registration with the above defaults. Avail
 Create and activate a fresh conda environment and install with:
 ```
 $ pip install btpytools[dev]
-
 ```
 
 You can now `cd` to the project root directory and do the following.
