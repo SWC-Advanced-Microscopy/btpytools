@@ -3,7 +3,7 @@ name = "btpytools"
 authors = [{name="Rob Campbell"}]
 description="Helper functions for BakingTray and StitchIt"
 readme="README.md"
-requires-python = ">=3.6.0"
+requires-python = ">=3.9.0"
 dynamic = ["version"]
 license = {text = "GPL-3.0-or-later"} # Can also provide a link with file =  (the standard licences have abbreviations)
 keywords = ["anatomy","image analysis","data handling"]
@@ -23,7 +23,7 @@ dependencies = [
 
 
 [project.urls]
-repository = "https://github.com/SainsburyWellcomeCentre/btpytools"
+repository = "https://github.com/SWC-Advanced-Microscopy/btpytools"
 
 [build-system]
 requires = [
@@ -57,7 +57,7 @@ register = [
 
 
 [tool.black]
-target-version = ['py36','py37','py38', 'py39', 'py310']
+target-version = ['py39', 'py310']
 skip-string-normalization = false
 line-length = 85
 exclude = '''
@@ -86,4 +86,3 @@ summariseAcqs="btpytools.summariseAcquisitions:main"
 compressRawData="btpytools.compressRawData:main"
 transferToServer="btpytools.transferToServer:main"
 brainregbt="btpytools.brainreg_bt:main"
-add_nums = "pythonator_123.amazing_function:main"
