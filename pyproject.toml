@@ -8,7 +8,7 @@ dynamic = ["version"]
 license = {text = "GPL-3.0-or-later"} # Can also provide a link with file =  (the standard licences have abbreviations)
 keywords = ["anatomy","image analysis","data handling"]
 classifiers=[
-    "Natural Language :: English", 
+    "Natural Language :: English",
     "Topic :: Scientific/Engineering :: Image Processing",
     "License :: Free for non-commercial use",
     "Programming Language :: Python",
@@ -38,9 +38,10 @@ build-backend = "setuptools.build_meta"
 
 
 # github actions will look in these. these are the tools that we need to work with
-# the software but not tools that are needed to run it. 
+# the software but not tools that are needed to run it.
 [project.optional-dependencies]
 dev = [
+    "brainreg",
     "ipython",
     "mypy",
     "pytest",
