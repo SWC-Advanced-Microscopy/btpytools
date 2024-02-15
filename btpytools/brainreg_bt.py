@@ -2,8 +2,8 @@
 
 """ Run brainreg on a BakingTray acquisition
 
-Assumes the brain was acquired such that the images stacks are orderd posterior to anterior
-and the dorsal surface is at the top of the images
+Assumes the brain was acquired such that the images stacks are ordered posterior to
+anterior and the dorsal surface is at the top of the images.
 
 
 Usage
@@ -16,9 +16,9 @@ This function is automatically added as a console-accessible command during pip 
 
 import argparse
 from btpytools import tools
-from brainreg.paths import Paths
-from brainreg.main import main as register
-from brainreg import cli
+from brainreg.core.paths import Paths
+from brainreg.core.main import main as register
+from brainreg.core import cli
 from imlib.general.numerical import check_positive_int
 
 
