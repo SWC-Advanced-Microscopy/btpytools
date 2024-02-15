@@ -11,7 +11,8 @@ classifiers=[
     "Natural Language :: English",
     "Topic :: Scientific/Engineering :: Image Processing",
     "License :: Free for non-commercial use",
-    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research"
     ]
