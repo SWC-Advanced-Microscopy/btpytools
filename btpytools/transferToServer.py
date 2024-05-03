@@ -14,11 +14,16 @@ transferToServer ./localSampleA ./localSampleB /path/to/server
 For more see transferToServer -h
 
 
+
 Notes
 If you have signed in via SSH and aren't in a tmux session, the function
 asks for confirmation before continuing. If your ssh session breaks off
 for some reason, then compression will fail. tmux is therefore recommended
 in this situation.
+
+If the transfer completed successfully, the command creates an empty filed called
+TRANSFER_SUCCEEDED in the local directory (or directories). This file is not copied
+to the server.
 
 """
 
@@ -82,6 +87,10 @@ def cli_parser():
                 asks for confirmation before continuing. If your ssh session breaks off
                 for some reason, then compression will fail. tmux is therefore recommended
                 in this situation.
+
+                If the transfer completed successfully, the command creates an empty filed
+                called `TRANSFER_SUCCEEDED` in the local directory (or directories). This
+                file is not copied to the server.
             """
         ),
     )
@@ -374,7 +383,7 @@ def remove_single_samples_from_list(source_dirs, verbose=False):
 
     # If it has a raw data archive or does not have a cropped directory with the raw data
     # then it is likely a non separately specified directory. So we can remove it from the list.
-    # keep removing. If list empty user had none specified indiviudally.
+    # keep removing. If list empty user had none specified individually.
     for t_dir in source_dirs:
         if (
             tools.has_compressed_raw_data(t_dir)
@@ -520,10 +529,15 @@ def main():
                     print('Copy "%s" to "%s"' % (sub_contents, destination_dir))
 
     # Build the rsync command string
-    cmd = "rsync %s --progress --exclude rawData --exclude *_DELETE_ME_* %s %s " % (
-        main_rsync_switch,
-        " ".join(source_dirs),
-        destination_dir,
+    cmd = (
+        "rsync %s --progress --exclude %s --exclude rsync_log --exclude rawData "
+        "--exclude *_DELETE_ME_* %s %s "
+        % (
+            main_rsync_switch,
+            tools.TRANSFER_SUCCEEDED_FNAME,
+            " ".join(source_dirs),
+            destination_dir,
+        )
     )
 
     print("")
@@ -554,6 +568,12 @@ def main():
         num_transfered_files = out.count(">")
         if num_transfered_files == 0:
             print("Good! There are no corrupt empty files on the server.")
+            # Create file to indicate that the transfer succeeded.
+            for t_dir in source_dirs:
+                fname = os.path.join(t_dir, tools.TRANSFER_SUCCEEDED_FNAME)
+                with open(fname, "a"):
+                    os.utime(fname, None)
+
             break
         else:
             print(

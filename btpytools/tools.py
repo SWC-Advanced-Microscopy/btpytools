@@ -19,6 +19,7 @@ DOWNSAMPLED_STACK_LOG_FILE = "ds_*.txt"  # Wildcard for downsampled stacks
 UNCROPPED_WILDCARD = "./Uncropped*_DELETE_ME_DELETE_ME"
 CROPPED_TEMP_DIR_WILDCARD = "CROP_stitchedImages_*"
 RECIPE_WILDCARD = "recipe*.yml"
+TRANSFER_SUCCEEDED_FNAME = "TRANSFER_SUCCEEDED"
 
 # Related to registration directories.
 ROOT_REG_DIR = "registration"
